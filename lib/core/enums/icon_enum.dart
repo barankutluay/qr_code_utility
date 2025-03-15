@@ -1,0 +1,1 @@
+enum IconEnum { qrCodeScanner }
