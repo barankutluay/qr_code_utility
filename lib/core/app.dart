@@ -22,7 +22,7 @@ class App extends StatelessWidget {
               return MaterialApp(
                 title: 'myproject',
                 debugShowCheckedModeBanner: false,
-                theme: !state.isDarkMode ? AppTheme.lightTheme : AppTheme.darkTheme,
+                theme: state.isDarkMode ? AppTheme.darkTheme : AppTheme.lightTheme,
                 home: HomeScreen(),
               );
             },

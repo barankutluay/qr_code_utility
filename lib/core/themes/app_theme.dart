@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_colors.dart';
+import 'package:myproject/core/themes/app_bottom_sheet_theme.dart';
 import 'package:myproject/core/themes/app_icon_button_theme.dart';
 import 'package:myproject/core/themes/app_icon_theme.dart';
 import 'package:myproject/core/themes/app_text_theme.dart';
@@ -14,6 +15,7 @@ class AppTheme {
       textTheme: AppTextTheme.light,
       iconButtonTheme: AppIconButtonTheme.light,
       iconTheme: AppIconTheme.light,
+      bottomSheetTheme: AppBottomSheetTheme.light,
     );
   }
 
@@ -26,6 +28,7 @@ class AppTheme {
       textTheme: AppTextTheme.dark,
       iconButtonTheme: AppIconButtonTheme.dark,
       iconTheme: AppIconTheme.dark,
+      bottomSheetTheme: AppBottomSheetTheme.dark,
     );
   }
 }

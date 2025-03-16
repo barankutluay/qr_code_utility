@@ -1,1 +1,1 @@
-enum IconEnum { qrCodeScanner }
+enum IconEnum { qrCodeScanner, history, create }
