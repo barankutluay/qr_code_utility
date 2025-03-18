@@ -19,17 +19,17 @@ class HistoryButton extends StatelessWidget {
         width: 72.r,
         height: 72.r,
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {}, //TODO: Burası halledilecek
           padding: PaddingUtil.all(18.r),
           style: Theme.of(context).iconButtonTheme.style,
-          icon: icon(themeState, context),
+          icon: _icon(themeState, context),
           iconSize: 36.r,
         ),
       ),
     );
   }
 
-  Widget icon(ThemeSwitchState themeState, BuildContext context) {
+  Widget _icon(ThemeSwitchState themeState, BuildContext context) {
     return IconEnum.history.toSVGWidget(width: 36.r, height: 36.r, color: Theme.of(context).iconTheme.color);
   }
 }

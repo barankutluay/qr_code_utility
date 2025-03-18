@@ -19,17 +19,17 @@ class ScanButton extends StatelessWidget {
         width: 144.r,
         height: 144.r,
         child: IconButton(
-          onPressed: () {},
+          onPressed: () {}, //TODO: Burası halledilecek
           padding: PaddingUtil.all(16.r),
           style: Theme.of(context).iconButtonTheme.style,
-          icon: icon(themeState, context),
+          icon: _icon(themeState, context),
           iconSize: 112.r,
         ),
       ),
     );
   }
 
-  Widget icon(ThemeSwitchState themeState, BuildContext context) {
+  Widget _icon(ThemeSwitchState themeState, BuildContext context) {
     return IconEnum.qrCodeScanner.toSVGWidget(width: 112.r, height: 112.r, color: Theme.of(context).iconTheme.color);
   }
 }

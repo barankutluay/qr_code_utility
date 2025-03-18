@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const Color transparent = Color.fromARGB(0, 0, 0, 0);
 
+  static const Color error = Color(0xFFBA1A1A);
+
   static const Color lightSurface = Color(0xFFFCF8F8);
   static const Color darkSurface = Color(0xFF141313);
 
   static const Color lightOnSurface = Color(0xFF1C1B1C);
   static const Color darkOnSurface = Color(0xFFE5E2E1);
+
+  static const Color lightPrimary = Color(0xFF1F3AB0);
+  static const Color darkPrimary = Color(0xFFBAC3FF);
 
   static const Color lightPrimaryContainer = Color(0xFF4A61D6);
   static const Color darkPrimaryContainer = Color(0xFF2D46BC);
