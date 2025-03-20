@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:myproject/core/utils/logger_util.dart';
+import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -7,7 +8,9 @@ class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     super.onChange(bloc, change);
-    LoggerUtil.debug('${bloc.runtimeType} $change');
+    if (change.nextState is! TextFormFieldState) {
+      LoggerUtil.debug('${bloc.runtimeType} $change');
+    }
   }
 
   @override
