@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/styles/theme_switch_style.dart';
 import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
+import 'package:myproject/features/home/controllers/theme_switch_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ThemeSwitch extends StatelessWidget {
@@ -11,7 +11,7 @@ class ThemeSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ThemeSwitchCubit themeSwitchCubit = context.watch<ThemeSwitchCubit>();
+    ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
 
     return SmoothContainer(
       child: SizedBox(
@@ -19,7 +19,7 @@ class ThemeSwitch extends StatelessWidget {
         height: 40.r,
         child: Switch(
           value: themeSwitchCubit.state.isDarkMode,
-          onChanged: (_) => context.read<ThemeSwitchCubit>().toggleTheme(),
+          onChanged: (_) => ThemeSwitchController.toggleTheme(context),
           activeColor: AppColors.darkPrimaryContainer,
           activeTrackColor: AppColors.darkPrimaryContainer,
           trackOutlineColor: ThemeSwitchStyle.trackOutlineColor(themeSwitchCubit),

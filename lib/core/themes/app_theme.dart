@@ -9,36 +9,41 @@ import 'package:myproject/core/themes/app_text_selection_theme.dart';
 import 'package:myproject/core/themes/app_text_theme.dart';
 
 class AppTheme {
-  static ThemeData get lightTheme {
+  static ThemeData lightTheme(BuildContext context) {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.lightSurface,
+      shadowColor: AppColors.black,
       indicatorColor: AppColors.lightPrimaryContainer,
+
+      elevatedButtonTheme: AppElevatedButtonTheme.light(context),
+      inputDecorationTheme: AppInputDecorationTheme.light(context),
 
       textTheme: AppTextTheme.light,
       iconTheme: AppIconTheme.light,
       iconButtonTheme: AppIconButtonTheme.light,
-      elevatedButtonTheme: AppElevatedButtonTheme.light,
       bottomSheetTheme: AppBottomSheetTheme.light,
-      inputDecorationTheme: AppInputDecorationTheme.light,
       textSelectionTheme: AppTextSelectionTheme.light,
     );
   }
 
-  static ThemeData get darkTheme {
+  static ThemeData darkTheme(BuildContext context) {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.darkSurface,
+      shadowColor: AppColors.black,
       indicatorColor: AppColors.darkPrimaryContainer,
+
+      elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
+      inputDecorationTheme: AppInputDecorationTheme.dark(context),
 
       textTheme: AppTextTheme.dark,
       iconTheme: AppIconTheme.dark,
       iconButtonTheme: AppIconButtonTheme.dark,
-      elevatedButtonTheme: AppElevatedButtonTheme.dark,
       bottomSheetTheme: AppBottomSheetTheme.dark,
-      inputDecorationTheme: AppInputDecorationTheme.dark,
+      textSelectionTheme: AppTextSelectionTheme.dark,
     );
   }
 }

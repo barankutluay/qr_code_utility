@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
+import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
+import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
+import 'package:myproject/features/home/controllers/theme_switch_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class LinkTextField extends StatelessWidget {
+  //TODO: Validate işlemlerini link için yap
   const LinkTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeSwitchCubit themeSwitchCubit = context.watch<ThemeSwitchCubit>();
-    TextFormFieldCubit textFormFieldCubit = context.watch<TextFormFieldCubit>();
+    ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
+    TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(context);
 
     return SmoothContainer(
       width: double.infinity,
@@ -40,7 +43,7 @@ class LinkTextField extends StatelessWidget {
         cursorRadius: Radius.circular(16.r),
         cursorColor: themeSwitchCubit.state.isDarkMode ? AppColors.darkOnSurface : AppColors.lightOnSurface,
         cursorErrorColor: AppColors.error,
-        decoration: const InputDecoration(hintText: "https://www.youtube.com/watch?v=dQw4w9WgXc"),
+        decoration: InputDecoration(hintText: AppStrings.linkTextFieldHintText),
       ),
     );
   }

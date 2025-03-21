@@ -1,1 +1,1 @@
-enum IconEnum { qrCodeScanner, history, create }
+enum IconEnum { qrCodeScanner, history, create, chevronBackward, share, openInNew, info }
