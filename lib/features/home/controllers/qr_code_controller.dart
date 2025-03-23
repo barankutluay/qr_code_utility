@@ -15,7 +15,7 @@ class QrCodeController {
   ) {
     Widget qrImageView = CustomQrImageView(data: textFormFieldCubit.state.value, themeSwitchCubit: themeSwitchCubit);
     if (Navigator.canPop(context)) {
-      NavigatorUtil.pop(context);
+      NavigatorUtil.pop(context); //TODO: GoRouter migrate
       Future.delayed(AppDurations.duration150ms, () {
         if (!context.mounted) {
           return; //TODO: Snackbar aç

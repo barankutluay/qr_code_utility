@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NavigatorUtil {
-  static void push(BuildContext context, {required Widget nextPage}) {
-    Navigator.of(context).push(MaterialPageRoute(builder: (context) => nextPage));
+  static void push(BuildContext context, Route route) {
+    Navigator.of(context).push(route);
   }
 
-  static void pushReplacement(BuildContext context, {required Widget nextPage}) {
-    Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => nextPage));
+  static void pushNamed(BuildContext context, String routeName) {
+    Navigator.of(context).pushNamed(routeName);
+  }
+
+  static void pushReplacement(BuildContext context, Route route) {
+    Navigator.of(context).pushReplacement(route);
   }
 
   static void pop(BuildContext context) {

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/core/utils/padding_util.dart';
+import 'package:myproject/features/home/widgets/open_in_new_button.dart';
+import 'package:myproject/features/home/widgets/share_button.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class GeneratedCodeBottomSheet extends StatelessWidget {
@@ -27,6 +29,13 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
             32.verticalSpacingRadius,
             qrImageView,
             64.verticalSpacingRadius,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              spacing: 16.r,
+              children: [ShareButton(), OpenInNewButton()],
+            ),
           ],
         ),
       ),

@@ -7,6 +7,7 @@ class AppElevatedButtonTheme {
   static ElevatedButtonThemeData light(BuildContext context) {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        alignment: Alignment.center,
         elevation: 2.r,
         enableFeedback: true,
         backgroundColor: AppColors.lightPrimaryContainer,
@@ -22,6 +23,7 @@ class AppElevatedButtonTheme {
   static ElevatedButtonThemeData dark(BuildContext context) {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
+        alignment: Alignment.center,
         elevation: 2.r,
         enableFeedback: true,
         backgroundColor: AppColors.darkPrimaryContainer,

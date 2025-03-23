@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/padding_util.dart';
@@ -15,8 +16,9 @@ class ScanButton extends StatelessWidget {
         width: 144.r,
         height: 144.r,
         child: IconButton(
-          onPressed: () {},
-          padding: PaddingUtil.all(16.r),
+          onPressed: () => context.go('/scanner'),
+          padding: PaddingUtil.zero(),
+          alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),
           iconSize: 112.r,

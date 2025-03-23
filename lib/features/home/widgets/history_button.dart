@@ -16,7 +16,8 @@ class HistoryButton extends StatelessWidget {
         height: 72.r,
         child: IconButton(
           onPressed: () {},
-          padding: PaddingUtil.all(18.r),
+          padding: PaddingUtil.zero(),
+          alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),
           iconSize: 36.r,
