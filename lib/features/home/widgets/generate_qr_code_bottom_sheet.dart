@@ -29,7 +29,7 @@ class GenerateQrCodeBottomSheet extends StatelessWidget {
             InfoWidget(),
             16.verticalSpacingRadius,
             LinkTextField(),
-            32.verticalSpacingRadius,
+            24.verticalSpacingRadius,
             GenerateButton(),
           ],
         ),

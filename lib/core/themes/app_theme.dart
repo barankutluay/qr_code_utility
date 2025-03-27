@@ -5,6 +5,7 @@ import 'package:myproject/core/themes/app_elevated_button_theme.dart';
 import 'package:myproject/core/themes/app_icon_button_theme.dart';
 import 'package:myproject/core/themes/app_icon_theme.dart';
 import 'package:myproject/core/themes/app_input_decoration_theme.dart';
+import 'package:myproject/core/themes/app_snackbar_theme.dart';
 import 'package:myproject/core/themes/app_text_selection_theme.dart';
 import 'package:myproject/core/themes/app_text_theme.dart';
 
@@ -16,9 +17,12 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.lightSurface,
       shadowColor: AppColors.black,
       indicatorColor: AppColors.lightPrimaryContainer,
+      splashColor: AppColors.lightSurfaceContainerLow,
+      highlightColor: AppColors.lightSurfaceContainerHighest,
 
       elevatedButtonTheme: AppElevatedButtonTheme.light(context),
       inputDecorationTheme: AppInputDecorationTheme.light(context),
+      snackBarTheme: AppSnackbarTheme.light(context),
 
       textTheme: AppTextTheme.light,
       iconTheme: AppIconTheme.light,
@@ -35,9 +39,12 @@ class AppTheme {
       scaffoldBackgroundColor: AppColors.darkSurface,
       shadowColor: AppColors.black,
       indicatorColor: AppColors.darkPrimaryContainer,
+      splashColor: AppColors.darkSurfaceContainerLow,
+      highlightColor: AppColors.darkSurfaceContainerHighest,
 
       elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
       inputDecorationTheme: AppInputDecorationTheme.dark(context),
+      snackBarTheme: AppSnackbarTheme.dark(context),
 
       textTheme: AppTextTheme.dark,
       iconTheme: AppIconTheme.dark,

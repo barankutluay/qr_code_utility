@@ -9,19 +9,20 @@ import 'package:myproject/features/home/controllers/theme_switch_controller.dart
 import 'package:smooth_corner/smooth_corner.dart';
 
 class LinkTextField extends StatelessWidget {
-  //TODO: Validate işlemlerini link için yap
   const LinkTextField({super.key});
 
   @override
   Widget build(BuildContext context) {
-    ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
-    TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(context);
+    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
+    final TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(context);
 
     return SmoothContainer(
       width: double.infinity,
-      height: 48.r,
       child: TextFormField(
+        autovalidateMode: AutovalidateMode.onUserInteraction,
+        validator: (value) => LinkTextFieldController.validationText(value!),
         onChanged: (newValue) => textFormFieldCubit.onChanged(newValue),
+        onTapOutside: (event) => FocusScope.of(context).unfocus(),
         autofillHints: const [AutofillHints.url],
         autofocus: true,
         enableInteractiveSelection: true,

@@ -4,7 +4,7 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 
 class AppIconButtonTheme {
-  static IconButtonThemeData light = IconButtonThemeData(
+  static final IconButtonThemeData light = IconButtonThemeData(
     style: IconButton.styleFrom(
       elevation: 2.r,
       enableFeedback: true,
@@ -15,7 +15,7 @@ class AppIconButtonTheme {
     ),
   );
 
-  static IconButtonThemeData dark = IconButtonThemeData(
+  static final IconButtonThemeData dark = IconButtonThemeData(
     style: IconButton.styleFrom(
       elevation: 2.r,
       enableFeedback: true,

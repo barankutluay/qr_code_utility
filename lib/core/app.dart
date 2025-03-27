@@ -15,6 +15,11 @@ class App extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
+      ensureScreenSize: true,
+      enableScaleText: () => true,
+      enableScaleWH: () => true,
+      useInheritedMediaQuery: true,
+      fontSizeResolver: (fontSize, instance) => fontSize * instance.screenWidth / 375,
       builder: (context, child) {
         return BlocProvider(
           create: (context) => ThemeSwitchCubit(),

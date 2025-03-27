@@ -5,30 +5,53 @@ import 'package:myproject/core/utils/border_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 
 class AppInputDecorationTheme {
-  static InputDecorationTheme light(BuildContext context) {
+  static InputDecorationTheme _buildTheme({
+    required BuildContext context,
+    required Color fillColor,
+    required Color onSurfaceColor,
+    required Color outlineColor,
+    required Color primaryContainerColor,
+  }) {
+    final bodyLargeStyle = Theme.of(context).textTheme.bodyLarge!;
+    final bodyMediumStyle = Theme.of(context).textTheme.bodyMedium!;
     return InputDecorationTheme(
       isCollapsed: false,
-      isDense: false,
-      contentPadding: PaddingUtil.horizontalAndVertical(16.r, 12.r),
-
-      hintStyle: Theme.of(
-        context,
-      ).textTheme.bodyLarge!.copyWith(color: AppColors.lightOnSurface.withValues(alpha: 0.5)),
-
+      isDense: true,
+      contentPadding: PaddingUtil.all(16.r),
+      fillColor: fillColor,
+      hintStyle: bodyLargeStyle.copyWith(color: onSurfaceColor.withValues(alpha: 0.5)),
+      errorStyle: bodyMediumStyle.copyWith(color: AppColors.error, fontWeight: FontWeight.w500),
       border: OutlineInputBorder(
         borderRadius: BorderUtil.all(16.r),
         borderSide: BorderSide(
-          color: AppColors.lightOutline,
+          color: outlineColor,
           width: 1.r,
           strokeAlign: BorderSide.strokeAlignInside,
           style: BorderStyle.solid,
         ),
       ),
-
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderUtil.all(16.r),
         borderSide: BorderSide(
-          color: AppColors.lightPrimaryContainer,
+          color: primaryContainerColor,
+          width: 2.r,
+          strokeAlign: BorderSide.strokeAlignInside,
+          style: BorderStyle.solid,
+        ),
+      ),
+      errorBorder: OutlineInputBorder(
+        borderRadius: BorderUtil.all(16.r),
+        borderSide: BorderSide(
+          color: AppColors.error,
+          width: 1.r,
+          strokeAlign: BorderSide.strokeAlignInside,
+          style: BorderStyle.solid,
+        ),
+      ),
+      focusedErrorBorder: OutlineInputBorder(
+        borderRadius: BorderUtil.all(16.r),
+        borderSide: BorderSide(
+          color: AppColors.error,
           width: 2.r,
           strokeAlign: BorderSide.strokeAlignInside,
           style: BorderStyle.solid,
@@ -37,33 +60,23 @@ class AppInputDecorationTheme {
     );
   }
 
+  static InputDecorationTheme light(BuildContext context) {
+    return _buildTheme(
+      context: context,
+      fillColor: AppColors.lightSurfaceContainerLow,
+      onSurfaceColor: AppColors.lightOnSurface,
+      outlineColor: AppColors.lightOutline,
+      primaryContainerColor: AppColors.lightPrimaryContainer,
+    );
+  }
+
   static InputDecorationTheme dark(BuildContext context) {
-    return InputDecorationTheme(
-      isCollapsed: false,
-      isDense: false,
-      contentPadding: PaddingUtil.horizontalAndVertical(16.r, 12.r),
-
-      hintStyle: Theme.of(context).textTheme.bodyLarge!.copyWith(color: AppColors.darkOnSurface.withValues(alpha: 0.5)),
-
-      border: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: AppColors.darkOutline,
-          width: 1.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
-      ),
-
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: AppColors.darkPrimaryContainer,
-          width: 2.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
-      ),
+    return _buildTheme(
+      context: context,
+      fillColor: AppColors.darkSurfaceContainerLow,
+      onSurfaceColor: AppColors.darkOnSurface,
+      outlineColor: AppColors.darkOutline,
+      primaryContainerColor: AppColors.darkPrimaryContainer,
     );
   }
 }

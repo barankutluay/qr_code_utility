@@ -7,4 +7,5 @@ class AppDurations {
   static const Duration duration800ms = Duration(milliseconds: 800);
   static const Duration duration1000ms = Duration(milliseconds: 1000);
   static const Duration duration2000ms = Duration(milliseconds: 2000);
+  static const Duration duration3000ms = Duration(milliseconds: 3000);
 }

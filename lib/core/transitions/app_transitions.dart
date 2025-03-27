@@ -38,8 +38,8 @@ class AppTransitions {
     required Offset end,
     Curve curve = Curves.easeOutQuad,
     bool useSecondary = false,
-    Duration totalDuration = AppDurations.duration1000ms,
-    Duration slideDelay = AppDurations.duration500ms,
+    Duration totalDuration = AppDurations.duration500ms,
+    Duration slideDelay = AppDurations.duration300ms,
   }) {
     final double beginScale = 1.0;
     final double endScale = useSecondary ? 0.90 : 1.0;

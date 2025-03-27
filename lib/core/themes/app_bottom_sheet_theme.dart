@@ -4,7 +4,7 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 
 class AppBottomSheetTheme {
-  static BottomSheetThemeData light = BottomSheetThemeData(
+  static final BottomSheetThemeData light = BottomSheetThemeData(
     elevation: 2.r,
     modalElevation: 2.r,
     showDragHandle: false,
@@ -15,7 +15,7 @@ class AppBottomSheetTheme {
     shape: RoundedRectangleBorder(borderRadius: BorderUtil.only(topLeft: 16.r, topRight: 16.r)),
   );
 
-  static BottomSheetThemeData dark = BottomSheetThemeData(
+  static final BottomSheetThemeData dark = BottomSheetThemeData(
     elevation: 2.r,
     modalElevation: 2.r,
     showDragHandle: false,

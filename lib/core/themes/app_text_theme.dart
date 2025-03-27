@@ -90,11 +90,7 @@ class AppTextTheme {
     bodyLarge: bodyLarge,
     bodyMedium: bodyMedium,
     bodySmall: bodySmall,
-  ).apply(
-    fontFamily: 'Roboto',
-    bodyColor: AppColors.lightOnSurface,
-    displayColor: AppColors.lightOnSurface,
-  );
+  ).apply(fontFamily: 'Roboto', bodyColor: AppColors.lightOnSurface, displayColor: AppColors.lightOnSurface);
 
   /// Complete dark text theme for app.
   static TextTheme get dark => TextTheme(
@@ -113,9 +109,5 @@ class AppTextTheme {
     bodyLarge: bodyLarge,
     bodyMedium: bodyMedium,
     bodySmall: bodySmall,
-  ).apply(
-    fontFamily: 'Roboto',
-    bodyColor: AppColors.darkOnSurface,
-    displayColor: AppColors.darkOnSurface,
-  );
+  ).apply(fontFamily: 'Roboto', bodyColor: AppColors.darkOnSurface, displayColor: AppColors.darkOnSurface);
 }

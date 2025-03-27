@@ -26,4 +26,8 @@ class ThemeSwitchStyle {
   static WidgetStateProperty<Color?> trackOutlineColor(ThemeSwitchCubit themeSwitchCubit) {
     return WidgetStateProperty.all(themeSwitchCubit.state.isDarkMode ? AppColors.transparent : AppColors.lightOutline);
   }
+
+  static WidgetStateProperty<double?> trackOutlineWidth(ThemeSwitchCubit themeSwitchCubit) {
+    return WidgetStateProperty.all(themeSwitchCubit.state.isDarkMode ? 0 : 2.r);
+  }
 }
