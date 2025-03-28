@@ -13,13 +13,15 @@ GoRoute homeRoute = GoRoute(
       key: state.pageKey,
       child: const HomeScreen(),
       barrierColor: AppColors.black.withValues(alpha: 0.5),
-      transitionDuration: AppDurations.duration500ms,
-      reverseTransitionDuration: AppDurations.duration500ms,
+      transitionDuration: AppDurations.duration1000ms,
+      reverseTransitionDuration: AppDurations.duration1000ms,
       transitionsBuilder: (context, primaryAnimation, secondaryAnimation, child) {
         return AppTransitions.buildScaleThenSlideTransition(
           primaryAnimation: primaryAnimation,
           secondaryAnimation: secondaryAnimation,
           child: child,
+          totalDuration: AppDurations.duration1000ms,
+          slideDelay: AppDurations.duration500ms,
           begin: Offset.zero,
           end: Offset(-0.25, 0),
           useSecondary: true,

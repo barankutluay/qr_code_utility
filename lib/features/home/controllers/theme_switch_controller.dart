@@ -7,6 +7,10 @@ class ThemeSwitchController {
     context.read<ThemeSwitchCubit>().toggleTheme();
   };
 
+  static ThemeSwitchCubit Function(BuildContext context) read = (BuildContext context) {
+    return context.read<ThemeSwitchCubit>();
+  };
+
   static ThemeSwitchCubit Function(BuildContext context) watch = (BuildContext context) {
     return context.watch<ThemeSwitchCubit>();
   };

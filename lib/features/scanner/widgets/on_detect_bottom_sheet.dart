@@ -6,10 +6,10 @@ import 'package:myproject/features/home/widgets/open_in_new_button.dart';
 import 'package:myproject/features/home/widgets/share_button.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class GeneratedCodeBottomSheet extends StatelessWidget {
-  const GeneratedCodeBottomSheet({super.key, required this.qrImageView});
+class OnDetectBottomSheet extends StatelessWidget {
+  const OnDetectBottomSheet(this.returnValue, {super.key});
 
-  final Widget qrImageView;
+  final String returnValue;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +23,12 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
-              AppStrings.generatedCodeBottomSheetTitle,
+              AppStrings.onDetectBottomSheetTitle,
               style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
             ),
+            16.verticalSpacingRadius,
+            Text(returnValue, style: Theme.of(context).textTheme.bodyLarge, textAlign: TextAlign.center),
             32.verticalSpacingRadius,
-            qrImageView,
-            64.verticalSpacingRadius,
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,

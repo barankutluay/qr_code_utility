@@ -14,8 +14,25 @@ final class ScannerInitial extends ScannerState {
   List<Object> get props => [];
 }
 
-final class ScannerScanning extends ScannerState {}
+final class ScannerScanning extends ScannerState {
+  const ScannerScanning();
 
-final class ScannerScanned extends ScannerState {}
+  @override
+  List<Object> get props => [];
+}
 
-final class ScannerError extends  ScannerState {}
+final class ScannerScanned extends ScannerState {
+  const ScannerScanned(this.returnValue);
+
+  final String returnValue;
+
+  @override
+  List<Object> get props => [returnValue];
+}
+
+final class ScannerError extends ScannerState {
+  const ScannerError();
+
+  @override
+  List<Object> get props => [];
+}

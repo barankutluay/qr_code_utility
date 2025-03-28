@@ -1,16 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 
-Future<dynamic> showCustomModalBottomSheet(BuildContext context, {required Widget widget}) {
+Future<dynamic> showCustomModalBottomSheet(
+  BuildContext context, {
+  required Widget widget,
+  bool useSafeArea = true,
+  bool isDismissible = true,
+  bool isScrollControlled = true,
+  bool enableDrag = false,
+  bool showDragHandle = false,
+  VoidCallback? onDismiss,
+}) async {
   return showModalBottomSheet(
     context: context,
-    useSafeArea: true,
-    isDismissible: true,
-    isScrollControlled: true,
-    enableDrag: false,
+    useSafeArea: useSafeArea,
+    isDismissible: isDismissible,
+    isScrollControlled: isScrollControlled,
+    enableDrag: enableDrag,
+    showDragHandle: showDragHandle,
     constraints: const BoxConstraints(maxWidth: double.infinity),
     sheetAnimationStyle: AnimationStyle(
       curve: Curves.easeOutQuad,
@@ -19,13 +27,8 @@ Future<dynamic> showCustomModalBottomSheet(BuildContext context, {required Widge
       reverseDuration: AppDurations.duration500ms,
     ),
     builder:
-        (context) => BlocProvider(
-          create: (context) => TextFormFieldCubit(),
-          child: BlocBuilder<TextFormFieldCubit, TextFormFieldState>(
-            builder: (context, state) {
-              return Padding(padding: PaddingUtil.onlyBottom(MediaQuery.of(context).viewInsets.bottom), child: widget);
-            },
-          ),
-        ),
-  );
+        (context) => Padding(padding: PaddingUtil.onlyBottom(MediaQuery.of(context).viewInsets.bottom), child: widget),
+  ).then((_) {
+    if (onDismiss != null) onDismiss();
+  });
 }

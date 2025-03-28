@@ -8,7 +8,7 @@ import 'package:myproject/features/home/controllers/link_text_field_controller.d
 import 'package:myproject/features/home/widgets/generated_code_bottom_sheet.dart';
 import 'package:myproject/features/home/widgets/qr_image_view.dart';
 
-class QrCodeController {
+class GenerateQrCodeController {
   static void generateQrCodeAndNavigate(
     BuildContext context,
     TextFormFieldCubit textFormFieldCubit,
