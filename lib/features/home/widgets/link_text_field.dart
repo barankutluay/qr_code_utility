@@ -19,7 +19,7 @@ class LinkTextField extends StatelessWidget {
     return SmoothContainer(
       width: double.infinity,
       child: TextFormField(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
+        autovalidateMode: AutovalidateMode.always,
         validator: (value) => LinkTextFieldController.validationText(value!),
         onChanged: (newValue) => textFormFieldCubit.onChanged(newValue),
         onTapOutside: (event) => FocusScope.of(context).unfocus(),

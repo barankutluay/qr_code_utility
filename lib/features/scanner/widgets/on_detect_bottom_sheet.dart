@@ -34,7 +34,7 @@ class OnDetectBottomSheet extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 16.r,
-              children: [ShareButton(), OpenInNewButton()],
+              children: [ShareButton(shareText: returnValue), OpenInNewButton()],
             ),
           ],
         ),

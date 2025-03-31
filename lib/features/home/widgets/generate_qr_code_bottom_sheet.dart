@@ -10,7 +10,9 @@ import 'package:myproject/features/home/widgets/link_text_field.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class GenerateQrCodeBottomSheet extends StatelessWidget {
-  const GenerateQrCodeBottomSheet({super.key});
+  GenerateQrCodeBottomSheet({super.key});
+
+  final GlobalKey repaintKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +38,7 @@ class GenerateQrCodeBottomSheet extends StatelessWidget {
                   16.verticalSpacingRadius,
                   LinkTextField(),
                   24.verticalSpacingRadius,
-                  GenerateButton(),
+                  GenerateButton(repaintKey: repaintKey),
                 ],
               ),
             ),

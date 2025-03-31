@@ -16,7 +16,7 @@ class ScanButton extends StatelessWidget {
         width: 144.r,
         height: 144.r,
         child: IconButton(
-          onPressed: () => context.go('/scanner'),
+          onPressed: () => context.push('/scanner'),
           padding: PaddingUtil.zero(),
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,

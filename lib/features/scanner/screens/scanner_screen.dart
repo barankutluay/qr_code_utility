@@ -13,15 +13,18 @@ class ScannerScreen extends StatefulWidget {
 }
 
 class _ScannerScreenState extends State<ScannerScreen> {
+  late ScannerController _scannerController;
+
   @override
   void initState() {
     super.initState();
-    ScannerController.controller.start();
+    _scannerController = ScannerController();
+    _scannerController.controller.start();
   }
 
   @override
   void dispose() {
-    ScannerController.controller.dispose();
+    _scannerController.controller.stop().then((_) => _scannerController.controller.dispose());
     super.dispose();
   }
 
@@ -31,7 +34,10 @@ class _ScannerScreenState extends State<ScannerScreen> {
       create: (context) => ScannerCubit()..scanningStarted(),
       child: BlocBuilder<ScannerCubit, ScannerState>(
         builder: (context, state) {
-          return Scaffold(body: ScannerScreenLayout(), backgroundColor: AppColors.black);
+          return Scaffold(
+            body: ScannerScreenLayout(controller: _scannerController.controller),
+            backgroundColor: AppColors.black,
+          );
         },
       ),
     );

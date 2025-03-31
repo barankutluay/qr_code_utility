@@ -19,18 +19,23 @@ class ScannerController {
     return context.watch<ScannerCubit>();
   };
 
-  static final MobileScannerController controller = MobileScannerController(
+  final MobileScannerController controller = MobileScannerController(
     formats: [BarcodeFormat.qrCode],
     detectionTimeoutMs: 300,
     autoStart: false,
   );
 
-  static final double scanWindowUpdateThreshold = 200.r;
+  static final double scanWindowUpdateThreshold = 1.r;
 
-  static void onDetect(BuildContext context, BarcodeCapture barcodes, ScannerCubit scannerCubit) {
+  static void onDetect(
+    BuildContext context,
+    BarcodeCapture barcodes,
+    ScannerCubit scannerCubit, {
+    required MobileScannerController controller,
+  }) {
     if (barcodes.barcodes.isNotEmpty) {
       String returnValue = barcodes.barcodes.first.rawValue!;
-      scannerCubit.scanningStopped(context, returnValue);
+      scannerCubit.scanningStopped(context, returnValue, controller: controller);
     }
   }
 
@@ -40,19 +45,17 @@ class ScannerController {
       width: 200.r,
       height: 200.r,
     );
-    return SmoothClipRRect(
-      borderRadius: BorderUtil.all(16.r),
-      child: CustomPaint(
-        size: Size.infinite,
-        willChange: true,
-        isComplex: true,
-        painter: ScannerOverlayPainter(scanWindow: scanWindowRect, borderRadius: 16.r),
-        child: Center(
-          child: SizedBox(
-            width: 200.r,
-            height: 200.r,
-            child: IconEnum.scanIcon.toSVGWidget(width: 200.r, height: 200.r, color: AppColors.white),
-          ),
+    return CustomPaint(
+      size: Size.infinite,
+      willChange: true,
+      isComplex: true,
+      painter: ScannerOverlayPainter(scanWindow: scanWindowRect, borderRadius: 16.r),
+      child: Center(
+        child: SmoothContainer(
+          width: 200.r,
+          height: 200.r,
+          borderRadius: BorderUtil.all(16.r),
+          child: IconEnum.scanIcon.toSVGWidget(width: 200.r, height: 200.r, color: AppColors.white),
         ),
       ),
     );
