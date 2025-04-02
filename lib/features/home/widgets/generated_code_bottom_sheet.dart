@@ -8,10 +8,16 @@ import 'package:myproject/features/home/widgets/share_button.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class GeneratedCodeBottomSheet extends StatelessWidget {
-  const GeneratedCodeBottomSheet({super.key, required this.qrImageView, required this.repaintKey});
+  const GeneratedCodeBottomSheet(
+    this.qrImageView,
+    this.repaintKey,
+    this.url, {
+    super.key,
+  });
 
   final Widget qrImageView;
   final GlobalKey repaintKey;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +32,9 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
           children: [
             Text(
               AppStrings.generatedCodeBottomSheetTitle,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
             ),
             32.verticalSpacingRadius,
             qrImageView,
@@ -37,8 +45,11 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 16.r,
               children: [
-                ShareButton(onShareFiles: () => GenerateQrCodeController.captureImage(repaintKey)),
-                OpenInNewButton(),
+                ShareButton(
+                  onShareFiles:
+                      () => GenerateQrCodeController.captureImage(repaintKey),
+                ),
+                OpenInNewButton(url: url),
               ],
             ),
           ],

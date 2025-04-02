@@ -13,8 +13,12 @@ class LinkTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
-    final TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(context);
+    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(
+      context,
+    );
+    final TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(
+      context,
+    );
 
     return SmoothContainer(
       width: double.infinity,
@@ -29,7 +33,10 @@ class LinkTextField extends StatelessWidget {
         enableSuggestions: true,
         autocorrect: true,
         obscureText: false,
-        keyboardAppearance: themeSwitchCubit.state.isDarkMode ? Brightness.dark : Brightness.light,
+        keyboardAppearance:
+            themeSwitchCubit.state.isDarkMode
+                ? Brightness.dark
+                : Brightness.light,
         keyboardType: TextInputType.url,
         maxLines: 1,
         minLines: 1,
@@ -42,7 +49,10 @@ class LinkTextField extends StatelessWidget {
         cursorWidth: 2.r,
         cursorHeight: 24.r,
         cursorRadius: Radius.circular(16.r),
-        cursorColor: themeSwitchCubit.state.isDarkMode ? AppColors.darkOnSurface : AppColors.lightOnSurface,
+        cursorColor:
+            themeSwitchCubit.state.isDarkMode
+                ? AppColors.darkOnSurface
+                : AppColors.lightOnSurface,
         cursorErrorColor: AppColors.error,
         decoration: InputDecoration(hintText: AppStrings.linkTextFieldHintText),
       ),

@@ -17,11 +17,22 @@ class ScannerScreenLayout extends StatelessWidget {
         builder: (context, constraints) {
           return MobileScanner(
             controller: controller,
-            onDetect: (barcodes) => ScannerController.onDetect(context, barcodes, scannerCubit, controller: controller),
-            overlayBuilder: (context, constraints) => ScannerController.overlayBuilder(context, constraints),
-            placeholderBuilder: (context, widget) => ScannerController.placeholderBuilder(context),
+            onDetect:
+                (barcodes) => ScannerController.onDetect(
+                  context,
+                  barcodes,
+                  scannerCubit,
+                  controller: controller,
+                ),
+            overlayBuilder:
+                (context, constraints) =>
+                    ScannerController.overlayBuilder(context, constraints),
+            placeholderBuilder:
+                (context, widget) =>
+                    ScannerController.placeholderBuilder(context),
             scanWindow: ScannerController.scanWindow(constraints),
-            scanWindowUpdateThreshold: ScannerController.scanWindowUpdateThreshold,
+            scanWindowUpdateThreshold:
+                ScannerController.scanWindowUpdateThreshold,
           );
         },
       ),

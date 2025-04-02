@@ -7,9 +7,9 @@ import 'package:myproject/features/home/widgets/share_button.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class OnDetectBottomSheet extends StatelessWidget {
-  const OnDetectBottomSheet(this.returnValue, {super.key});
+  const OnDetectBottomSheet(this.url, {super.key});
 
-  final String returnValue;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +24,23 @@ class OnDetectBottomSheet extends StatelessWidget {
           children: [
             Text(
               AppStrings.onDetectBottomSheetTitle,
-              style: Theme.of(context).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
+              style: Theme.of(
+                context,
+              ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
             ),
             16.verticalSpacingRadius,
-            Text(returnValue, style: Theme.of(context).textTheme.bodyLarge, textAlign: TextAlign.center),
+            Text(
+              url,
+              style: Theme.of(context).textTheme.bodyLarge,
+              textAlign: TextAlign.center,
+            ),
             32.verticalSpacingRadius,
             Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               spacing: 16.r,
-              children: [ShareButton(shareText: returnValue), OpenInNewButton()],
+              children: [ShareButton(url: url), OpenInNewButton(url: url)],
             ),
           ],
         ),

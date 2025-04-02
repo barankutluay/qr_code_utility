@@ -16,8 +16,15 @@ class InfoWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         spacing: 4.r,
         children: [
-          IconEnum.info.toSVGWidget(width: 24.r, height: 24.r, color: Theme.of(context).textTheme.bodyMedium!.color),
-          Text(AppStrings.generateQrCodeBottomSheetInfoText, style: Theme.of(context).textTheme.bodyMedium),
+          IconEnum.info.toSVGWidget(
+            width: 24.r,
+            height: 24.r,
+            color: Theme.of(context).textTheme.bodyMedium!.color,
+          ),
+          Text(
+            AppStrings.generateQrCodeBottomSheetInfoText,
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
         ],
       ),
     );

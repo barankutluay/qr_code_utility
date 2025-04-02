@@ -28,6 +28,10 @@ class ScanButton extends StatelessWidget {
   }
 
   Widget _icon(BuildContext context) {
-    return IconEnum.qrCodeScanner.toSVGWidget(width: 112.r, height: 112.r, color: Theme.of(context).iconTheme.color);
+    return IconEnum.qrCodeScanner.toSVGWidget(
+      width: 112.r,
+      height: 112.r,
+      color: Theme.of(context).iconTheme.color,
+    );
   }
 }

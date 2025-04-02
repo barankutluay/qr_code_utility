@@ -12,7 +12,9 @@ class ThemeSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
+    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(
+      context,
+    );
 
     return SizedBox(
       width: 65.r,
@@ -26,10 +28,14 @@ class ThemeSwitch extends StatelessWidget {
             onChanged: (_) => ThemeSwitchController.toggleTheme(context),
             activeColor: AppColors.darkPrimaryContainer,
             activeTrackColor: AppColors.darkPrimaryContainer,
-            trackOutlineColor: ThemeSwitchStyle.trackOutlineColor(themeSwitchCubit),
+            trackOutlineColor: ThemeSwitchStyle.trackOutlineColor(
+              themeSwitchCubit,
+            ),
             thumbColor: ThemeSwitchStyle.thumbColor(themeSwitchCubit),
             thumbIcon: ThemeSwitchStyle.thumbIcon(themeSwitchCubit),
-            trackOutlineWidth: ThemeSwitchStyle.trackOutlineWidth(themeSwitchCubit),
+            trackOutlineWidth: ThemeSwitchStyle.trackOutlineWidth(
+              themeSwitchCubit,
+            ),
           ),
         ),
       ),

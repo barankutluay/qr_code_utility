@@ -11,11 +11,15 @@ import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart'
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ScannerController {
-  static ScannerCubit Function(BuildContext context) read = (BuildContext context) {
+  static ScannerCubit Function(BuildContext context) read = (
+    BuildContext context,
+  ) {
     return context.read<ScannerCubit>();
   };
 
-  static ScannerCubit Function(BuildContext context) watch = (BuildContext context) {
+  static ScannerCubit Function(BuildContext context) watch = (
+    BuildContext context,
+  ) {
     return context.watch<ScannerCubit>();
   };
 
@@ -35,11 +39,18 @@ class ScannerController {
   }) {
     if (barcodes.barcodes.isNotEmpty) {
       String returnValue = barcodes.barcodes.first.rawValue!;
-      scannerCubit.scanningStopped(context, returnValue, controller: controller);
+      scannerCubit.scanningStopped(
+        context,
+        returnValue,
+        controller: controller,
+      );
     }
   }
 
-  static Widget overlayBuilder(BuildContext context, BoxConstraints constraints) {
+  static Widget overlayBuilder(
+    BuildContext context,
+    BoxConstraints constraints,
+  ) {
     final scanWindowRect = Rect.fromCenter(
       center: constraints.biggest.center(Offset.zero),
       width: 200.r,
@@ -49,13 +60,20 @@ class ScannerController {
       size: Size.infinite,
       willChange: true,
       isComplex: true,
-      painter: ScannerOverlayPainter(scanWindow: scanWindowRect, borderRadius: 16.r),
+      painter: ScannerOverlayPainter(
+        scanWindow: scanWindowRect,
+        borderRadius: 16.r,
+      ),
       child: Center(
         child: SmoothContainer(
           width: 200.r,
           height: 200.r,
           borderRadius: BorderUtil.all(16.r),
-          child: IconEnum.scanIcon.toSVGWidget(width: 200.r, height: 200.r, color: AppColors.white),
+          child: IconEnum.scanIcon.toSVGWidget(
+            width: 200.r,
+            height: 200.r,
+            color: AppColors.white,
+          ),
         ),
       ),
     );
@@ -66,6 +84,10 @@ class ScannerController {
   }
 
   static Rect? scanWindow(BoxConstraints constraints) {
-    return Rect.fromCenter(center: constraints.biggest.center(Offset.zero), width: 200.r, height: 200.r);
+    return Rect.fromCenter(
+      center: constraints.biggest.center(Offset.zero),
+      width: 200.r,
+      height: 200.r,
+    );
   }
 }

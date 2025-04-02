@@ -2,11 +2,23 @@ import 'package:logger/logger.dart';
 
 class LoggerUtil {
   static final Logger _defaultLogger = Logger(
-    printer: PrettyPrinter(methodCount: 2, errorMethodCount: 8, lineLength: 120, colors: true, printEmojis: true),
+    printer: PrettyPrinter(
+      methodCount: 2,
+      errorMethodCount: 8,
+      lineLength: 120,
+      colors: true,
+      printEmojis: true,
+    ),
   );
 
   static final Logger _infoLogger = Logger(
-    printer: PrettyPrinter(methodCount: 0, errorMethodCount: 0, lineLength: 120, colors: true, printEmojis: true),
+    printer: PrettyPrinter(
+      methodCount: 0,
+      errorMethodCount: 0,
+      lineLength: 120,
+      colors: true,
+      printEmojis: true,
+    ),
   );
 
   static void debug(dynamic message) {

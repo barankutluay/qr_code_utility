@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 class AppColors {
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
-  static const Color transparent = Color.fromARGB(0, 0, 0, 0);
+  static const Color black50 = Color(0x80000000);
+  static const Color transparent = Color(0x00000000);
 
   static const Color error = Color(0xFFBA1A1A);
 

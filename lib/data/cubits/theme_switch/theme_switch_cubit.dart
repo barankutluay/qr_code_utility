@@ -8,10 +8,17 @@ part 'theme_switch_state.dart';
 
 class ThemeSwitchCubit extends Cubit<ThemeSwitchState> {
   ThemeSwitchCubit()
-    : super(ThemeSwitchState(isDarkMode: PlatformDispatcher.instance.platformBrightness == Brightness.dark));
+    : super(
+        ThemeSwitchState(
+          isDarkMode:
+              PlatformDispatcher.instance.platformBrightness == Brightness.dark,
+        ),
+      );
 
   void toggleTheme() {
-    LoggerUtil.debug("Theme toggled ${state.isDarkMode ? "'Light Mode'" : "'Dark Mode'"}");
+    LoggerUtil.debug(
+      "Theme toggled ${state.isDarkMode ? "'Light Mode'" : "'Dark Mode'"}",
+    );
     emit(ThemeSwitchState(isDarkMode: !state.isDarkMode));
   }
 }

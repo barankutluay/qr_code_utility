@@ -17,7 +17,11 @@ class CreateButton extends StatelessWidget {
         width: 72.r,
         height: 72.r,
         child: IconButton(
-          onPressed: () => showCustomModalBottomSheet(context, widget: GenerateQrCodeBottomSheet()),
+          onPressed:
+              () => showCustomModalBottomSheet(
+                context,
+                widget: GenerateQrCodeBottomSheet(),
+              ),
           padding: PaddingUtil.zero(),
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
@@ -29,6 +33,10 @@ class CreateButton extends StatelessWidget {
   }
 
   Widget _icon(BuildContext context) {
-    return IconEnum.create.toSVGWidget(width: 36.r, height: 36.r, color: Theme.of(context).iconTheme.color);
+    return IconEnum.create.toSVGWidget(
+      width: 36.r,
+      height: 36.r,
+      color: Theme.of(context).iconTheme.color,
+    );
   }
 }

@@ -8,9 +8,9 @@ import 'package:share_plus/share_plus.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ShareButton extends StatelessWidget {
-  const ShareButton({super.key, this.shareText, this.onShareFiles});
+  const ShareButton({super.key, this.url, this.onShareFiles});
 
-  final String? shareText;
+  final String? url;
   final Future<List<XFile>> Function()? onShareFiles;
 
   @override
@@ -20,7 +20,7 @@ class ShareButton extends StatelessWidget {
         width: 101.r,
         height: 48.r,
         child: IconButton(
-          onPressed: () => share(context, shareText: shareText, onShareFiles: onShareFiles),
+          onPressed: () => share(context, url: url, onShareFiles: onShareFiles),
           padding: PaddingUtil.zero(),
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
@@ -32,6 +32,10 @@ class ShareButton extends StatelessWidget {
   }
 
   Widget _icon(BuildContext context) {
-    return IconEnum.share.toSVGWidget(width: 36.r, height: 36.r, color: Theme.of(context).iconTheme.color);
+    return IconEnum.share.toSVGWidget(
+      width: 36.r,
+      height: 36.r,
+      color: Theme.of(context).iconTheme.color,
+    );
   }
 }

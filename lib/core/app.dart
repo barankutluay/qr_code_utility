@@ -19,7 +19,8 @@ class App extends StatelessWidget {
       enableScaleText: () => true,
       enableScaleWH: () => true,
       useInheritedMediaQuery: true,
-      fontSizeResolver: (fontSize, instance) => fontSize * instance.screenWidth / 375,
+      fontSizeResolver:
+          (fontSize, instance) => fontSize * instance.screenWidth / 375,
       builder: (context, child) {
         return BlocProvider(
           create: (context) => ThemeSwitchCubit(),
@@ -29,7 +30,10 @@ class App extends StatelessWidget {
                 title: AppStrings.appName,
                 routerConfig: AppGoRouterConfig.router,
                 debugShowCheckedModeBanner: false,
-                theme: state.isDarkMode ? AppTheme.darkTheme(context) : AppTheme.lightTheme(context),
+                theme:
+                    state.isDarkMode
+                        ? AppTheme.darkTheme(context)
+                        : AppTheme.lightTheme(context),
               );
             },
           ),

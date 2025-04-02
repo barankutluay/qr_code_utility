@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 
-void showCustomSnackbar(BuildContext context, String message, {SnackBarEnum type = SnackBarEnum.info}) {
+void showCustomSnackbar(
+  BuildContext context,
+  String message, {
+  SnackBarEnum type = SnackBarEnum.info,
+}) {
   if (type == SnackBarEnum.error) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
@@ -13,9 +17,12 @@ void showCustomSnackbar(BuildContext context, String message, {SnackBarEnum type
     );
   }
   if (type == SnackBarEnum.info) {
-    ScaffoldMessenger.of(
-      context,
-    ).showSnackBar(SnackBar(content: Center(child: Text(message)), duration: AppDurations.duration3000ms));
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Center(child: Text(message)),
+        duration: AppDurations.duration3000ms,
+      ),
+    );
   }
 }
 

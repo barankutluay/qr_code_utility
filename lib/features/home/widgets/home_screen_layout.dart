@@ -15,7 +15,14 @@ class HomeScreenLayout extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: PaddingUtil.horizontal(20.r),
-        child: Stack(children: [_titleText(), _themeSwitch(), _scanButton(), _bottomButtons()]),
+        child: Stack(
+          children: [
+            _titleText(),
+            _themeSwitch(),
+            _scanButton(),
+            _bottomButtons(),
+          ],
+        ),
       ),
     );
   }

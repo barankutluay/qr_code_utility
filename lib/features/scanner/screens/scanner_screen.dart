@@ -24,7 +24,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
 
   @override
   void dispose() {
-    _scannerController.controller.stop().then((_) => _scannerController.controller.dispose());
+    _scannerController.controller.stop().then(
+      (_) => _scannerController.controller.dispose(),
+    );
     super.dispose();
   }
 
@@ -35,7 +37,9 @@ class _ScannerScreenState extends State<ScannerScreen> {
       child: BlocBuilder<ScannerCubit, ScannerState>(
         builder: (context, state) {
           return Scaffold(
-            body: ScannerScreenLayout(controller: _scannerController.controller),
+            body: ScannerScreenLayout(
+              controller: _scannerController.controller,
+            ),
             backgroundColor: AppColors.black,
           );
         },

@@ -23,13 +23,15 @@ class GenerateQrCodeController {
     ThemeSwitchCubit themeSwitchCubit,
     GlobalKey repaintKey,
   ) {
+    final String url = textFormFieldCubit.state.value;
+
     final Widget qrImageView = CustomQrImageView(
       data: textFormFieldCubit.state.value,
       themeSwitchCubit: themeSwitchCubit,
       repaintKey: repaintKey,
     );
 
-    final bool isValidated = LinkTextFieldController.validateLink(context, textFormFieldCubit.state.value);
+    final bool isValidated = LinkTextFieldController.validateLink(context, url);
 
     if (context.canPop() && isValidated) {
       context.pop();
@@ -39,7 +41,7 @@ class GenerateQrCodeController {
         } else {
           showCustomModalBottomSheet(
             context,
-            widget: GeneratedCodeBottomSheet(qrImageView: qrImageView, repaintKey: repaintKey),
+            widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
           );
         }
       });
@@ -63,7 +65,9 @@ class GenerateQrCodeController {
 
       final ui.Image image = await boundary.toImage(pixelRatio: 5.0);
 
-      final ByteData? byteData = await image.toByteData(format: ui.ImageByteFormat.png);
+      final ByteData? byteData = await image.toByteData(
+        format: ui.ImageByteFormat.png,
+      );
       if (byteData == null) {
         LoggerUtil.error("ByteData is null!");
         return [];
@@ -71,12 +75,15 @@ class GenerateQrCodeController {
 
       final Uint8List pngBytes = byteData.buffer.asUint8List();
       final Directory tempDir = await getTemporaryDirectory();
-      final String filePath = '${tempDir.path}/qr_${DateTime.now().millisecondsSinceEpoch}.png';
+      final String filePath =
+          '${tempDir.path}/qr_${DateTime.now().millisecondsSinceEpoch}.png';
       final File file = File(filePath);
       await file.writeAsBytes(pngBytes);
 
       final decodedImage = await decodeImageFromList(pngBytes);
-      LoggerUtil.debug("QR Boyutları: ${decodedImage.width}x${decodedImage.height}");
+      LoggerUtil.debug(
+        "QR Boyutları: ${decodedImage.width}x${decodedImage.height}",
+      );
 
       return [XFile(file.path)];
     } catch (e) {

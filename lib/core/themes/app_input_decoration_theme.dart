@@ -12,50 +12,43 @@ class AppInputDecorationTheme {
     required Color outlineColor,
     required Color primaryContainerColor,
   }) {
-    final bodyLargeStyle = Theme.of(context).textTheme.bodyLarge!;
-    final bodyMediumStyle = Theme.of(context).textTheme.bodyMedium!;
+    final textTheme = Theme.of(context).textTheme;
+    final padding = PaddingUtil.all(16.r);
+    final borderRadius = BorderUtil.all(16.r);
+
     return InputDecorationTheme(
-      isCollapsed: false,
       isDense: true,
-      contentPadding: PaddingUtil.all(16.r),
       fillColor: fillColor,
-      hintStyle: bodyLargeStyle.copyWith(color: onSurfaceColor.withValues(alpha: 0.5)),
-      errorStyle: bodyMediumStyle.copyWith(color: AppColors.error, fontWeight: FontWeight.w500),
-      border: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: outlineColor,
-          width: 1.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
+      contentPadding: padding,
+      hintStyle: textTheme.bodyLarge!.copyWith(
+        color: onSurfaceColor.withValues(alpha: 0.5),
       ),
-      focusedBorder: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: primaryContainerColor,
-          width: 2.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
+      errorStyle: textTheme.bodyMedium!.copyWith(
+        color: AppColors.error,
+        fontWeight: FontWeight.w500,
       ),
-      errorBorder: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: AppColors.error,
-          width: 1.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
-      ),
-      focusedErrorBorder: OutlineInputBorder(
-        borderRadius: BorderUtil.all(16.r),
-        borderSide: BorderSide(
-          color: AppColors.error,
-          width: 2.r,
-          strokeAlign: BorderSide.strokeAlignInside,
-          style: BorderStyle.solid,
-        ),
+      border: _buildBorder(outlineColor, 1.r, borderRadius),
+      focusedBorder: _buildBorder(primaryContainerColor, 2.r, borderRadius),
+      errorBorder: _buildBorder(AppColors.error, 1.r, borderRadius),
+      focusedErrorBorder: _buildBorder(AppColors.error, 2.r, borderRadius),
+    );
+  }
+
+  static OutlineInputBorder _buildBorder(
+    Color color,
+    double width,
+    BorderRadius borderRadius,
+  ) {
+    const strokeAlign = BorderSide.strokeAlignInside;
+    const borderStyle = BorderStyle.solid;
+
+    return OutlineInputBorder(
+      borderRadius: borderRadius,
+      borderSide: BorderSide(
+        color: color,
+        width: width,
+        strokeAlign: strokeAlign,
+        style: borderStyle,
       ),
     );
   }

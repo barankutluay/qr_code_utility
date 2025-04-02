@@ -20,15 +20,15 @@ class AppTheme {
       splashColor: AppColors.lightSurfaceContainerLow,
       highlightColor: AppColors.lightSurfaceContainerHighest,
 
-      elevatedButtonTheme: AppElevatedButtonTheme.light(context),
-      inputDecorationTheme: AppInputDecorationTheme.light(context),
-      snackBarTheme: AppSnackbarTheme.light(context),
-
       textTheme: AppTextTheme.light,
       iconTheme: AppIconTheme.light,
       iconButtonTheme: AppIconButtonTheme.light,
       bottomSheetTheme: AppBottomSheetTheme.light,
       textSelectionTheme: AppTextSelectionTheme.light,
+
+      elevatedButtonTheme: AppElevatedButtonTheme.light(context),
+      inputDecorationTheme: AppInputDecorationTheme.light(context),
+      snackBarTheme: AppSnackbarTheme.light(context),
     );
   }
 
@@ -42,15 +42,15 @@ class AppTheme {
       splashColor: AppColors.darkSurfaceContainerLow,
       highlightColor: AppColors.darkSurfaceContainerHighest,
 
-      elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
-      inputDecorationTheme: AppInputDecorationTheme.dark(context),
-      snackBarTheme: AppSnackbarTheme.dark(context),
-
       textTheme: AppTextTheme.dark,
       iconTheme: AppIconTheme.dark,
       iconButtonTheme: AppIconButtonTheme.dark,
       bottomSheetTheme: AppBottomSheetTheme.dark,
       textSelectionTheme: AppTextSelectionTheme.dark,
+
+      elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
+      inputDecorationTheme: AppInputDecorationTheme.dark(context),
+      snackBarTheme: AppSnackbarTheme.dark(context),
     );
   }
 }

@@ -15,8 +15,12 @@ class GenerateButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(context);
-    final TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(context);
+    final ThemeSwitchCubit themeSwitchCubit = ThemeSwitchController.watch(
+      context,
+    );
+    final TextFormFieldCubit textFormFieldCubit = LinkTextFieldController.watch(
+      context,
+    );
 
     return SmoothContainer(
       width: double.infinity,

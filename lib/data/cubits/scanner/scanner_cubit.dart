@@ -12,7 +12,11 @@ class ScannerCubit extends Cubit<ScannerState> {
 
   void scanningStarted() => emit(ScannerScanning());
 
-  void scanningStopped(BuildContext context, String returnValue, {required MobileScannerController controller}) {
+  void scanningStopped(
+    BuildContext context,
+    String returnValue, {
+    required MobileScannerController controller,
+  }) {
     controller.pause();
     showCustomModalBottomSheet(
       context,
@@ -22,7 +26,10 @@ class ScannerCubit extends Cubit<ScannerState> {
     emit(ScannerScanned(returnValue));
   }
 
-  void scanningRestarted(BuildContext context, {required MobileScannerController controller}) {
+  void scanningRestarted(
+    BuildContext context, {
+    required MobileScannerController controller,
+  }) {
     controller.start();
     emit(ScannerInitial());
   }

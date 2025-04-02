@@ -27,7 +27,12 @@ Future<dynamic> showCustomModalBottomSheet(
       reverseDuration: AppDurations.duration500ms,
     ),
     builder:
-        (context) => Padding(padding: PaddingUtil.onlyBottom(MediaQuery.of(context).viewInsets.bottom), child: widget),
+        (context) => Padding(
+          padding: PaddingUtil.onlyBottom(
+            MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: widget,
+        ),
   ).then((_) {
     if (onDismiss != null) onDismiss();
   });
