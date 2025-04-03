@@ -21,7 +21,7 @@ class ShareButton extends StatelessWidget {
         height: 48.r,
         child: IconButton(
           onPressed: () => share(context, url: url, onShareFiles: onShareFiles),
-          padding: PaddingUtil.zero(),
+          padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),

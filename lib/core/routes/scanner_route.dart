@@ -6,8 +6,8 @@ import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/transitions/app_transitions.dart';
 import 'package:myproject/features/scanner/screens/scanner_screen.dart';
 
-GoRoute scannerRoute = GoRoute(
-  path: "/scanner",
+final GoRoute scannerRoute = GoRoute(
+  path: '/scanner',
   pageBuilder:
       (context, state) => CustomTransitionPage(
         key: state.pageKey,

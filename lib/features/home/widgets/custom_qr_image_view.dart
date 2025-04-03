@@ -20,18 +20,28 @@ class CustomQrImageView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final boxDecoration = BoxDecoration(
+      border: Border.all(
+        width: 2.r,
+        color:
+            themeSwitchCubit.state.isDarkMode
+                ? AppColors.white
+                : AppColors.black,
+      ),
+    );
+
     return RepaintBoundary(
       key: repaintKey,
-      child: SizedBox(
+      child: Container(
         width: 200.r,
         height: 200.r,
+        decoration: boxDecoration,
         child: QrImageView(
           data: data,
           size: 200.r,
           version: QrVersions.auto,
           errorCorrectionLevel: QrErrorCorrectLevel.H,
-          gapless: true,
-          padding: PaddingUtil.zero(),
+          padding: PaddingUtil.all(8.r),
           constrainErrorBounds: true,
           backgroundColor: AppColors.white,
           dataModuleStyle: QrImageViewStyle.dataModuleStyle,

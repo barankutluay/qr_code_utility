@@ -22,7 +22,7 @@ class CreateButton extends StatelessWidget {
                 context,
                 widget: GenerateQrCodeBottomSheet(),
               ),
-          padding: PaddingUtil.zero(),
+          padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),

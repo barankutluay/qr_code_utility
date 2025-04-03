@@ -4,7 +4,7 @@ enum IconEnum {
   history,
   info,
   openInNew,
-  qrCodeScanner,
   scanIcon,
+  scanFrame,
   share,
 }

@@ -17,7 +17,7 @@ class ScanButton extends StatelessWidget {
         height: 144.r,
         child: IconButton(
           onPressed: () => context.push('/scanner'),
-          padding: PaddingUtil.zero(),
+          padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),
@@ -28,7 +28,7 @@ class ScanButton extends StatelessWidget {
   }
 
   Widget _icon(BuildContext context) {
-    return IconEnum.qrCodeScanner.toSVGWidget(
+    return IconEnum.scanIcon.toSVGWidget(
       width: 112.r,
       height: 112.r,
       color: Theme.of(context).iconTheme.color,

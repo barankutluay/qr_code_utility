@@ -7,12 +7,10 @@ class AppTransitions {
     required Animation<double> secondaryAnimation,
     bool useSecondary = false,
     Curve curve = Curves.easeOutQuad,
-  }) {
-    return CurvedAnimation(
-      parent: useSecondary ? secondaryAnimation : primaryAnimation,
-      curve: curve,
-    );
-  }
+  }) => CurvedAnimation(
+    parent: useSecondary ? secondaryAnimation : primaryAnimation,
+    curve: curve,
+  );
 
   static Widget buildSlideTransition({
     required Animation<double> primaryAnimation,
@@ -23,13 +21,13 @@ class AppTransitions {
     Curve curve = Curves.easeOutQuad,
     bool useSecondary = false,
   }) {
-    final animation = _buildCurvedAnimation(
+    final CurvedAnimation animation = _buildCurvedAnimation(
       primaryAnimation: primaryAnimation,
       secondaryAnimation: secondaryAnimation,
       useSecondary: useSecondary,
       curve: curve,
     );
-    final tween = Tween<Offset>(begin: begin, end: end);
+    final Tween<Offset> tween = Tween<Offset>(begin: begin, end: end);
     return SlideTransition(position: tween.animate(animation), child: child);
   }
 
@@ -44,26 +42,36 @@ class AppTransitions {
     Duration totalDuration = AppDurations.duration1000ms,
     Duration slideDelay = AppDurations.duration500ms,
   }) {
-    final double beginScale = 1.0;
+    const double beginScale = 1.0;
     final double endScale = useSecondary ? 0.90 : 1.0;
-    final parentAnimation = _buildCurvedAnimation(
+
+    final CurvedAnimation parentAnimation = _buildCurvedAnimation(
       primaryAnimation: primaryAnimation,
       secondaryAnimation: secondaryAnimation,
       useSecondary: useSecondary,
       curve: curve,
     );
+
     final double delayFraction =
         slideDelay.inMilliseconds / totalDuration.inMilliseconds;
-    final slideAnimation = CurvedAnimation(
+
+    final CurvedAnimation slideAnimation = CurvedAnimation(
       parent: parentAnimation,
       curve: Interval(delayFraction, 1.0, curve: curve),
     );
-    final slideTween = Tween<Offset>(begin: begin, end: end);
-    final slideTransition = SlideTransition(
+
+    final Tween<Offset> slideTween = Tween<Offset>(begin: begin, end: end);
+
+    final SlideTransition slideTransition = SlideTransition(
       position: slideTween.animate(slideAnimation),
       child: child,
     );
-    final scaleTween = Tween<double>(begin: beginScale, end: endScale);
+
+    final Tween<double> scaleTween = Tween<double>(
+      begin: beginScale,
+      end: endScale,
+    );
+
     return ScaleTransition(
       scale: scaleTween.animate(parentAnimation),
       child: slideTransition,

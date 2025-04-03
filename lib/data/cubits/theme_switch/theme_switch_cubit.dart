@@ -16,7 +16,7 @@ class ThemeSwitchCubit extends Cubit<ThemeSwitchState> {
       );
 
   void toggleTheme() {
-    LoggerUtil.debug(
+    LoggerUtil.info(
       "Theme toggled ${state.isDarkMode ? "'Light Mode'" : "'Dark Mode'"}",
     );
     emit(ThemeSwitchState(isDarkMode: !state.isDarkMode));

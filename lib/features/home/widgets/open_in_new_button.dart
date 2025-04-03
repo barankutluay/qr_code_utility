@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
-import 'package:myproject/core/utils/launch_url.dart';
+import 'package:myproject/core/utils/launch_url_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
@@ -19,7 +19,7 @@ class OpenInNewButton extends StatelessWidget {
         height: 48.r,
         child: IconButton(
           onPressed: () => customLaunchUrl(url),
-          padding: PaddingUtil.zero(),
+          padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           icon: _icon(context),

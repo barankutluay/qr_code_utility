@@ -12,12 +12,14 @@ class ScannerOverlayPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final overlayPaint =
+    final Paint overlayPaint =
         Paint()
           ..color = AppColors.black.withValues(alpha: 0.33)
           ..style = PaintingStyle.fill;
-    final clearPaint = Paint()..blendMode = BlendMode.clear;
-    final rRect = RRect.fromRectAndRadius(
+
+    final Paint clearPaint = Paint()..blendMode = BlendMode.clear;
+
+    final RRect rRect = RRect.fromRectAndRadius(
       scanWindow,
       Radius.circular(borderRadius),
     );

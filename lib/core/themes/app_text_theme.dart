@@ -8,15 +8,13 @@ class AppTextTheme {
     FontWeight fontWeight = FontWeight.w400,
     double letterSpacingPercent = 0,
     double height = 1.5,
-  }) {
-    return TextStyle(
-      fontSize: fontSize.r,
-      fontWeight: fontWeight,
-      letterSpacing: fontSize.r * (letterSpacingPercent / 100),
-      height: height,
-      fontFamily: 'Roboto',
-    );
-  }
+  }) => TextStyle(
+    fontSize: fontSize.r,
+    fontWeight: fontWeight,
+    letterSpacing: fontSize.r * (letterSpacingPercent / 100),
+    height: height,
+    fontFamily: 'Roboto',
+  );
 
   // * Display styles
 

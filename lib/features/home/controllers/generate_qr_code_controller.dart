@@ -36,30 +36,27 @@ class GenerateQrCodeController {
     if (context.canPop() && isValidated) {
       context.pop();
       Future.delayed(AppDurations.duration300ms, () {
-        if (!context.mounted) {
-          return;
-        } else {
-          showCustomModalBottomSheet(
-            context,
-            widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
-          );
-        }
+        if (!context.mounted) return;
+        showCustomModalBottomSheet(
+          context,
+          widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
+        );
       });
-    } else {
-      return;
     }
+    return;
   }
 
   static Future<List<XFile>> captureImage(GlobalKey repaintKey) async {
     try {
-      final renderObject = repaintKey.currentContext?.findRenderObject();
+      final RenderObject? renderObject =
+          repaintKey.currentContext?.findRenderObject();
 
       if (renderObject == null || (renderObject is! RenderRepaintBoundary)) {
-        LoggerUtil.error("RenderRepaintBoundary not found!");
-        return [];
+        const String e = 'RenderRepaintBoundary not found!';
+        throw Exception(e);
       }
 
-      final boundary = renderObject;
+      final RenderRepaintBoundary boundary = renderObject;
 
       await Future.delayed(AppDurations.duration100ms);
 
@@ -68,9 +65,10 @@ class GenerateQrCodeController {
       final ByteData? byteData = await image.toByteData(
         format: ui.ImageByteFormat.png,
       );
+
       if (byteData == null) {
-        LoggerUtil.error("ByteData is null!");
-        return [];
+        const String e = 'ByteData is null!';
+        throw Exception(e);
       }
 
       final Uint8List pngBytes = byteData.buffer.asUint8List();
@@ -78,11 +76,13 @@ class GenerateQrCodeController {
       final String filePath =
           '${tempDir.path}/qr_${DateTime.now().millisecondsSinceEpoch}.png';
       final File file = File(filePath);
+
       await file.writeAsBytes(pngBytes);
 
-      final decodedImage = await decodeImageFromList(pngBytes);
-      LoggerUtil.debug(
-        "QR Boyutları: ${decodedImage.width}x${decodedImage.height}",
+      final ui.Image decodedImage = await decodeImageFromList(pngBytes);
+
+      LoggerUtil.info(
+        'QR Boyutları: ${decodedImage.width}x${decodedImage.height}',
       );
 
       return [XFile(file.path)];

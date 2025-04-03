@@ -11,17 +11,11 @@ import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart'
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ScannerController {
-  static ScannerCubit Function(BuildContext context) read = (
-    BuildContext context,
-  ) {
-    return context.read<ScannerCubit>();
-  };
+  static ScannerCubit Function(BuildContext context) read =
+      (BuildContext context) => context.read<ScannerCubit>();
 
-  static ScannerCubit Function(BuildContext context) watch = (
-    BuildContext context,
-  ) {
-    return context.watch<ScannerCubit>();
-  };
+  static ScannerCubit Function(BuildContext context) watch =
+      (BuildContext context) => context.watch<ScannerCubit>();
 
   final MobileScannerController controller = MobileScannerController(
     formats: [BarcodeFormat.qrCode],
@@ -32,9 +26,9 @@ class ScannerController {
   static final double scanWindowUpdateThreshold = 1.r;
 
   static void onDetect(
-    BuildContext context,
-    BarcodeCapture barcodes,
-    ScannerCubit scannerCubit, {
+    BuildContext context, {
+    required BarcodeCapture barcodes,
+    required ScannerCubit scannerCubit,
     required MobileScannerController controller,
   }) {
     if (barcodes.barcodes.isNotEmpty) {
@@ -48,9 +42,9 @@ class ScannerController {
   }
 
   static Widget overlayBuilder(
-    BuildContext context,
-    BoxConstraints constraints,
-  ) {
+    BuildContext context, {
+    required BoxConstraints constraints,
+  }) {
     final scanWindowRect = Rect.fromCenter(
       center: constraints.biggest.center(Offset.zero),
       width: 200.r,
@@ -69,7 +63,7 @@ class ScannerController {
           width: 200.r,
           height: 200.r,
           borderRadius: BorderUtil.all(16.r),
-          child: IconEnum.scanIcon.toSVGWidget(
+          child: IconEnum.scanFrame.toSVGWidget(
             width: 200.r,
             height: 200.r,
             color: AppColors.white,
@@ -79,15 +73,13 @@ class ScannerController {
     );
   }
 
-  static Widget placeholderBuilder(BuildContext context, {Widget? widget}) {
-    return Container(color: AppColors.black);
-  }
+  static Widget placeholderBuilder(BuildContext context) =>
+      Container(color: AppColors.black);
 
-  static Rect? scanWindow(BoxConstraints constraints) {
-    return Rect.fromCenter(
-      center: constraints.biggest.center(Offset.zero),
-      width: 200.r,
-      height: 200.r,
-    );
-  }
+  static Rect scanWindow({required BoxConstraints constraints}) =>
+      Rect.fromCenter(
+        center: constraints.biggest.center(Offset.zero),
+        width: 200.r,
+        height: 200.r,
+      );
 }

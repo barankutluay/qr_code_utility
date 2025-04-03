@@ -53,23 +53,19 @@ class AppInputDecorationTheme {
     );
   }
 
-  static InputDecorationTheme light(BuildContext context) {
-    return _buildTheme(
-      context: context,
-      fillColor: AppColors.lightSurfaceContainerLow,
-      onSurfaceColor: AppColors.lightOnSurface,
-      outlineColor: AppColors.lightOutline,
-      primaryContainerColor: AppColors.lightPrimaryContainer,
-    );
-  }
+  static InputDecorationTheme light(BuildContext context) => _buildTheme(
+    context: context,
+    fillColor: AppColors.lightSurfaceContainerLow,
+    onSurfaceColor: AppColors.lightOnSurface,
+    outlineColor: AppColors.lightOutline,
+    primaryContainerColor: AppColors.lightPrimaryContainer,
+  );
 
-  static InputDecorationTheme dark(BuildContext context) {
-    return _buildTheme(
-      context: context,
-      fillColor: AppColors.darkSurfaceContainerLow,
-      onSurfaceColor: AppColors.darkOnSurface,
-      outlineColor: AppColors.darkOutline,
-      primaryContainerColor: AppColors.darkPrimaryContainer,
-    );
-  }
+  static InputDecorationTheme dark(BuildContext context) => _buildTheme(
+    context: context,
+    fillColor: AppColors.darkSurfaceContainerLow,
+    onSurfaceColor: AppColors.darkOnSurface,
+    outlineColor: AppColors.darkOutline,
+    primaryContainerColor: AppColors.darkPrimaryContainer,
+  );
 }

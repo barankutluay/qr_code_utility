@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 
 extension IconEnumExtension on IconEnum {
-  String get _getAssetName => 'assets/icons/$name.svg';
+  String get _assetName => 'assets/icons/$name.svg';
 
   Widget toSVGWidget({
     double? width,
@@ -12,7 +12,7 @@ extension IconEnumExtension on IconEnum {
     Color? color,
     String? semanticsLabel,
   }) => SvgPicture.asset(
-    _getAssetName,
+    _assetName,
     width: width,
     height: height,
     fit: fit,
