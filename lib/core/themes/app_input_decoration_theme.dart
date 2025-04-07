@@ -40,20 +40,10 @@ final class AppInputDecorationTheme {
     Color color,
     double width,
     BorderRadius borderRadius,
-  ) {
-    const strokeAlign = BorderSide.strokeAlignInside;
-    const borderStyle = BorderStyle.solid;
-
-    return OutlineInputBorder(
-      borderRadius: borderRadius,
-      borderSide: BorderSide(
-        color: color,
-        width: width,
-        strokeAlign: strokeAlign,
-        style: borderStyle,
-      ),
-    );
-  }
+  ) => OutlineInputBorder(
+    borderRadius: borderRadius,
+    borderSide: BorderSide(color: color, width: width),
+  );
 
   static InputDecorationTheme light(BuildContext context) => _buildTheme(
     context: context,

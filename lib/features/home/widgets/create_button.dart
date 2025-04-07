@@ -11,28 +11,26 @@ class CreateButton extends StatelessWidget {
   const CreateButton({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SmoothContainer(
-      child: SizedBox(
-        width: 72.r,
-        height: 72.r,
-        child: IconButton(
-          onPressed:
-              () => showCustomModalBottomSheet(
-                context,
-                widget: GenerateQrCodeBottomSheet(),
-              ),
-          padding: PaddingUtil.zero,
-          alignment: Alignment.center,
-          style: Theme.of(context).iconButtonTheme.style,
-          iconSize: 36.r,
-          icon: IconEnum.create.toSVGWidget(
-            width: 36.r,
-            height: 36.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+  Widget build(BuildContext context) => SmoothContainer(
+    child: SizedBox(
+      width: 72.r,
+      height: 72.r,
+      child: IconButton(
+        onPressed:
+            () async => showCustomModalBottomSheet(
+              context,
+              widget: GenerateQrCodeBottomSheet(),
+            ),
+        padding: PaddingUtil.zero,
+        alignment: Alignment.center,
+        style: Theme.of(context).iconButtonTheme.style,
+        iconSize: 36.r,
+        icon: IconEnum.create.toSVGWidget(
+          width: 36.r,
+          height: 36.r,
+          color: Theme.of(context).iconTheme.color,
         ),
       ),
-    );
-  }
+    ),
+  );
 }

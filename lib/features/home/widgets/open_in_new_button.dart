@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
@@ -7,29 +8,33 @@ import 'package:myproject/core/utils/padding_util.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class OpenInNewButton extends StatelessWidget {
-  const OpenInNewButton({super.key, required this.url});
+  const OpenInNewButton({required this.url, super.key});
 
   final String url;
 
   @override
-  Widget build(BuildContext context) {
-    return SmoothContainer(
-      child: SizedBox(
-        width: 101.r,
-        height: 48.r,
-        child: IconButton(
-          onPressed: () => customLaunchUrl(url),
-          padding: PaddingUtil.zero,
-          alignment: Alignment.center,
-          style: Theme.of(context).iconButtonTheme.style,
-          iconSize: 36.r,
-          icon: IconEnum.openInNew.toSVGWidget(
-            width: 36.r,
-            height: 36.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+  Widget build(BuildContext context) => SmoothContainer(
+    child: SizedBox(
+      width: 101.r,
+      height: 48.r,
+      child: IconButton(
+        onPressed: () async => customLaunchUrl(url),
+        padding: PaddingUtil.zero,
+        alignment: Alignment.center,
+        style: Theme.of(context).iconButtonTheme.style,
+        iconSize: 36.r,
+        icon: IconEnum.openInNew.toSVGWidget(
+          width: 36.r,
+          height: 36.r,
+          color: Theme.of(context).iconTheme.color,
         ),
       ),
-    );
+    ),
+  );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('url', url));
   }
 }

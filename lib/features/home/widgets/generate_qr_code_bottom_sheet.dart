@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,19 +16,16 @@ class GenerateQrCodeBottomSheet extends StatelessWidget {
   final GlobalKey repaintKey = GlobalKey();
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => TextFormFieldCubit(),
-      child: BlocBuilder<TextFormFieldCubit, TextFormFieldState>(
-        builder: (context, state) {
-          return SmoothContainer(
+  Widget build(BuildContext context) => BlocProvider(
+    create: (context) => TextFormFieldCubit(),
+    child: BlocBuilder<TextFormFieldCubit, TextFormFieldState>(
+      builder:
+          (context, state) => SmoothContainer(
             width: double.infinity,
             child: Padding(
               padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
                     AppStrings.generateQrCodeBottomSheetTitle,
@@ -44,8 +42,17 @@ class GenerateQrCodeBottomSheet extends StatelessWidget {
                 ],
               ),
             ),
-          );
-        },
+          ),
+    ),
+  );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      DiagnosticsProperty<GlobalKey<State<StatefulWidget>>>(
+        'repaintKey',
+        repaintKey,
       ),
     );
   }

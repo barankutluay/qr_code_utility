@@ -6,11 +6,11 @@ final class ThemeSwitchController {
   const ThemeSwitchController._();
 
   static void Function(BuildContext context) toggleTheme =
-      (BuildContext context) => context.read<ThemeSwitchCubit>().toggleTheme();
+      (context) => context.read<ThemeSwitchCubit>().toggleTheme();
 
   static ThemeSwitchCubit Function(BuildContext context) read =
-      (BuildContext context) => context.read<ThemeSwitchCubit>();
+      (context) => context.read<ThemeSwitchCubit>();
 
   static ThemeSwitchCubit Function(BuildContext context) watch =
-      (BuildContext context) => context.watch<ThemeSwitchCubit>();
+      (context) => context.watch<ThemeSwitchCubit>();
 }

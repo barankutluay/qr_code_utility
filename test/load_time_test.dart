@@ -6,7 +6,7 @@ import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/logger_util.dart';
 
 void main() {
-  testWidgets('App Load Time', (WidgetTester tester) async {
+  testWidgets('App Load Time', (tester) async {
     final stopwatch = Stopwatch()..start();
 
     await tester.pumpWidget(const App());
@@ -18,7 +18,7 @@ void main() {
     expect(true, isTrue);
   });
 
-  testWidgets('Scan Icon Load Time', (WidgetTester tester) async {
+  testWidgets('Scan Icon Load Time', (tester) async {
     final stopwatch = Stopwatch()..start();
 
     await tester.pumpWidget(
@@ -36,7 +36,7 @@ void main() {
     expect(true, isTrue);
   });
 
-  testWidgets('History Icon Load Time', (WidgetTester tester) async {
+  testWidgets('History Icon Load Time', (tester) async {
     final stopwatch = Stopwatch()..start();
 
     await tester.pumpWidget(
@@ -56,7 +56,7 @@ void main() {
     expect(true, isTrue);
   });
 
-  testWidgets('Create Icon Load Time', (WidgetTester tester) async {
+  testWidgets('Create Icon Load Time', (tester) async {
     final stopwatch = Stopwatch()..start();
 
     await tester.pumpWidget(

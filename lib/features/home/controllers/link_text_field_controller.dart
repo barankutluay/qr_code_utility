@@ -6,13 +6,13 @@ final class LinkTextFieldController {
   const LinkTextFieldController._();
 
   static TextFormFieldCubit Function(BuildContext context) read =
-      (BuildContext context) => context.read<TextFormFieldCubit>();
+      (context) => context.read<TextFormFieldCubit>();
 
   static TextFormFieldCubit Function(BuildContext context) watch =
-      (BuildContext context) => context.watch<TextFormFieldCubit>();
+      (context) => context.watch<TextFormFieldCubit>();
 
   static bool validateLink(BuildContext context, String value) {
-    final Uri? uri = Uri.tryParse(value);
+    final uri = Uri.tryParse(value);
 
     if (value.isEmpty) return false;
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) return false;
@@ -21,10 +21,10 @@ final class LinkTextFieldController {
   }
 
   static String? validationText(String value) {
-    final Uri? uri = Uri.tryParse(value);
+    final uri = Uri.tryParse(value);
 
-    const String emptyMessage = 'This field cannot be empty';
-    const String notValidMessage = 'Please enter a valid link';
+    const emptyMessage = 'This field cannot be empty';
+    const notValidMessage = 'Please enter a valid link';
 
     if (value.isEmpty) return emptyMessage;
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) {

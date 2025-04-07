@@ -1,5 +1,4 @@
 import 'dart:io';
-import 'dart:typed_data';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -27,7 +26,7 @@ final class GenerateQrCodeController {
     GlobalKey repaintKey,
   ) async {
     try {
-      final String url = textFormFieldCubit.state.value;
+      final url = textFormFieldCubit.state.value;
       if (!LinkTextFieldController.validateLink(context, url)) return;
 
       final Widget qrImageView = CustomQrImageView(
@@ -57,37 +56,34 @@ final class GenerateQrCodeController {
 
   static Future<List<XFile>> captureImage(GlobalKey repaintKey) async {
     try {
-      final RenderObject? renderObject =
-          repaintKey.currentContext?.findRenderObject();
+      final renderObject = repaintKey.currentContext?.findRenderObject();
 
       if (renderObject == null || (renderObject is! RenderRepaintBoundary)) {
-        const String e = 'RenderRepaintBoundary not found!';
+        const e = 'RenderRepaintBoundary not found!';
         throw Exception(e);
       }
 
-      final RenderRepaintBoundary boundary = renderObject;
+      final boundary = renderObject;
 
       await Future.delayed(AppDurations.duration100ms);
 
-      final ui.Image image = await boundary.toImage(pixelRatio: 5.0);
-      final ByteData? byteData = await image.toByteData(
-        format: ui.ImageByteFormat.png,
-      );
+      final image = await boundary.toImage(pixelRatio: 5);
+      final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 
       if (byteData == null) {
-        const String e = 'ByteData is null!';
+        const e = 'ByteData is null!';
         throw Exception(e);
       }
 
-      final Uint8List pngBytes = byteData.buffer.asUint8List();
-      final Directory tempDir = await getTemporaryDirectory();
-      final String filePath =
+      final pngBytes = byteData.buffer.asUint8List();
+      final tempDir = await getTemporaryDirectory();
+      final filePath =
           '${tempDir.path}/qr_${DateTime.now().millisecondsSinceEpoch}.png';
-      final File file = File(filePath);
+      final file = File(filePath);
 
       await file.writeAsBytes(pngBytes);
 
-      final ui.Image decodedImage = await decodeImageFromList(pngBytes);
+      final decodedImage = await decodeImageFromList(pngBytes);
 
       LoggerUtil.info(
         'QR Boyutları: ${decodedImage.width}x${decodedImage.height}',

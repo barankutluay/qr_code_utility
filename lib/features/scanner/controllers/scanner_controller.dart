@@ -15,9 +15,9 @@ final class ScannerController {
   static final ScannerController instance = ScannerController._();
 
   static ScannerCubit Function(BuildContext context) read =
-      (BuildContext context) => context.read<ScannerCubit>();
+      (context) => context.read<ScannerCubit>();
   static ScannerCubit Function(BuildContext context) watch =
-      (BuildContext context) => context.watch<ScannerCubit>();
+      (context) => context.watch<ScannerCubit>();
 
   static final double scanWindowUpdateThreshold = 1.r;
 
@@ -27,14 +27,14 @@ final class ScannerController {
     autoStart: false,
   );
 
-  void onDetect(
+  Future<void> onDetect(
     BuildContext context, {
     required BarcodeCapture barcodes,
     required ScannerCubit scannerCubit,
-  }) {
+  }) async {
     if (barcodes.barcodes.isNotEmpty) {
-      String returnValue = barcodes.barcodes.first.rawValue!;
-      scannerCubit.scanningStopped(
+      final returnValue = barcodes.barcodes.first.rawValue!;
+      await scannerCubit.scanningStopped(
         context,
         returnValue,
         controller: controller,

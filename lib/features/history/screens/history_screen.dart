@@ -5,7 +5,6 @@ class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return const Scaffold(body: HistoryScreenLayout());
-  }
+  Widget build(BuildContext context) =>
+      const Scaffold(body: HistoryScreenLayout());
 }

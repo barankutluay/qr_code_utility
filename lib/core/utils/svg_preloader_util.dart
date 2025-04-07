@@ -12,7 +12,7 @@ final class SvgPreloaderUtil {
 
   static Future<void> svgPreloader(List<String> assetPaths) async {
     for (final path in assetPaths) {
-      final SvgAssetLoader loader = SvgAssetLoader(path);
+      final loader = SvgAssetLoader(path);
       LoggerUtil.info('Preloading SVG: $path');
       await svg.cache.putIfAbsent(
         loader.cacheKey(null),

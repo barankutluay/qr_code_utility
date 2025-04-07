@@ -22,8 +22,6 @@ final GoRoute homeRoute = GoRoute(
                   primaryAnimation: primaryAnimation,
                   secondaryAnimation: secondaryAnimation,
                   child: child,
-                  totalDuration: AppDurations.duration1000ms,
-                  slideDelay: AppDurations.duration500ms,
                   begin: Offset.zero,
                   end: const Offset(-0.25, 0),
                   useSecondary: true,

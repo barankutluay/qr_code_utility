@@ -10,24 +10,22 @@ class BackwardButton extends StatelessWidget {
   const BackwardButton({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SmoothContainer(
-      child: SizedBox(
-        width: 48.r,
-        height: 48.r,
-        child: IconButton(
-          onPressed: () => context.pop(),
-          padding: PaddingUtil.zero,
-          alignment: Alignment.center,
-          style: Theme.of(context).iconButtonTheme.style,
-          iconSize: 24.r,
-          icon: IconEnum.chevronBackward.toSVGWidget(
-            width: 24.r,
-            height: 24.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+  Widget build(BuildContext context) => SmoothContainer(
+    child: SizedBox(
+      width: 48.r,
+      height: 48.r,
+      child: IconButton(
+        onPressed: () => context.pop(),
+        padding: PaddingUtil.zero,
+        alignment: Alignment.center,
+        style: Theme.of(context).iconButtonTheme.style,
+        iconSize: 24.r,
+        icon: IconEnum.chevronBackward.toSVGWidget(
+          width: 24.r,
+          height: 24.r,
+          color: Theme.of(context).iconTheme.color,
         ),
       ),
-    );
-  }
+    ),
+  );
 }

@@ -22,8 +22,6 @@ final GoRoute scannerRoute = GoRoute(
                   primaryAnimation: primaryAnimation,
                   secondaryAnimation: secondaryAnimation,
                   child: child,
-                  totalDuration: AppDurations.duration1000ms,
-                  slideDelay: AppDurations.duration500ms,
                   begin: const Offset(1, 0),
                   end: Offset.zero,
                 ),

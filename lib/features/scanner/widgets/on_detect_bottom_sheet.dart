@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_strings.dart';
@@ -12,39 +13,39 @@ class OnDetectBottomSheet extends StatelessWidget {
   final String url;
 
   @override
-  Widget build(BuildContext context) {
-    return SmoothContainer(
-      width: double.infinity,
-      child: Padding(
-        padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Text(
-              AppStrings.onDetectBottomSheetTitle,
-              style: Theme.of(
-                context,
-              ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
-            ),
-            16.verticalSpacingRadius,
-            Text(
-              url,
-              style: Theme.of(context).textTheme.bodyLarge,
-              textAlign: TextAlign.center,
-            ),
-            32.verticalSpacingRadius,
-            Row(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              spacing: 16.r,
-              children: [ShareButton(url: url), OpenInNewButton(url: url)],
-            ),
-          ],
-        ),
+  Widget build(BuildContext context) => SmoothContainer(
+    width: double.infinity,
+    child: Padding(
+      padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Text(
+            AppStrings.onDetectBottomSheetTitle,
+            style: Theme.of(
+              context,
+            ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
+          ),
+          16.verticalSpacingRadius,
+          Text(
+            url,
+            style: Theme.of(context).textTheme.bodyLarge,
+            textAlign: TextAlign.center,
+          ),
+          32.verticalSpacingRadius,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 16.r,
+            children: [ShareButton(url: url), OpenInNewButton(url: url)],
+          ),
+        ],
       ),
-    );
+    ),
+  );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(StringProperty('url', url));
   }
 }

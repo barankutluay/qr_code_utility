@@ -18,7 +18,7 @@ Future<dynamic> showCustomModalBottomSheet(
   isScrollControlled: isScrollControlled,
   enableDrag: enableDrag,
   showDragHandle: showDragHandle,
-  constraints: const BoxConstraints(maxWidth: double.infinity),
+  constraints: const BoxConstraints(),
   sheetAnimationStyle: AnimationStyle(
     curve: Curves.easeOutQuad,
     duration: AppDurations.duration500ms,

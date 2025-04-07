@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/core/constants/app_colors.dart';
@@ -16,30 +17,38 @@ class _ScannerScreenState extends State<ScannerScreen> {
   final controllerInstance = ScannerController.instance;
 
   @override
-  void initState() {
+  Future<void> initState() async {
     super.initState();
-    controllerInstance.controller.start();
+    await controllerInstance.controller.start();
   }
 
   @override
-  void dispose() {
-    controllerInstance.controller.stop().then(
+  Future<void> dispose() async {
+    await controllerInstance.controller.stop().then(
       (_) => controllerInstance.controller.dispose(),
     );
     super.dispose();
   }
 
   @override
-  Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => ScannerCubit()..scanningStarted(),
-      child: BlocBuilder<ScannerCubit, ScannerState>(
-        builder: (context, state) {
-          return Scaffold(
+  Widget build(BuildContext context) => BlocProvider(
+    create: (context) => ScannerCubit()..scanningStarted(),
+    child: BlocBuilder<ScannerCubit, ScannerState>(
+      builder:
+          (context, state) => Scaffold(
             body: ScannerScreenLayout(controllerInstance: controllerInstance),
             backgroundColor: AppColors.black,
-          );
-        },
+          ),
+    ),
+  );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      DiagnosticsProperty<ScannerController>(
+        'controllerInstance',
+        controllerInstance,
       ),
     );
   }

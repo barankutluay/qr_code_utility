@@ -3,24 +3,10 @@ import 'package:logger/logger.dart';
 final class LoggerUtil {
   const LoggerUtil._();
 
-  static final Logger _defaultLogger = Logger(
-    printer: PrettyPrinter(
-      methodCount: 2,
-      errorMethodCount: 8,
-      lineLength: 120,
-      colors: true,
-      printEmojis: true,
-    ),
-  );
+  static final Logger _defaultLogger = Logger(printer: PrettyPrinter());
 
   static final Logger _infoLogger = Logger(
-    printer: PrettyPrinter(
-      methodCount: 0,
-      errorMethodCount: 0,
-      lineLength: 120,
-      colors: true,
-      printEmojis: true,
-    ),
+    printer: PrettyPrinter(methodCount: 0, errorMethodCount: 0),
   );
 
   static void debug(dynamic message) => _defaultLogger.d(message);
@@ -29,7 +15,7 @@ final class LoggerUtil {
 
   static void warning(dynamic message) => _defaultLogger.w(message);
 
-  static void error(dynamic message, [dynamic error, StackTrace? stackTrace]) =>
+  static void error(dynamic message, [Object? error, StackTrace? stackTrace]) =>
       _defaultLogger.e(message, error: error, stackTrace: stackTrace);
 
   static void fatal(dynamic message) => _defaultLogger.f(message);

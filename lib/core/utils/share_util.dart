@@ -6,7 +6,7 @@ Future<void> share(
   String? url,
   Future<List<XFile>> Function()? onShareFiles,
 }) async {
-  final RenderBox? renderBox = context.findRenderObject() as RenderBox?;
+  final renderBox = context.findRenderObject() as RenderBox?;
 
   if (renderBox == null) return;
 

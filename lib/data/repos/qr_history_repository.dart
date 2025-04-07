@@ -30,7 +30,7 @@ final class QrHistoryRepository {
         DatabaseHelper.table,
         orderBy: '${DatabaseHelper.columnTime} DESC',
       );
-      return maps.map((map) => QrHistoryModel.fromMap(map)).toList();
+      return maps.map(QrHistoryModel.fromMap).toList();
     } catch (e) {
       LoggerUtil.error('Get all error: $e');
       throw Exception('Get all error: $e');
@@ -45,7 +45,7 @@ final class QrHistoryRepository {
         where: '${DatabaseHelper.columnType} = ?',
         whereArgs: [type],
       );
-      return maps.map((map) => QrHistoryModel.fromMap(map)).toList();
+      return maps.map(QrHistoryModel.fromMap).toList();
     } catch (e) {
       LoggerUtil.error('Filter error: $e');
       throw Exception('Filter error: $e');

@@ -10,11 +10,10 @@ class HistoryScreenLayout extends StatelessWidget {
   const HistoryScreenLayout({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return SafeArea(
-      child: NestedScrollView(
-        headerSliverBuilder: (context, innerBoxIsScrolled) {
-          return [
+  Widget build(BuildContext context) => SafeArea(
+    child: NestedScrollView(
+      headerSliverBuilder:
+          (context, innerBoxIsScrolled) => [
             SliverAppBar(
               floating: true,
               snap: true,
@@ -32,19 +31,16 @@ class HistoryScreenLayout extends StatelessWidget {
               ),
               title: const HistoryTitle(),
             ),
-          ];
-        },
-        body: ListView.builder(
-          padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
-          itemCount: 1,
-          itemBuilder: (context, index) {
-            return const HistoryScannedCard(
+          ],
+      body: ListView.builder(
+        padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
+        itemCount: 1,
+        itemBuilder:
+            (context, index) => const HistoryScannedCard(
               dateString: '26.02.2025 14:29:29',
               url: 'https://www.youtube.com/watch?v=dQw4w9WgXc',
-            );
-          },
-        ),
+            ),
       ),
-    );
-  }
+    ),
+  );
 }
