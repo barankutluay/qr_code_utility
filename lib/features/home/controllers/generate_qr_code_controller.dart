@@ -37,16 +37,17 @@ final class GenerateQrCodeController {
 
       if (context.mounted && context.canPop()) {
         context.pop();
-
-        await Future.delayed(AppDurations.duration300ms, () async {
-          await saveData(url: url, time: DateTime.now(), type: 0);
-
-          if (!context.mounted) return;
-          await showCustomModalBottomSheet(
-            context,
-            widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
-          );
-        });
+        await Future.wait([
+          Future.delayed(AppDurations.duration300ms, () {
+            if (context.mounted) {
+              showCustomModalBottomSheet(
+                context,
+                widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
+              );
+            }
+          }),
+          saveData(url: url, time: DateTime.now(), type: 0),
+        ]);
       }
     } catch (e) {
       LoggerUtil.error('QR Generate Error: $e');

@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:myproject/core/utils/logger_util.dart';
+import 'package:myproject/data/cubits/history/history_cubit.dart';
 import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 
 final class AppBlocObserver extends BlocObserver {
@@ -8,7 +9,8 @@ final class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     super.onChange(bloc, change);
-    if (change.nextState is! TextFormFieldState) {
+    if (change.nextState is! TextFormFieldState &&
+        change.nextState is! HistoryLoaded) {
       LoggerUtil.debug('${bloc.runtimeType} $change');
     }
   }

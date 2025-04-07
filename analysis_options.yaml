@@ -130,7 +130,7 @@ linter:
     directives_ordering: true
     discarded_futures: true
     eol_at_end_of_file: true
-    flutter_style_todos: true
+    flutter_style_todos: false
     leading_newlines_in_multiline_strings: true
     no_literal_bool_comparisons: true
     noop_primitive_operations: true

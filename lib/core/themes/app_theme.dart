@@ -36,7 +36,7 @@ final class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppColors.darkSurface,
-    shadowColor: AppColors.black,
+    shadowColor: AppColors.white.withValues(alpha: 0.2),
     indicatorColor: AppColors.darkPrimaryContainer,
     splashColor: AppColors.darkSurfaceContainerLow,
     highlightColor: AppColors.darkSurfaceContainerHighest,

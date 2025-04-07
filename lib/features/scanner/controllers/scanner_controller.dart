@@ -11,8 +11,7 @@ import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart'
 import 'package:smooth_corner/smooth_corner.dart';
 
 final class ScannerController {
-  ScannerController._();
-  static final ScannerController instance = ScannerController._();
+  ScannerController();
 
   static ScannerCubit Function(BuildContext context) read =
       (context) => context.read<ScannerCubit>();

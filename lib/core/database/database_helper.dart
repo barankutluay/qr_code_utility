@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:myproject/core/utils/logger_util.dart';
 import 'package:path/path.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 
 final class DatabaseHelper {
@@ -25,7 +28,15 @@ final class DatabaseHelper {
 
   Future<Database> _initDatabase() async {
     try {
-      final path = join(await getDatabasesPath(), _databaseName);
+      final String path;
+
+      if (Platform.isAndroid || Platform.isIOS) {
+        path = join(await getDatabasesPath(), _databaseName);
+      } else {
+        final dir = await getApplicationDocumentsDirectory();
+        path = join(dir.path, _databaseName);
+      }
+
       return await openDatabase(
         path,
         version: _databaseVersion,

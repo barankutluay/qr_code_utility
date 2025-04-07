@@ -1,53 +1,72 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
+import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
 import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
 
-class ScannerScreenLayout extends StatelessWidget {
-  const ScannerScreenLayout({required this.controllerInstance, super.key});
-
-  final ScannerController controllerInstance;
+class ScannerScreenLayout extends StatefulWidget {
+  const ScannerScreenLayout({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    final scannerCubit = ScannerController.watch(context);
+  State<ScannerScreenLayout> createState() => _ScannerScreenLayoutState();
+}
 
-    return SafeArea(
-      child: LayoutBuilder(
-        builder:
-            (context, constraints) => MobileScanner(
-              controller: controllerInstance.controller,
-              onDetect:
-                  (barcodes) async => controllerInstance.onDetect(
-                    context,
-                    barcodes: barcodes,
-                    scannerCubit: scannerCubit,
-                  ),
-              overlayBuilder:
-                  (context, constraints) => ScannerController.overlayBuilder(
-                    context,
+class _ScannerScreenLayoutState extends State<ScannerScreenLayout> {
+  late final ScannerCubit _scannerCubit;
+  late final ScannerController _scannerController;
+
+  @override
+  void initState() {
+    super.initState();
+    _scannerCubit = context.read<ScannerCubit>();
+    _scannerController = ScannerController();
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _scannerController.controller.start();
+    });
+  }
+
+  @override
+  void dispose() {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
+      await _scannerController.controller.dispose();
+    });
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) => SafeArea(
+    child: BlocBuilder<ScannerCubit, ScannerState>(
+      buildWhen: (previous, current) => current != previous,
+      builder:
+          (context, state) => LayoutBuilder(
+            builder:
+                (context, constraints) => MobileScanner(
+                  controller: _scannerController.controller,
+                  onDetect: (barcodes) {
+                    WidgetsBinding.instance.addPostFrameCallback((_) async {
+                      await _scannerController.onDetect(
+                        context,
+                        barcodes: barcodes,
+                        scannerCubit: _scannerCubit,
+                      );
+                    });
+                  },
+                  overlayBuilder:
+                      (context, constraints) =>
+                          ScannerController.overlayBuilder(
+                            context,
+                            constraints: constraints,
+                          ),
+                  placeholderBuilder:
+                      (context, _) =>
+                          ScannerController.placeholderBuilder(context),
+                  scanWindow: ScannerController.scanWindow(
                     constraints: constraints,
                   ),
-              placeholderBuilder:
-                  (context, _) => ScannerController.placeholderBuilder(context),
-              scanWindow: ScannerController.scanWindow(
-                constraints: constraints,
-              ),
-              scanWindowUpdateThreshold:
-                  ScannerController.scanWindowUpdateThreshold,
-            ),
-      ),
-    );
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties.add(
-      DiagnosticsProperty<ScannerController>(
-        'controllerInstance',
-        controllerInstance,
-      ),
-    );
-  }
+                  scanWindowUpdateThreshold:
+                      ScannerController.scanWindowUpdateThreshold,
+                ),
+          ),
+    ),
+  );
 }

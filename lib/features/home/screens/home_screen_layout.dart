@@ -16,37 +16,34 @@ class HomeScreenLayout extends StatelessWidget {
       padding: PaddingUtil.horizontal(20.r),
       child: Stack(
         alignment: Alignment.center,
-        children: [_title(), _themeSwitch(), _scanButton(), _bottomButtons()],
-      ),
-    ),
-  );
-
-  Align _title() => Align(
-    alignment: Alignment.topCenter,
-    child: Padding(
-      padding: PaddingUtil.onlyTop(20.r),
-      child: const HomeTitle(),
-    ),
-  );
-
-  Align _themeSwitch() => Align(
-    alignment: Alignment.topRight,
-    child: Padding(
-      padding: PaddingUtil.onlyTop(34.r),
-      child: const ThemeSwitch(),
-    ),
-  );
-
-  Align _scanButton() => const Align(child: ScanButton());
-
-  Align _bottomButtons() => Align(
-    alignment: Alignment.bottomCenter,
-    child: Padding(
-      padding: PaddingUtil.onlyBottom(32.r),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 25.r,
-        children: const [HistoryButton(), CreateButton()],
+        children: [
+          Align(
+            alignment: Alignment.topCenter,
+            child: Padding(
+              padding: PaddingUtil.onlyTop(20.r),
+              child: const HomeTitle(),
+            ),
+          ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: PaddingUtil.onlyTop(34.r),
+              child: const ThemeSwitch(),
+            ),
+          ),
+          const Align(child: ScanButton()),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Padding(
+              padding: PaddingUtil.onlyBottom(32.r),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                spacing: 25.r,
+                children: const [HistoryButton(), CreateButton()],
+              ),
+            ),
+          ),
+        ],
       ),
     ),
   );

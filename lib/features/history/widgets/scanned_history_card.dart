@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/core/utils/border_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
@@ -9,8 +8,8 @@ import 'package:myproject/features/home/widgets/open_in_new_button.dart';
 import 'package:myproject/features/home/widgets/share_button.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class HistoryScannedCard extends StatelessWidget {
-  const HistoryScannedCard({
+class ScannedHistoryCard extends StatelessWidget {
+  const ScannedHistoryCard({
     required this.dateString,
     required this.url,
     super.key,
@@ -26,10 +25,10 @@ class HistoryScannedCard extends StatelessWidget {
       elevation: 2,
       semanticContainer: false,
       borderRadius: BorderUtil.all(16.r),
-      shadowColor: AppColors.shadowColor,
+      shadowColor: Theme.of(context).shadowColor,
       color: Theme.of(context).scaffoldBackgroundColor,
       child: Padding(
-        padding: PaddingUtil.vertical(24.r),
+        padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
@@ -51,7 +50,7 @@ class HistoryScannedCard extends StatelessWidget {
             ),
             24.verticalSpacingRadius,
             Text(
-              'https://www.youtube.com/watch?v=dQw4w9WgXc',
+              url,
               style: Theme.of(context).textTheme.bodyLarge,
               textAlign: TextAlign.center,
             ),
