@@ -22,11 +22,11 @@ class CustomQrImageView extends StatelessWidget {
   Widget build(BuildContext context) {
     final boxDecoration = BoxDecoration(
       border: Border.all(
-        width: 2.r,
+        width: 1.r,
         color:
             themeSwitchCubit.state.isDarkMode
-                ? AppColors.white
-                : AppColors.black,
+                ? AppColors.lightOutline
+                : AppColors.darkOutline,
       ),
     );
 

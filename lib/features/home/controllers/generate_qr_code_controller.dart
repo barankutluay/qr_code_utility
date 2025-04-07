@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/utils/bottom_sheet_util.dart';
 import 'package:myproject/core/utils/logger_util.dart';
+import 'package:myproject/core/utils/save_data_util.dart';
 import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
 import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
@@ -16,34 +17,42 @@ import 'package:myproject/features/home/widgets/generated_code_bottom_sheet.dart
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
-class GenerateQrCodeController {
-  static void generateQrCodeAndNavigate(
+final class GenerateQrCodeController {
+  const GenerateQrCodeController._();
+
+  static Future<void> generateQrCodeAndNavigate(
     BuildContext context,
     TextFormFieldCubit textFormFieldCubit,
     ThemeSwitchCubit themeSwitchCubit,
     GlobalKey repaintKey,
-  ) {
-    final String url = textFormFieldCubit.state.value;
+  ) async {
+    try {
+      final String url = textFormFieldCubit.state.value;
+      if (!LinkTextFieldController.validateLink(context, url)) return;
 
-    final Widget qrImageView = CustomQrImageView(
-      data: textFormFieldCubit.state.value,
-      themeSwitchCubit: themeSwitchCubit,
-      repaintKey: repaintKey,
-    );
+      final Widget qrImageView = CustomQrImageView(
+        data: textFormFieldCubit.state.value,
+        themeSwitchCubit: themeSwitchCubit,
+        repaintKey: repaintKey,
+      );
 
-    final bool isValidated = LinkTextFieldController.validateLink(context, url);
+      if (context.mounted && context.canPop()) {
+        context.pop();
 
-    if (context.canPop() && isValidated) {
-      context.pop();
-      Future.delayed(AppDurations.duration300ms, () {
-        if (!context.mounted) return;
-        showCustomModalBottomSheet(
-          context,
-          widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
-        );
-      });
+        await Future.delayed(AppDurations.duration300ms, () async {
+          await saveData(url: url, time: DateTime.now(), type: 0);
+
+          if (!context.mounted) return;
+          await showCustomModalBottomSheet(
+            context,
+            widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
+          );
+        });
+      }
+    } catch (e) {
+      LoggerUtil.error('QR Generate Error: $e');
+      throw Exception('QR Generate Error: $e');
     }
-    return;
   }
 
   static Future<List<XFile>> captureImage(GlobalKey repaintKey) async {
@@ -61,7 +70,6 @@ class GenerateQrCodeController {
       await Future.delayed(AppDurations.duration100ms);
 
       final ui.Image image = await boundary.toImage(pixelRatio: 5.0);
-
       final ByteData? byteData = await image.toByteData(
         format: ui.ImageByteFormat.png,
       );

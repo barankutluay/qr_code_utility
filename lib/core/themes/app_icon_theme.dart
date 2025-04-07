@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 
-class AppIconTheme {
+final class AppIconTheme {
+  const AppIconTheme._();
+
   static final IconThemeData light = IconThemeData(
     color: AppColors.lightOnPrimaryContainer,
     size: 24.r,

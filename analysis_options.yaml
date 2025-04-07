@@ -7,3 +7,5 @@ linter:
     avoid_final_parameters: true
     curly_braces_in_flow_control_structures: true
     directives_ordering: true
+    prefer_const_constructors: true
+    unawaited_futures: true

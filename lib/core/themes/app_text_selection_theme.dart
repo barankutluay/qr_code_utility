@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 
-class AppTextSelectionTheme {
+final class AppTextSelectionTheme {
+  const AppTextSelectionTheme._();
+
   static final TextSelectionThemeData light = TextSelectionThemeData(
     cursorColor: AppColors.lightOnSurface,
     selectionColor: AppColors.lightPrimaryContainer.withValues(alpha: 0.25),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:share_plus/share_plus.dart';
 
-void share(
+Future<void> share(
   BuildContext context, {
   String? url,
   Future<List<XFile>> Function()? onShareFiles,
@@ -14,11 +14,11 @@ void share(
       renderBox.localToGlobal(Offset.zero) & renderBox.size;
 
   if (url != null) {
-    Share.share(url, sharePositionOrigin: sharePositionOrigin);
+    await Share.share(url, sharePositionOrigin: sharePositionOrigin);
   } else if (onShareFiles != null) {
     final files = await onShareFiles();
     if (files.isNotEmpty) {
-      Share.shareXFiles(files, sharePositionOrigin: sharePositionOrigin);
+      await Share.shareXFiles(files, sharePositionOrigin: sharePositionOrigin);
     }
   }
 }

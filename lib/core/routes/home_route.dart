@@ -8,6 +8,7 @@ import 'package:myproject/features/home/screens/home_screen.dart';
 
 final GoRoute homeRoute = GoRoute(
   path: '/',
+  name: 'home',
   pageBuilder:
       (context, state) => CustomTransitionPage(
         key: state.pageKey,
@@ -24,7 +25,7 @@ final GoRoute homeRoute = GoRoute(
                   totalDuration: AppDurations.duration1000ms,
                   slideDelay: AppDurations.duration500ms,
                   begin: Offset.zero,
-                  end: Offset(-0.25, 0),
+                  end: const Offset(-0.25, 0),
                   useSecondary: true,
                 ),
       ),

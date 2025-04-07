@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 
-class AppTextTheme {
+final class AppTextTheme {
+  const AppTextTheme._();
+
   static TextStyle _baseTextStyle({
     required double fontSize,
     FontWeight fontWeight = FontWeight.w400,

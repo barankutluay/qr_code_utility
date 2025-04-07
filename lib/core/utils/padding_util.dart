@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class PaddingUtil {
+final class PaddingUtil {
+  const PaddingUtil._();
+
   static EdgeInsets all(double value) => EdgeInsets.all(value);
 
   static EdgeInsets only(

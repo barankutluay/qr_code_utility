@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
-class AppColors {
+final class AppColors {
+  const AppColors._();
+
   static const Color white = Color(0xFFFFFFFF);
   static const Color black = Color(0xFF000000);
   static const Color black50 = Color(0x80000000);
   static const Color transparent = Color(0x00000000);
   static const Color error = Color(0xFFBA1A1A);
+  static const Color shadowColor = Color(0xFF000000);
 
   static const Color lightSurface = Color(0xFFFCF8F8);
   static const Color darkSurface = Color(0xFF141313);
@@ -30,7 +33,4 @@ class AppColors {
 
   static const Color lightOutline = Color(0xFF757685);
   static const Color darkOutline = Color(0xFF8F909F);
-
-  static const Color lightShadow = Color(0xFF000000);
-  static const Color darkShadow = Color(0xFF000000);
 }

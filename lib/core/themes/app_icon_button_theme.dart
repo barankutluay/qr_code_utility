@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 
-class AppIconButtonTheme {
+final class AppIconButtonTheme {
+  const AppIconButtonTheme._();
+
   static final RoundedRectangleBorder shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(16.r),
   );
@@ -13,7 +15,7 @@ class AppIconButtonTheme {
       elevation: 2.r,
       enableFeedback: true,
       backgroundColor: AppColors.lightPrimaryContainer,
-      shadowColor: AppColors.lightShadow,
+      shadowColor: AppColors.shadowColor,
       overlayColor: AppColors.lightOnSurface,
       shape: shape,
     ),
@@ -24,7 +26,7 @@ class AppIconButtonTheme {
       elevation: 2.r,
       enableFeedback: true,
       backgroundColor: AppColors.darkPrimaryContainer,
-      shadowColor: AppColors.darkShadow,
+      shadowColor: AppColors.shadowColor,
       overlayColor: AppColors.darkOnSurface,
       shape: shape,
     ),

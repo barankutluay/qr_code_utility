@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
 import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
-import 'package:myproject/features/scanner/widgets/scanner_screen_layout.dart';
+import 'package:myproject/features/scanner/screens/scanner_screen_layout.dart';
 
 class ScannerScreen extends StatefulWidget {
   const ScannerScreen({super.key});
@@ -13,19 +13,18 @@ class ScannerScreen extends StatefulWidget {
 }
 
 class _ScannerScreenState extends State<ScannerScreen> {
-  late ScannerController _scannerController;
+  final controllerInstance = ScannerController.instance;
 
   @override
   void initState() {
     super.initState();
-    _scannerController = ScannerController();
-    _scannerController.controller.start();
+    controllerInstance.controller.start();
   }
 
   @override
   void dispose() {
-    _scannerController.controller.stop().then(
-      (_) => _scannerController.controller.dispose(),
+    controllerInstance.controller.stop().then(
+      (_) => controllerInstance.controller.dispose(),
     );
     super.dispose();
   }
@@ -37,9 +36,7 @@ class _ScannerScreenState extends State<ScannerScreen> {
       child: BlocBuilder<ScannerCubit, ScannerState>(
         builder: (context, state) {
           return Scaffold(
-            body: ScannerScreenLayout(
-              controller: _scannerController.controller,
-            ),
+            body: ScannerScreenLayout(controllerInstance: controllerInstance),
             backgroundColor: AppColors.black,
           );
         },

@@ -7,10 +7,10 @@ import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet.dart';
 
 part 'scanner_state.dart';
 
-class ScannerCubit extends Cubit<ScannerState> {
-  ScannerCubit() : super(ScannerInitial());
+final class ScannerCubit extends Cubit<ScannerState> {
+  ScannerCubit() : super(const ScannerInitial());
 
-  void scanningStarted() => emit(ScannerScanning());
+  void scanningStarted() => emit(const ScannerScanning());
 
   void scanningStopped(
     BuildContext context,
@@ -31,6 +31,6 @@ class ScannerCubit extends Cubit<ScannerState> {
     required MobileScannerController controller,
   }) {
     controller.start();
-    emit(ScannerInitial());
+    emit(const ScannerInitial());
   }
 }

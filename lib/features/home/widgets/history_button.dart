@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/padding_util.dart';
@@ -15,22 +16,18 @@ class HistoryButton extends StatelessWidget {
         width: 72.r,
         height: 72.r,
         child: IconButton(
-          onPressed: () {},
+          onPressed: () => context.pushNamed('history'),
           padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
-          icon: _icon(context),
           iconSize: 36.r,
+          icon: IconEnum.history.toSVGWidget(
+            width: 36.r,
+            height: 36.r,
+            color: Theme.of(context).iconTheme.color,
+          ),
         ),
       ),
-    );
-  }
-
-  Widget _icon(BuildContext context) {
-    return IconEnum.history.toSVGWidget(
-      width: 36.r,
-      height: 36.r,
-      color: Theme.of(context).iconTheme.color,
     );
   }
 }

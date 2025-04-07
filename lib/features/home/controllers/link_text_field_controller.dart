@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 
-class LinkTextFieldController {
+final class LinkTextFieldController {
+  const LinkTextFieldController._();
+
   static TextFormFieldCubit Function(BuildContext context) read =
       (BuildContext context) => context.read<TextFormFieldCubit>();
 
@@ -13,7 +15,6 @@ class LinkTextFieldController {
     final Uri? uri = Uri.tryParse(value);
 
     if (value.isEmpty) return false;
-
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) return false;
 
     return true;
@@ -26,7 +27,6 @@ class LinkTextFieldController {
     const String notValidMessage = 'Please enter a valid link';
 
     if (value.isEmpty) return emptyMessage;
-
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) {
       return notValidMessage;
     }

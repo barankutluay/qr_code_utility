@@ -4,7 +4,9 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 
-class AppSnackbarTheme {
+final class AppSnackbarTheme {
+  const AppSnackbarTheme._();
+
   static final ShapeBorder shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(100.r),
   );

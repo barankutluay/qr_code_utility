@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 
-class AppTransitions {
+final class AppTransitions {
+  const AppTransitions._();
+
   static CurvedAnimation _buildCurvedAnimation({
     required Animation<double> primaryAnimation,
     required Animation<double> secondaryAnimation,

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/configs/go_router_config.dart';
 import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/core/themes/app_theme.dart';
+import 'package:myproject/core/utils/go_router_util.dart';
 import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
 
 class App extends StatelessWidget {
@@ -28,7 +28,7 @@ class App extends StatelessWidget {
             builder: (context, state) {
               return MaterialApp.router(
                 title: AppStrings.appName,
-                routerConfig: AppGoRouterConfig.router,
+                routerConfig: GoRouterUtil.router,
                 debugShowCheckedModeBanner: false,
                 theme:
                     state.isDarkMode

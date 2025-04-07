@@ -1,7 +1,7 @@
 import 'package:myproject/core/utils/logger_util.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-void customLaunchUrl(String url) async {
+Future<void> customLaunchUrl(String url) async {
   final Uri uri = Uri.parse(url);
   try {
     if (await canLaunchUrl(uri)) {

@@ -54,7 +54,9 @@ class LinkTextField extends StatelessWidget {
                 ? AppColors.darkOnSurface
                 : AppColors.lightOnSurface,
         cursorErrorColor: AppColors.error,
-        decoration: InputDecoration(hintText: AppStrings.linkTextFieldHintText),
+        decoration: const InputDecoration(
+          hintText: AppStrings.linkTextFieldHintText,
+        ),
       ),
     );
   }

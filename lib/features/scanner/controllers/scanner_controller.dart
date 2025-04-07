@@ -10,12 +10,16 @@ import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
 import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class ScannerController {
+final class ScannerController {
+  ScannerController._();
+  static final ScannerController instance = ScannerController._();
+
   static ScannerCubit Function(BuildContext context) read =
       (BuildContext context) => context.read<ScannerCubit>();
-
   static ScannerCubit Function(BuildContext context) watch =
       (BuildContext context) => context.watch<ScannerCubit>();
+
+  static final double scanWindowUpdateThreshold = 1.r;
 
   final MobileScannerController controller = MobileScannerController(
     formats: [BarcodeFormat.qrCode],
@@ -23,13 +27,10 @@ class ScannerController {
     autoStart: false,
   );
 
-  static final double scanWindowUpdateThreshold = 1.r;
-
-  static void onDetect(
+  void onDetect(
     BuildContext context, {
     required BarcodeCapture barcodes,
     required ScannerCubit scannerCubit,
-    required MobileScannerController controller,
   }) {
     if (barcodes.barcodes.isNotEmpty) {
       String returnValue = barcodes.barcodes.first.rawValue!;

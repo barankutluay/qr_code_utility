@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 
-class AppElevatedButtonTheme {
+final class AppElevatedButtonTheme {
+  const AppElevatedButtonTheme._();
+
   static final RoundedRectangleBorder shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(16.r),
   );
@@ -20,7 +22,7 @@ class AppElevatedButtonTheme {
           enableFeedback: true,
           alignment: Alignment.center,
           backgroundColor: AppColors.lightPrimaryContainer,
-          shadowColor: AppColors.lightShadow,
+          shadowColor: AppColors.shadowColor,
           overlayColor: AppColors.lightOnSurface,
           foregroundColor: AppColors.lightOnPrimaryContainer,
           textStyle: textStyle(context),
@@ -35,7 +37,7 @@ class AppElevatedButtonTheme {
           shape: shape,
           alignment: Alignment.center,
           backgroundColor: AppColors.darkPrimaryContainer,
-          shadowColor: AppColors.darkShadow,
+          shadowColor: AppColors.shadowColor,
           overlayColor: AppColors.darkOnSurface,
           foregroundColor: AppColors.darkOnPrimaryContainer,
           textStyle: textStyle(context),

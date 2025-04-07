@@ -6,7 +6,7 @@ import 'package:myproject/core/utils/logger_util.dart';
 
 part 'theme_switch_state.dart';
 
-class ThemeSwitchCubit extends Cubit<ThemeSwitchState> {
+final class ThemeSwitchCubit extends Cubit<ThemeSwitchState> {
   ThemeSwitchCubit()
     : super(
         ThemeSwitchState(

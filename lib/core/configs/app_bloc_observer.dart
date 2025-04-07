@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:myproject/core/utils/logger_util.dart';
 import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
 
-class AppBlocObserver extends BlocObserver {
+final class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
 
   @override

@@ -4,15 +4,15 @@ import 'package:go_router/go_router.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/transitions/app_transitions.dart';
-import 'package:myproject/features/scanner/screens/scanner_screen.dart';
+import 'package:myproject/features/history/screens/history_screen.dart';
 
-final GoRoute scannerRoute = GoRoute(
-  path: '/scanner',
-  name: 'scanner',
+final GoRoute historyRoute = GoRoute(
+  path: '/history',
+  name: 'history',
   pageBuilder:
       (context, state) => CustomTransitionPage(
         key: state.pageKey,
-        child: const ScannerScreen(),
+        child: const HistoryScreen(),
         barrierColor: AppColors.black50,
         transitionDuration: AppDurations.duration1000ms,
         reverseTransitionDuration: AppDurations.duration1000ms,

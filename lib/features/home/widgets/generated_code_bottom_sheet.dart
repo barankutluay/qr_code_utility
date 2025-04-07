@@ -46,6 +46,7 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
               spacing: 16.r,
               children: [
                 ShareButton(
+                  url: url,
                   onShareFiles:
                       () => GenerateQrCodeController.captureImage(repaintKey),
                 ),

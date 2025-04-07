@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class NavigatorUtil {
+final class NavigatorUtil {
+  const NavigatorUtil._();
+
   static void push(BuildContext context, Route route) =>
       Navigator.of(context).push(route);
 

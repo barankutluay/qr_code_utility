@@ -34,7 +34,7 @@ class GenerateButton extends StatelessWidget {
               repaintKey,
             ),
         style: Theme.of(context).elevatedButtonTheme.style,
-        child: Text(AppStrings.generateButtonText),
+        child: const Text(AppStrings.generateButtonText),
       ),
     );
   }

@@ -4,7 +4,9 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 
-class AppInputDecorationTheme {
+final class AppInputDecorationTheme {
+  const AppInputDecorationTheme._();
+
   static InputDecorationTheme _buildTheme({
     required BuildContext context,
     required Color fillColor,

@@ -9,7 +9,9 @@ import 'package:myproject/core/themes/app_snackbar_theme.dart';
 import 'package:myproject/core/themes/app_text_selection_theme.dart';
 import 'package:myproject/core/themes/app_text_theme.dart';
 
-class AppTheme {
+final class AppTheme {
+  const AppTheme._();
+
   static ThemeData lightTheme(BuildContext context) => ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,

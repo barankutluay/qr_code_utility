@@ -4,9 +4,9 @@ import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
 import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
 
 class ScannerScreenLayout extends StatelessWidget {
-  const ScannerScreenLayout({super.key, required this.controller});
+  const ScannerScreenLayout({super.key, required this.controllerInstance});
 
-  final MobileScannerController controller;
+  final ScannerController controllerInstance;
 
   @override
   Widget build(BuildContext context) {
@@ -16,13 +16,12 @@ class ScannerScreenLayout extends StatelessWidget {
       child: LayoutBuilder(
         builder: (context, constraints) {
           return MobileScanner(
-            controller: controller,
+            controller: controllerInstance.controller,
             onDetect:
-                (barcodes) => ScannerController.onDetect(
+                (barcodes) => controllerInstance.onDetect(
                   context,
                   barcodes: barcodes,
                   scannerCubit: scannerCubit,
-                  controller: controller,
                 ),
             overlayBuilder:
                 (context, constraints) => ScannerController.overlayBuilder(

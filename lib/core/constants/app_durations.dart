@@ -1,4 +1,6 @@
-class AppDurations {
+final class AppDurations {
+  const AppDurations._();
+
   static const Duration duration100ms = Duration(milliseconds: 100);
   static const Duration duration150ms = Duration(milliseconds: 150);
   static const Duration duration200ms = Duration(milliseconds: 200);

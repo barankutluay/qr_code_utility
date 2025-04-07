@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-class BorderUtil {
+final class BorderUtil {
+  const BorderUtil._();
+
   static BorderRadius only({
     double topLeft = 0,
     double topRight = 0,

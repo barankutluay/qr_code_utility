@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
 
-class ThemeSwitchStyle {
+final class ThemeSwitchStyle {
+  const ThemeSwitchStyle._();
+
   static WidgetStateProperty<Icon?> thumbIcon(
     ThemeSwitchCubit themeSwitchCubit,
   ) => WidgetStateProperty.all(
