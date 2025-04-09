@@ -32,6 +32,7 @@ final class AppTransitions {
       curve: curve,
     );
     final tween = Tween<Offset>(begin: begin, end: end);
+
     return SlideTransition(position: tween.animate(animation), child: child);
   }
 
@@ -48,8 +49,7 @@ final class AppTransitions {
   }) {
     const beginScale = 1.0;
     final endScale = useSecondary ? 0.90 : 1.0;
-    final delayFraction =
-        slideDelay.inMilliseconds / totalDuration.inMilliseconds;
+    final delay = slideDelay.inMilliseconds / totalDuration.inMilliseconds;
     final slideTween = Tween<Offset>(begin: begin, end: end);
     final scaleTween = Tween<double>(begin: beginScale, end: endScale);
 
@@ -62,7 +62,7 @@ final class AppTransitions {
 
     final slideAnimation = CurvedAnimation(
       parent: parentAnimation,
-      curve: Interval(delayFraction, 1, curve: curve),
+      curve: Interval(delay, 1, curve: curve),
     );
 
     final slideTransition = SlideTransition(

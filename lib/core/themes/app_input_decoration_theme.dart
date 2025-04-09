@@ -13,6 +13,7 @@ final class AppInputDecorationTheme {
     required Color onSurfaceColor,
     required Color outlineColor,
     required Color primaryContainerColor,
+    required Color errorColor,
   }) {
     final textTheme = Theme.of(context).textTheme;
     final padding = PaddingUtil.all(16.r);
@@ -26,7 +27,7 @@ final class AppInputDecorationTheme {
         color: onSurfaceColor.withValues(alpha: 0.5),
       ),
       errorStyle: textTheme.bodyMedium!.copyWith(
-        color: AppColors.error,
+        color: errorColor,
         fontWeight: FontWeight.w500,
       ),
       border: _buildBorder(
@@ -40,12 +41,12 @@ final class AppInputDecorationTheme {
         borderRadius: borderRadius,
       ),
       errorBorder: _buildBorder(
-        color: AppColors.error,
+        color: errorColor,
         width: 1.r,
         borderRadius: borderRadius,
       ),
       focusedErrorBorder: _buildBorder(
-        color: AppColors.error,
+        color: errorColor,
         width: 2.r,
         borderRadius: borderRadius,
       ),
@@ -70,6 +71,7 @@ final class AppInputDecorationTheme {
       onSurfaceColor: AppColors.lightOnSurface,
       outlineColor: AppColors.lightOutline,
       primaryContainerColor: AppColors.lightPrimaryContainer,
+      errorColor: AppColors.lightError,
     );
   }
 
@@ -80,6 +82,7 @@ final class AppInputDecorationTheme {
       onSurfaceColor: AppColors.darkOnSurface,
       outlineColor: AppColors.darkOutline,
       primaryContainerColor: AppColors.darkPrimaryContainer,
+      errorColor: AppColors.darkError,
     );
   }
 }

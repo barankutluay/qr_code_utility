@@ -17,9 +17,9 @@ final class QrHistoryRepository {
         history.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
-    } catch (e) {
-      LoggerUtil.error('Insert error: $e');
-      throw Exception('Insert error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('Insert error: $error', stackTrace);
+      rethrow;
     }
   }
 
@@ -31,9 +31,9 @@ final class QrHistoryRepository {
         orderBy: '${DatabaseHelper.columnTime} DESC',
       );
       return maps.map(QrHistoryModel.fromMap).toList();
-    } catch (e) {
-      LoggerUtil.error('Get all error: $e');
-      throw Exception('Get all error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('Get all error: $error', stackTrace);
+      rethrow;
     }
   }
 
@@ -46,9 +46,9 @@ final class QrHistoryRepository {
         whereArgs: [type],
       );
       return maps.map(QrHistoryModel.fromMap).toList();
-    } catch (e) {
-      LoggerUtil.error('Filter error: $e');
-      throw Exception('Filter error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('Filter error: $error', stackTrace);
+      rethrow;
     }
   }
 
@@ -60,9 +60,9 @@ final class QrHistoryRepository {
         where: '${DatabaseHelper.columnId} = ?',
         whereArgs: [id],
       );
-    } catch (e) {
-      LoggerUtil.error('Delete error: $e');
-      throw Exception('Delete error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('Delete error: $error', stackTrace);
+      rethrow;
     }
   }
 
@@ -70,9 +70,9 @@ final class QrHistoryRepository {
     try {
       final db = await _databaseHelper.database;
       await db.delete(DatabaseHelper.table);
-    } catch (e) {
-      LoggerUtil.error('Clear error: $e');
-      throw Exception('Clear error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('Clear error: $error', stackTrace);
+      rethrow;
     }
   }
 }

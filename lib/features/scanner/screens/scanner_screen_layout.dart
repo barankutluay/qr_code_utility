@@ -44,12 +44,10 @@ class _ScannerScreenLayoutState extends State<ScannerScreenLayout> {
               return MobileScanner(
                 controller: _scannerController.controller,
                 onDetect: (barcodes) {
-                  unawaited(
-                    _scannerController.onDetect(
-                      context,
-                      barcodes: barcodes,
-                      scannerCubit: _scannerCubit,
-                    ),
+                  _scannerController.onDetect(
+                    context,
+                    barcodes: barcodes,
+                    scannerCubit: _scannerCubit,
                   );
                 },
                 overlayBuilder: (context, constraints) {

@@ -5,6 +5,7 @@ import 'package:myproject/core/themes/app_elevated_button_theme.dart';
 import 'package:myproject/core/themes/app_icon_button_theme.dart';
 import 'package:myproject/core/themes/app_icon_theme.dart';
 import 'package:myproject/core/themes/app_input_decoration_theme.dart';
+import 'package:myproject/core/themes/app_progress_indicator_theme.dart';
 import 'package:myproject/core/themes/app_snackbar_theme.dart';
 import 'package:myproject/core/themes/app_text_selection_theme.dart';
 import 'package:myproject/core/themes/app_text_theme.dart';
@@ -27,6 +28,7 @@ final class AppTheme {
       iconButtonTheme: AppIconButtonTheme.light,
       bottomSheetTheme: AppBottomSheetTheme.light,
       textSelectionTheme: AppTextSelectionTheme.light,
+      progressIndicatorTheme: AppProgressIndicatorTheme.light,
 
       elevatedButtonTheme: AppElevatedButtonTheme.light(context),
       inputDecorationTheme: AppInputDecorationTheme.light(context),
@@ -49,6 +51,7 @@ final class AppTheme {
       iconButtonTheme: AppIconButtonTheme.dark,
       bottomSheetTheme: AppBottomSheetTheme.dark,
       textSelectionTheme: AppTextSelectionTheme.dark,
+      progressIndicatorTheme: AppProgressIndicatorTheme.dark,
 
       elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
       inputDecorationTheme: AppInputDecorationTheme.dark(context),

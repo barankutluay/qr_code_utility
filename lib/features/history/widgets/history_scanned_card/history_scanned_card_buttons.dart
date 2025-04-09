@@ -1,14 +1,12 @@
-import 'dart:async';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/share_util.dart';
-import 'package:myproject/features/home/widgets/open_in_new_button.dart';
-import 'package:myproject/features/home/widgets/share_button.dart';
+import 'package:myproject/features/history/controllers/history_controller.dart';
+import 'package:myproject/features/home/widgets/buttons/open_in_new_button.dart';
+import 'package:myproject/features/home/widgets/buttons/share_button.dart';
 
-class OnDetectBottomSheetButtons extends StatelessWidget {
-  const OnDetectBottomSheetButtons({required this.url, super.key});
+class HistoryScannedCardButtons extends StatelessWidget {
+  const HistoryScannedCardButtons({required this.url, super.key});
 
   final String url;
 
@@ -18,10 +16,7 @@ class OnDetectBottomSheetButtons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       spacing: 16.r,
       children: [
-        ShareButton(
-          url: url,
-          onPressed: () => unawaited(share(context, url: url)),
-        ),
+        ShareButton(onPressed: () => HistoryController.shareUrl(context, url)),
         OpenInNewButton(url: url),
       ],
     );

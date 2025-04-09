@@ -3,17 +3,21 @@ import 'package:flutter/material.dart';
 final class PaddingUtil {
   const PaddingUtil._();
 
+  static EdgeInsets get zero => EdgeInsets.zero;
+
   static EdgeInsets all(double value) => EdgeInsets.all(value);
+
+  static EdgeInsets onlyTop(double value) => EdgeInsets.only(top: value);
+
+  static EdgeInsets onlyBottom(double value) => EdgeInsets.only(bottom: value);
+
+  static EdgeInsets onlyLeft(double value) => EdgeInsets.only(left: value);
+
+  static EdgeInsets onlyRight(double value) => EdgeInsets.only(right: value);
 
   static EdgeInsets only(double top, double right, double bottom, double left) {
     return EdgeInsets.only(top: top, right: right, bottom: bottom, left: left);
   }
-
-  static EdgeInsets get zero => EdgeInsets.zero;
-  static EdgeInsets onlyTop(double value) => EdgeInsets.only(top: value);
-  static EdgeInsets onlyBottom(double value) => EdgeInsets.only(bottom: value);
-  static EdgeInsets onlyLeft(double value) => EdgeInsets.only(left: value);
-  static EdgeInsets onlyRight(double value) => EdgeInsets.only(right: value);
 
   static EdgeInsets horizontal(double value) {
     return EdgeInsets.symmetric(horizontal: value);

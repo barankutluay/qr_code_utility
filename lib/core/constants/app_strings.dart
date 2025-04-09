@@ -14,4 +14,5 @@ final class AppStrings {
   static const String onDetectBottomSheetTitle = 'Scan Result';
   static const String historyScannedCardTitle = 'SCANNED';
   static const String historyGeneratedCardTitle = 'GENERATED';
+  static const String historyIsEmpty = 'History is empty';
 }

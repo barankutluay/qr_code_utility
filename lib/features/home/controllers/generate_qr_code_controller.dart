@@ -9,14 +9,26 @@ import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/utils/bottom_sheet_util.dart';
 import 'package:myproject/core/utils/logger_util.dart';
 import 'package:myproject/core/utils/save_data_util.dart';
+import 'package:myproject/core/utils/share_util.dart';
 import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
 import 'package:myproject/features/home/widgets/custom_qr_image_view.dart';
-import 'package:myproject/features/home/widgets/generated_code_bottom_sheet.dart';
+import 'package:myproject/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:share_plus/share_plus.dart';
 
 final class GenerateQrCodeController {
   const GenerateQrCodeController._();
+
+  static void shareQrCode(BuildContext context, GlobalKey repaintKey) {
+    unawaited(
+      share(
+        context,
+        onShareFiles: () async {
+          return GenerateQrCodeController.onShareFiles(repaintKey);
+        },
+      ),
+    );
+  }
 
   static void handleOnPressed(BuildContext context, GlobalKey repaintKey) {
     unawaited(
@@ -52,9 +64,9 @@ final class GenerateQrCodeController {
           saveData(url: url, time: DateTime.now(), type: 0),
         ]);
       }
-    } catch (e) {
-      LoggerUtil.error('QR Generate Error: $e');
-      throw Exception('QR Generate Error: $e');
+    } catch (error, stackTrace) {
+      LoggerUtil.error('QR Generate Error: $error', stackTrace);
+      rethrow;
     }
   }
 
@@ -63,8 +75,7 @@ final class GenerateQrCodeController {
       final renderObject = repaintKey.currentContext?.findRenderObject();
 
       if (renderObject == null || (renderObject is! RenderRepaintBoundary)) {
-        const e = 'RenderRepaintBoundary not found!';
-        throw Exception(e);
+        throw 'RenderRepaintBoundary not found!';
       }
       final boundary = renderObject;
       await Future.delayed(AppDurations.duration100ms);
@@ -72,8 +83,7 @@ final class GenerateQrCodeController {
       final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 
       if (byteData == null) {
-        const e = 'ByteData is null!';
-        throw Exception(e);
+        throw 'ByteData is null!';
       }
       final pngBytes = byteData.buffer.asUint8List();
       final tempDir = await getTemporaryDirectory();
@@ -88,9 +98,11 @@ final class GenerateQrCodeController {
       );
 
       return [XFile(file.path)];
-    } catch (e) {
-      LoggerUtil.error(e);
-      return [];
+    } catch (error, stackTrace) {
+      if (error is String) {
+        LoggerUtil.error(error, stackTrace);
+      }
+      rethrow;
     }
   }
 

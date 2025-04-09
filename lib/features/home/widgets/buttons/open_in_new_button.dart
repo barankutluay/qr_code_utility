@@ -1,26 +1,18 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart'
-    show DiagnosticPropertiesBuilder, ObjectFlagProperty, StringProperty;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
+import 'package:myproject/core/utils/launch_url_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
-import 'package:share_plus/share_plus.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class ShareButton extends StatelessWidget {
-  const ShareButton({
-    required this.url,
-    required this.onPressed,
-    super.key,
-    this.onShareFiles,
-  });
+class OpenInNewButton extends StatelessWidget {
+  const OpenInNewButton({required this.url, super.key});
 
-  final String? url;
-  final Future<List<XFile>> Function()? onShareFiles;
-  final VoidCallback onPressed;
+  final String url;
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +21,12 @@ class ShareButton extends StatelessWidget {
         width: 101.r,
         height: 48.r,
         child: IconButton(
-          // onPressed: () {
-          //   unawaited(share(context, url: url, onShareFiles: onShareFiles));
-          // },
-          onPressed: onPressed,
+          onPressed: () => unawaited(customLaunchUrl(url)),
           padding: PaddingUtil.zero,
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 36.r,
-          icon: IconEnum.share.toSVGWidget(
+          icon: IconEnum.openInNew.toSVGWidget(
             width: 36.r,
             height: 36.r,
             color: Theme.of(context).iconTheme.color,
@@ -50,14 +39,6 @@ class ShareButton extends StatelessWidget {
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(StringProperty('url', url))
-      ..add(
-        ObjectFlagProperty<Future<List<XFile>> Function()?>.has(
-          'onShareFiles',
-          onShareFiles,
-        ),
-      )
-      ..add(ObjectFlagProperty<VoidCallback>.has('onPressed', onPressed));
+    properties.add(StringProperty('url', url));
   }
 }

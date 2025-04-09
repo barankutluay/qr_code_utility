@@ -42,7 +42,10 @@ class LinkTextField extends StatelessWidget {
             themeSwitchCubit.state.isDarkMode
                 ? AppColors.darkOnSurface
                 : AppColors.lightOnSurface,
-        cursorErrorColor: AppColors.error,
+        cursorErrorColor:
+            themeSwitchCubit.state.isDarkMode
+                ? AppColors.darkError
+                : AppColors.lightError,
         decoration: const InputDecoration(
           hintText: AppStrings.linkTextFieldHintText,
         ),

@@ -9,6 +9,7 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/border_util.dart';
+import 'package:myproject/core/utils/share_util.dart';
 import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
 import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart';
 import 'package:smooth_corner/smooth_corner.dart';
@@ -32,21 +33,23 @@ final class ScannerController {
     autoStart: false,
   );
 
+  static void shareUrl(BuildContext context, String url) {
+    unawaited(share(context, url: url));
+  }
+
   static void handleOnPressed(BuildContext context) {
     unawaited(context.pushNamed('scanner'));
   }
 
-  Future<void> onDetect(
+  void onDetect(
     BuildContext context, {
     required BarcodeCapture barcodes,
     required ScannerCubit scannerCubit,
-  }) async {
+  }) {
     if (barcodes.barcodes.isNotEmpty) {
       final url = barcodes.barcodes.first.rawValue!;
-      await scannerCubit.scanningStopped(
-        context,
-        url: url,
-        controller: controller,
+      unawaited(
+        scannerCubit.scanningStopped(context, url: url, controller: controller),
       );
     }
   }

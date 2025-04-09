@@ -3,10 +3,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 import 'package:myproject/features/home/controllers/create_button_controller.dart';
 import 'package:myproject/features/home/controllers/history_button_controller.dart';
-import 'package:myproject/features/home/widgets/create_button.dart';
-import 'package:myproject/features/home/widgets/history_button.dart';
+import 'package:myproject/features/home/widgets/buttons/create_button.dart';
+import 'package:myproject/features/home/widgets/buttons/history_button.dart';
+import 'package:myproject/features/home/widgets/buttons/scan_button.dart';
 import 'package:myproject/features/home/widgets/home_title.dart';
-import 'package:myproject/features/home/widgets/scan_button.dart';
 import 'package:myproject/features/home/widgets/theme_switch.dart';
 import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
 

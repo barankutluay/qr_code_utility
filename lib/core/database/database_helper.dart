@@ -11,8 +11,8 @@ final class DatabaseHelper {
 
   static const String _databaseName = 'qr_history.db';
   static const int _databaseVersion = 1;
-  static const String table = 'history';
 
+  static const String table = 'history';
   static const String columnId = '_id';
   static const String columnUrl = 'url';
   static const String columnTime = 'time';
@@ -42,9 +42,9 @@ final class DatabaseHelper {
         version: _databaseVersion,
         onCreate: _onCreate,
       );
-    } catch (e) {
-      LoggerUtil.error(e);
-      throw Exception(e);
+    } catch (error, stackTrace) {
+      LoggerUtil.error("Couldn't retrieve database: $error", stackTrace);
+      rethrow;
     }
   }
 

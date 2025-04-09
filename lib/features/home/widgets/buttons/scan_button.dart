@@ -12,24 +12,26 @@ class ScanButton extends StatelessWidget {
   final VoidCallback onPressed;
 
   @override
-  Widget build(BuildContext context) => SmoothContainer(
-    child: SizedBox(
-      width: 144.r,
-      height: 144.r,
-      child: IconButton(
-        onPressed: onPressed,
-        padding: PaddingUtil.zero,
-        alignment: Alignment.center,
-        style: Theme.of(context).iconButtonTheme.style,
-        iconSize: 112.r,
-        icon: IconEnum.scanIcon.toSVGWidget(
-          width: 112.r,
-          height: 112.r,
-          color: Theme.of(context).iconTheme.color,
+  Widget build(BuildContext context) {
+    return SmoothContainer(
+      child: SizedBox(
+        width: 144.r,
+        height: 144.r,
+        child: IconButton(
+          onPressed: onPressed,
+          padding: PaddingUtil.zero,
+          alignment: Alignment.center,
+          style: Theme.of(context).iconButtonTheme.style,
+          iconSize: 112.r,
+          icon: IconEnum.scanIcon.toSVGWidget(
+            width: 112.r,
+            height: 112.r,
+            color: Theme.of(context).iconTheme.color,
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {

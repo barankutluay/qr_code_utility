@@ -7,4 +7,6 @@ enum IconEnum {
   scanIcon,
   scanFrame,
   share,
+  delete,
+  empty,
 }

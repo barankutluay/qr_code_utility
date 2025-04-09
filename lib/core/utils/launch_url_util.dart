@@ -10,7 +10,8 @@ Future<void> customLaunchUrl(String url) async {
       final e = 'Could not launch $url';
       throw Exception(e);
     }
-  } catch (e) {
-    LoggerUtil.error(e);
+  } catch (error, stackTrace) {
+    LoggerUtil.error('Error: $error', stackTrace);
+    rethrow;
   }
 }
