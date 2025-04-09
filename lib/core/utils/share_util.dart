@@ -9,7 +9,6 @@ Future<void> share(
   final renderBox = context.findRenderObject() as RenderBox?;
 
   if (renderBox == null) return;
-
   final sharePositionOrigin =
       renderBox.localToGlobal(Offset.zero) & renderBox.size;
 

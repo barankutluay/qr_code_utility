@@ -11,8 +11,8 @@ class LinkTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeSwitchCubit = ThemeSwitchController.watch(context);
-    final textFormFieldCubit = LinkTextFieldController.watch(context);
+    final themeSwitchCubit = ThemeSwitchController.read(context);
+    final textFormFieldCubit = LinkTextFieldController.read(context);
 
     return SmoothContainer(
       width: double.infinity,
@@ -20,7 +20,7 @@ class LinkTextField extends StatelessWidget {
         autovalidateMode: AutovalidateMode.always,
         validator: (value) => LinkTextFieldController.validationText(value!),
         onChanged: textFormFieldCubit.onChanged,
-        onTapOutside: (event) => FocusScope.of(context).unfocus(),
+        onTapOutside: (_) => FocusScope.of(context).unfocus(),
         autofillHints: const [AutofillHints.url],
         autofocus: true,
         enableInteractiveSelection: true,

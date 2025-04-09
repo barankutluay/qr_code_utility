@@ -10,37 +10,42 @@ final class AppElevatedButtonTheme {
     borderRadius: BorderUtil.all(16.r),
   );
 
-  static TextStyle textStyle(BuildContext context) => Theme.of(
-    context,
-  ).textTheme.titleLarge!.copyWith(fontSize: 20.r, fontWeight: FontWeight.w700);
+  static TextStyle textStyle(BuildContext context) {
+    return Theme.of(context).textTheme.titleLarge!.copyWith(
+      fontSize: 20.r,
+      fontWeight: FontWeight.w700,
+    );
+  }
 
-  static ElevatedButtonThemeData light(BuildContext context) =>
-      ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          elevation: 2.r,
-          shape: shape,
-          enableFeedback: true,
-          alignment: Alignment.center,
-          backgroundColor: AppColors.lightPrimaryContainer,
-          shadowColor: AppColors.shadowColor,
-          overlayColor: AppColors.lightOnSurface,
-          foregroundColor: AppColors.lightOnPrimaryContainer,
-          textStyle: textStyle(context),
-        ),
-      );
+  static ElevatedButtonThemeData light(BuildContext context) {
+    return ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 2.r,
+        shape: shape,
+        enableFeedback: true,
+        alignment: Alignment.center,
+        backgroundColor: AppColors.lightPrimaryContainer,
+        shadowColor: AppColors.shadowColor,
+        overlayColor: AppColors.lightOnSurface,
+        foregroundColor: AppColors.lightOnPrimaryContainer,
+        textStyle: textStyle(context),
+      ),
+    );
+  }
 
-  static ElevatedButtonThemeData dark(BuildContext context) =>
-      ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          elevation: 2.r,
-          enableFeedback: true,
-          shape: shape,
-          alignment: Alignment.center,
-          backgroundColor: AppColors.darkPrimaryContainer,
-          shadowColor: AppColors.shadowColor,
-          overlayColor: AppColors.darkOnSurface,
-          foregroundColor: AppColors.darkOnPrimaryContainer,
-          textStyle: textStyle(context),
-        ),
-      );
+  static ElevatedButtonThemeData dark(BuildContext context) {
+    return ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        elevation: 2.r,
+        enableFeedback: true,
+        shape: shape,
+        alignment: Alignment.center,
+        backgroundColor: AppColors.darkPrimaryContainer,
+        shadowColor: AppColors.shadowColor,
+        overlayColor: AppColors.darkOnSurface,
+        foregroundColor: AppColors.darkOnPrimaryContainer,
+        textStyle: textStyle(context),
+      ),
+    );
+  }
 }

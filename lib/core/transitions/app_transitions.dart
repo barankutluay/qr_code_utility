@@ -9,10 +9,12 @@ final class AppTransitions {
     required Animation<double> secondaryAnimation,
     bool useSecondary = false,
     Curve curve = Curves.easeOutQuad,
-  }) => CurvedAnimation(
-    parent: useSecondary ? secondaryAnimation : primaryAnimation,
-    curve: curve,
-  );
+  }) {
+    return CurvedAnimation(
+      parent: useSecondary ? secondaryAnimation : primaryAnimation,
+      curve: curve,
+    );
+  }
 
   static Widget buildSlideTransition({
     required Animation<double> primaryAnimation,
@@ -46,6 +48,10 @@ final class AppTransitions {
   }) {
     const beginScale = 1.0;
     final endScale = useSecondary ? 0.90 : 1.0;
+    final delayFraction =
+        slideDelay.inMilliseconds / totalDuration.inMilliseconds;
+    final slideTween = Tween<Offset>(begin: begin, end: end);
+    final scaleTween = Tween<double>(begin: beginScale, end: endScale);
 
     final parentAnimation = _buildCurvedAnimation(
       primaryAnimation: primaryAnimation,
@@ -54,22 +60,15 @@ final class AppTransitions {
       curve: curve,
     );
 
-    final delayFraction =
-        slideDelay.inMilliseconds / totalDuration.inMilliseconds;
-
     final slideAnimation = CurvedAnimation(
       parent: parentAnimation,
       curve: Interval(delayFraction, 1, curve: curve),
     );
 
-    final slideTween = Tween<Offset>(begin: begin, end: end);
-
     final slideTransition = SlideTransition(
       position: slideTween.animate(slideAnimation),
       child: child,
     );
-
-    final scaleTween = Tween<double>(begin: beginScale, end: endScale);
 
     return ScaleTransition(
       scale: scaleTween.animate(parentAnimation),

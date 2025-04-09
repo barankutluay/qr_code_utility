@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
@@ -13,10 +16,13 @@ import 'package:smooth_corner/smooth_corner.dart';
 final class ScannerController {
   ScannerController();
 
-  static ScannerCubit Function(BuildContext context) read =
-      (context) => context.read<ScannerCubit>();
-  static ScannerCubit Function(BuildContext context) watch =
-      (context) => context.watch<ScannerCubit>();
+  static ScannerCubit Function(BuildContext context) read = (context) {
+    return context.read<ScannerCubit>();
+  };
+
+  static ScannerCubit Function(BuildContext context) watch = (context) {
+    return context.watch<ScannerCubit>();
+  };
 
   static final double scanWindowUpdateThreshold = 1.r;
 
@@ -26,16 +32,20 @@ final class ScannerController {
     autoStart: false,
   );
 
+  static void handleOnPressed(BuildContext context) {
+    unawaited(context.pushNamed('scanner'));
+  }
+
   Future<void> onDetect(
     BuildContext context, {
     required BarcodeCapture barcodes,
     required ScannerCubit scannerCubit,
   }) async {
     if (barcodes.barcodes.isNotEmpty) {
-      final returnValue = barcodes.barcodes.first.rawValue!;
+      final url = barcodes.barcodes.first.rawValue!;
       await scannerCubit.scanningStopped(
         context,
-        returnValue,
+        url: url,
         controller: controller,
       );
     }
@@ -50,6 +60,7 @@ final class ScannerController {
       width: 200.r,
       height: 200.r,
     );
+
     return CustomPaint(
       size: Size.infinite,
       willChange: true,
@@ -73,13 +84,15 @@ final class ScannerController {
     );
   }
 
-  static Widget placeholderBuilder(BuildContext context) =>
-      Container(color: AppColors.black);
+  static Widget placeholderBuilder(BuildContext context) {
+    return Container(color: AppColors.black);
+  }
 
-  static Rect scanWindow({required BoxConstraints constraints}) =>
-      Rect.fromCenter(
-        center: constraints.biggest.center(Offset.zero),
-        width: 200.r,
-        height: 200.r,
-      );
+  static Rect scanWindow({required BoxConstraints constraints}) {
+    return Rect.fromCenter(
+      center: constraints.biggest.center(Offset.zero),
+      width: 200.r,
+      height: 200.r,
+    );
+  }
 }

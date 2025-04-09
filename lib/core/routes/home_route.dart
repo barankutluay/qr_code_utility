@@ -9,22 +9,28 @@ import 'package:myproject/features/home/screens/home_screen.dart';
 final GoRoute homeRoute = GoRoute(
   path: '/',
   name: 'home',
-  pageBuilder:
-      (context, state) => CustomTransitionPage(
-        key: state.pageKey,
-        child: const HomeScreen(),
-        barrierColor: AppColors.black50,
-        transitionDuration: AppDurations.duration1000ms,
-        reverseTransitionDuration: AppDurations.duration1000ms,
-        transitionsBuilder:
-            (context, primaryAnimation, secondaryAnimation, child) =>
-                AppTransitions.buildScaleThenSlideTransition(
-                  primaryAnimation: primaryAnimation,
-                  secondaryAnimation: secondaryAnimation,
-                  child: child,
-                  begin: Offset.zero,
-                  end: const Offset(-0.25, 0),
-                  useSecondary: true,
-                ),
-      ),
+  pageBuilder: (context, state) {
+    return CustomTransitionPage(
+      key: state.pageKey,
+      child: const HomeScreen(),
+      barrierColor: AppColors.black50,
+      transitionDuration: AppDurations.duration1000ms,
+      reverseTransitionDuration: AppDurations.duration1000ms,
+      transitionsBuilder: (
+        context,
+        primaryAnimation,
+        secondaryAnimation,
+        child,
+      ) {
+        return AppTransitions.buildScaleThenSlideTransition(
+          primaryAnimation: primaryAnimation,
+          secondaryAnimation: secondaryAnimation,
+          child: child,
+          begin: Offset.zero,
+          end: const Offset(-0.25, 0),
+          useSecondary: true,
+        );
+      },
+    );
+  },
 );

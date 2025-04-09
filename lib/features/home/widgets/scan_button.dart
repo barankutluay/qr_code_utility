@@ -1,13 +1,15 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:go_router/go_router.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ScanButton extends StatelessWidget {
-  const ScanButton({super.key});
+  const ScanButton({required this.onPressed, super.key});
+
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) => SmoothContainer(
@@ -15,7 +17,7 @@ class ScanButton extends StatelessWidget {
       width: 144.r,
       height: 144.r,
       child: IconButton(
-        onPressed: () async => context.pushNamed('scanner'),
+        onPressed: onPressed,
         padding: PaddingUtil.zero,
         alignment: Alignment.center,
         style: Theme.of(context).iconButtonTheme.style,
@@ -28,4 +30,12 @@ class ScanButton extends StatelessWidget {
       ),
     ),
   );
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties.add(
+      ObjectFlagProperty<VoidCallback>.has('onPressed', onPressed),
+    );
+  }
 }

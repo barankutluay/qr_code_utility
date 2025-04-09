@@ -7,8 +7,10 @@ class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});
 
   @override
-  Widget build(BuildContext context) => BlocProvider(
-    create: (_) => HistoryCubit()..pageLoading(),
-    child: const Scaffold(body: HistoryScreenLayout()),
-  );
+  Widget build(BuildContext context) {
+    return BlocProvider(
+      create: (_) => HistoryCubit()..pageLoading(),
+      child: const Scaffold(body: HistoryScreenLayout()),
+    );
+  }
 }

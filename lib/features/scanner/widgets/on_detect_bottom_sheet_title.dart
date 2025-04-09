@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_strings.dart';
 
-class HistoryTitle extends StatelessWidget {
-  const HistoryTitle({super.key});
+class OnDetectBottomSheetTitle extends StatelessWidget {
+  const OnDetectBottomSheetTitle({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      AppStrings.historyTitleText,
+      AppStrings.onDetectBottomSheetTitle,
       style: Theme.of(
         context,
-      ).textTheme.headlineMedium!.copyWith(fontWeight: FontWeight.w700),
-      textAlign: TextAlign.center,
+      ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
     );
   }
 }

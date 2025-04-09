@@ -13,4 +13,5 @@ final class AppStrings {
       'https://www.youtube.com/watch?v=dQw4w9WgXc';
   static const String onDetectBottomSheetTitle = 'Scan Result';
   static const String historyScannedCardTitle = 'SCANNED';
+  static const String historyGeneratedCardTitle = 'GENERATED';
 }

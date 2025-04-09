@@ -7,8 +7,8 @@ import 'package:myproject/core/utils/padding_util.dart';
 final class AppInputDecorationTheme {
   const AppInputDecorationTheme._();
 
-  static InputDecorationTheme _buildTheme({
-    required BuildContext context,
+  static InputDecorationTheme _buildTheme(
+    BuildContext context, {
     required Color fillColor,
     required Color onSurfaceColor,
     required Color outlineColor,
@@ -29,35 +29,57 @@ final class AppInputDecorationTheme {
         color: AppColors.error,
         fontWeight: FontWeight.w500,
       ),
-      border: _buildBorder(outlineColor, 1.r, borderRadius),
-      focusedBorder: _buildBorder(primaryContainerColor, 2.r, borderRadius),
-      errorBorder: _buildBorder(AppColors.error, 1.r, borderRadius),
-      focusedErrorBorder: _buildBorder(AppColors.error, 2.r, borderRadius),
+      border: _buildBorder(
+        color: outlineColor,
+        width: 1.r,
+        borderRadius: borderRadius,
+      ),
+      focusedBorder: _buildBorder(
+        color: primaryContainerColor,
+        width: 2.r,
+        borderRadius: borderRadius,
+      ),
+      errorBorder: _buildBorder(
+        color: AppColors.error,
+        width: 1.r,
+        borderRadius: borderRadius,
+      ),
+      focusedErrorBorder: _buildBorder(
+        color: AppColors.error,
+        width: 2.r,
+        borderRadius: borderRadius,
+      ),
     );
   }
 
-  static OutlineInputBorder _buildBorder(
-    Color color,
-    double width,
-    BorderRadius borderRadius,
-  ) => OutlineInputBorder(
-    borderRadius: borderRadius,
-    borderSide: BorderSide(color: color, width: width),
-  );
+  static OutlineInputBorder _buildBorder({
+    required Color color,
+    required double width,
+    required BorderRadius borderRadius,
+  }) {
+    return OutlineInputBorder(
+      borderRadius: borderRadius,
+      borderSide: BorderSide(color: color, width: width),
+    );
+  }
 
-  static InputDecorationTheme light(BuildContext context) => _buildTheme(
-    context: context,
-    fillColor: AppColors.lightSurfaceContainerLow,
-    onSurfaceColor: AppColors.lightOnSurface,
-    outlineColor: AppColors.lightOutline,
-    primaryContainerColor: AppColors.lightPrimaryContainer,
-  );
+  static InputDecorationTheme light(BuildContext context) {
+    return _buildTheme(
+      context,
+      fillColor: AppColors.lightSurfaceContainerLow,
+      onSurfaceColor: AppColors.lightOnSurface,
+      outlineColor: AppColors.lightOutline,
+      primaryContainerColor: AppColors.lightPrimaryContainer,
+    );
+  }
 
-  static InputDecorationTheme dark(BuildContext context) => _buildTheme(
-    context: context,
-    fillColor: AppColors.darkSurfaceContainerLow,
-    onSurfaceColor: AppColors.darkOnSurface,
-    outlineColor: AppColors.darkOutline,
-    primaryContainerColor: AppColors.darkPrimaryContainer,
-  );
+  static InputDecorationTheme dark(BuildContext context) {
+    return _buildTheme(
+      context,
+      fillColor: AppColors.darkSurfaceContainerLow,
+      onSurfaceColor: AppColors.darkOnSurface,
+      outlineColor: AppColors.darkOutline,
+      primaryContainerColor: AppColors.darkPrimaryContainer,
+    );
+  }
 }

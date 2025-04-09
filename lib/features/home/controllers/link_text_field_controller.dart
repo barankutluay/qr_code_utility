@@ -5,11 +5,13 @@ import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart
 final class LinkTextFieldController {
   const LinkTextFieldController._();
 
-  static TextFormFieldCubit Function(BuildContext context) read =
-      (context) => context.read<TextFormFieldCubit>();
+  static TextFormFieldCubit Function(BuildContext context) read = (context) {
+    return context.read<TextFormFieldCubit>();
+  };
 
-  static TextFormFieldCubit Function(BuildContext context) watch =
-      (context) => context.watch<TextFormFieldCubit>();
+  static TextFormFieldCubit Function(BuildContext context) watch = (context) {
+    return context.watch<TextFormFieldCubit>();
+  };
 
   static bool validateLink(BuildContext context, String value) {
     final uri = Uri.tryParse(value);

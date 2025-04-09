@@ -10,13 +10,9 @@ final class LoggerUtil {
   );
 
   static void debug(dynamic message) => _defaultLogger.d(message);
-
   static void info(dynamic message) => _infoLogger.i(message);
-
   static void warning(dynamic message) => _defaultLogger.w(message);
-
   static void error(dynamic message, [Object? error, StackTrace? stackTrace]) =>
       _defaultLogger.e(message, error: error, stackTrace: stackTrace);
-
   static void fatal(dynamic message) => _defaultLogger.f(message);
 }

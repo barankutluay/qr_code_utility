@@ -14,20 +14,20 @@ final class ScannerCubit extends Cubit<ScannerState> {
   void scanningStarted() => emit(const ScannerScanning());
 
   Future<void> scanningStopped(
-    BuildContext context,
-    String returnValue, {
+    BuildContext context, {
+    required String url,
     required MobileScannerController controller,
   }) async {
     await controller.pause();
     await Future.wait([
       showCustomModalBottomSheet(
         context,
-        widget: OnDetectBottomSheet(returnValue),
+        widget: OnDetectBottomSheet(url),
         onDismiss: () => scanningRestarted(context, controller: controller),
       ),
-      saveData(url: returnValue, time: DateTime.now(), type: 1),
+      saveData(url: url, time: DateTime.now(), type: 1),
     ]);
-    emit(ScannerScanned(returnValue));
+    emit(ScannerScanned(url));
   }
 
   Future<void> scanningRestarted(

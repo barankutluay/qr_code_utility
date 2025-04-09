@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:myproject/core/constants/app_durations.dart';
 import 'package:myproject/core/utils/padding_util.dart';
 
-Future<dynamic> showCustomModalBottomSheet(
+Future<void> showCustomModalBottomSheet(
   BuildContext context, {
   required Widget widget,
   bool useSafeArea = true,
@@ -11,27 +11,29 @@ Future<dynamic> showCustomModalBottomSheet(
   bool enableDrag = false,
   bool showDragHandle = false,
   VoidCallback? onDismiss,
-}) async => showModalBottomSheet(
-  context: context,
-  useSafeArea: useSafeArea,
-  isDismissible: isDismissible,
-  isScrollControlled: isScrollControlled,
-  enableDrag: enableDrag,
-  showDragHandle: showDragHandle,
-  constraints: const BoxConstraints(),
-  sheetAnimationStyle: AnimationStyle(
-    curve: Curves.easeOutQuad,
-    duration: AppDurations.duration500ms,
-    reverseCurve: Curves.easeOutQuad,
-    reverseDuration: AppDurations.duration500ms,
-  ),
-  builder:
-      (context) => Padding(
-        padding: PaddingUtil.onlyBottom(
-          MediaQuery.of(context).viewInsets.bottom,
+}) async {
+  return showModalBottomSheet(
+    context: context,
+    useSafeArea: useSafeArea,
+    isDismissible: isDismissible,
+    isScrollControlled: isScrollControlled,
+    enableDrag: enableDrag,
+    showDragHandle: showDragHandle,
+    constraints: const BoxConstraints(),
+    sheetAnimationStyle: AnimationStyle(
+      curve: Curves.easeOutQuad,
+      duration: AppDurations.duration500ms,
+      reverseCurve: Curves.easeOutQuad,
+      reverseDuration: AppDurations.duration500ms,
+    ),
+    builder:
+        (context) => Padding(
+          padding: PaddingUtil.onlyBottom(
+            MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: widget,
         ),
-        child: widget,
-      ),
-).then((_) {
-  if (onDismiss != null) onDismiss();
-});
+  ).then((_) {
+    if (onDismiss != null) onDismiss();
+  });
+}

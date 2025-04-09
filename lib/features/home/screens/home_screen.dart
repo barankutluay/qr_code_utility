@@ -5,6 +5,7 @@ class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
-  Widget build(BuildContext context) =>
-      const Scaffold(body: HomeScreenLayout());
+  Widget build(BuildContext context) {
+    return const Scaffold(body: HomeScreenLayout());
+  }
 }

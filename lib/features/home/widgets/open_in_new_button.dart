@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,7 +20,7 @@ class OpenInNewButton extends StatelessWidget {
       width: 101.r,
       height: 48.r,
       child: IconButton(
-        onPressed: () async => customLaunchUrl(url),
+        onPressed: () => unawaited(customLaunchUrl(url)),
         padding: PaddingUtil.zero,
         alignment: Alignment.center,
         style: Theme.of(context).iconButtonTheme.style,

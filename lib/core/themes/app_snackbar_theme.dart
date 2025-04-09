@@ -16,30 +16,35 @@ final class AppSnackbarTheme {
     8.r,
   );
 
-  static TextStyle textStyle(BuildContext context, {Color? color}) =>
-      Theme.of(context).textTheme.bodyLarge!.copyWith(color: color);
+  static TextStyle textStyle(BuildContext context, {Color? color}) {
+    return Theme.of(context).textTheme.bodyLarge!.copyWith(color: color);
+  }
 
-  static SnackBarThemeData light(BuildContext context) => SnackBarThemeData(
-    elevation: 2.r,
-    shape: shape,
-    insetPadding: insetPadding,
-    behavior: SnackBarBehavior.floating,
-    dismissDirection: DismissDirection.horizontal,
-    actionBackgroundColor: AppColors.lightOnSurface,
-    actionTextColor: AppColors.lightSurface,
-    backgroundColor: AppColors.lightOnSurface,
-    contentTextStyle: textStyle(context, color: AppColors.lightSurface),
-  );
+  static SnackBarThemeData light(BuildContext context) {
+    return SnackBarThemeData(
+      elevation: 2.r,
+      shape: shape,
+      insetPadding: insetPadding,
+      behavior: SnackBarBehavior.floating,
+      dismissDirection: DismissDirection.horizontal,
+      actionBackgroundColor: AppColors.lightOnSurface,
+      actionTextColor: AppColors.lightSurface,
+      backgroundColor: AppColors.lightOnSurface,
+      contentTextStyle: textStyle(context, color: AppColors.lightSurface),
+    );
+  }
 
-  static SnackBarThemeData dark(BuildContext context) => SnackBarThemeData(
-    elevation: 2.r,
-    shape: shape,
-    insetPadding: insetPadding,
-    behavior: SnackBarBehavior.floating,
-    dismissDirection: DismissDirection.horizontal,
-    actionBackgroundColor: AppColors.darkOnSurface,
-    actionTextColor: AppColors.darkSurface,
-    backgroundColor: AppColors.darkOnSurface,
-    contentTextStyle: textStyle(context, color: AppColors.darkSurface),
-  );
+  static SnackBarThemeData dark(BuildContext context) {
+    return SnackBarThemeData(
+      elevation: 2.r,
+      shape: shape,
+      insetPadding: insetPadding,
+      behavior: SnackBarBehavior.floating,
+      dismissDirection: DismissDirection.horizontal,
+      actionBackgroundColor: AppColors.darkOnSurface,
+      actionTextColor: AppColors.darkSurface,
+      backgroundColor: AppColors.darkOnSurface,
+      contentTextStyle: textStyle(context, color: AppColors.darkSurface),
+    );
+  }
 }

@@ -11,13 +11,15 @@ extension IconEnumExtension on IconEnum {
     BoxFit fit = BoxFit.cover,
     Color? color,
     String? semanticsLabel,
-  }) => SvgPicture.asset(
-    _assetName,
-    width: width,
-    height: height,
-    fit: fit,
-    colorFilter:
-        color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
-    semanticsLabel: semanticsLabel,
-  );
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      width: width,
+      height: height,
+      fit: fit,
+      colorFilter:
+          color != null ? ColorFilter.mode(color, BlendMode.srcIn) : null,
+      semanticsLabel: semanticsLabel,
+    );
+  }
 }

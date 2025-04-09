@@ -11,7 +11,6 @@ Future<void> saveData({
     final qrHistoryModel = QrHistoryModel(url: url, time: time, type: type);
 
     await QrHistoryRepository.instance.insertHistory(qrHistoryModel);
-
     LoggerUtil.info('Data has been saved: ${qrHistoryModel.formattedTime}');
   } catch (e) {
     LoggerUtil.error('Data save error: $e');

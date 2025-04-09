@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/home/widgets/open_in_new_button.dart';
-import 'package:myproject/features/home/widgets/share_button.dart';
+import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet_buttons.dart';
+import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet_title.dart';
+import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet_url.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class OnDetectBottomSheet extends StatelessWidget {
@@ -13,35 +13,24 @@ class OnDetectBottomSheet extends StatelessWidget {
   final String url;
 
   @override
-  Widget build(BuildContext context) => SmoothContainer(
-    width: double.infinity,
-    child: Padding(
-      padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
-            AppStrings.onDetectBottomSheetTitle,
-            style: Theme.of(
-              context,
-            ).textTheme.titleLarge!.copyWith(fontWeight: FontWeight.w700),
-          ),
-          16.verticalSpacingRadius,
-          Text(
-            url,
-            style: Theme.of(context).textTheme.bodyLarge,
-            textAlign: TextAlign.center,
-          ),
-          32.verticalSpacingRadius,
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 16.r,
-            children: [ShareButton(url: url), OpenInNewButton(url: url)],
-          ),
-        ],
+  Widget build(BuildContext context) {
+    return SmoothContainer(
+      width: double.infinity,
+      child: Padding(
+        padding: PaddingUtil.horizontalAndVertical(20.r, 24.r),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const OnDetectBottomSheetTitle(),
+            16.verticalSpacingRadius,
+            OnDetectBottomSheetUrl(url: url),
+            32.verticalSpacingRadius,
+            OnDetectBottomSheetButtons(url: url),
+          ],
+        ),
       ),
-    ),
-  );
+    );
+  }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
