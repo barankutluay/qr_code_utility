@@ -6,13 +6,13 @@ class HistoryGeneratedCardTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: 0.5,
-      child: Text(
-        AppStrings.historyGeneratedCardTitle,
-        style: Theme.of(
+    return Text(
+      AppStrings.historyGeneratedCardTitle,
+      style: Theme.of(context).textTheme.titleMedium!.copyWith(
+        fontWeight: FontWeight.w700,
+        color: Theme.of(
           context,
-        ).textTheme.titleMedium!.copyWith(fontWeight: FontWeight.w700),
+        ).textTheme.titleMedium!.color!.withValues(alpha: 0.5),
       ),
     );
   }

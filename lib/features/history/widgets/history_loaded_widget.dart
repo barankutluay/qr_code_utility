@@ -18,13 +18,13 @@ class HistoryLoadedWidget extends StatelessWidget {
       itemCount: state.historyList.length,
       itemBuilder: (context, index) {
         final item = state.historyList[index];
-        final repaintKey = GlobalKey();
-
+        final repaintKey = item.type == 0 ? GlobalKey() : null;
+        
         return switch (item.type) {
           0 => HistoryGeneratedCard(
             dateString: item.formattedTime,
             url: item.url,
-            repaintKey: repaintKey,
+            repaintKey: repaintKey!,
           ),
           1 => HistoryScannedCard(
             dateString: item.formattedTime,

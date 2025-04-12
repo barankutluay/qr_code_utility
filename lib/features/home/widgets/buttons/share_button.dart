@@ -20,7 +20,7 @@ class ShareButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SmoothContainer(
       child: SizedBox(
-        width: 101.r,
+        width: 72.r,
         height: 48.r,
         child: IconButton(
           onPressed: onPressed,
@@ -28,11 +28,7 @@ class ShareButton extends StatelessWidget {
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 36.r,
-          icon: IconEnum.share.toSVGWidget(
-            width: 36.r,
-            height: 36.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+          icon: IconEnum.share.toSVGWidget(context, width: 36.r, height: 36.r),
         ),
       ),
     );

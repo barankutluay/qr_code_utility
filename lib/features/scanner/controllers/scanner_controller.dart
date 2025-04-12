@@ -78,6 +78,7 @@ final class ScannerController {
           height: 200.r,
           borderRadius: BorderUtil.all(16.r),
           child: IconEnum.scanFrame.toSVGWidget(
+            context,
             width: 200.r,
             height: 200.r,
             color: AppColors.white,

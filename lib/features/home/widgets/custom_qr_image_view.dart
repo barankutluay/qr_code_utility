@@ -22,6 +22,7 @@ class CustomQrImageView extends StatelessWidget {
     final boxDecoration = BoxDecoration(
       border: Border.all(
         width: 1.r,
+        strokeAlign: BorderSide.strokeAlignOutside,
         color:
             themeSwitchController.state.isDarkMode
                 ? AppColors.lightOutline
@@ -32,13 +33,12 @@ class CustomQrImageView extends StatelessWidget {
     return RepaintBoundary(
       key: repaintKey,
       child: Container(
-        width: 200.r,
-        height: 200.r,
+        width: 150.r,
+        height: 150.r,
         decoration: boxDecoration,
         child: QrImageView(
           data: data,
-          size: 200.r,
-          errorCorrectionLevel: QrErrorCorrectLevel.H,
+          size: 150.r,
           padding: PaddingUtil.all(8.r),
           backgroundColor: AppColors.white,
         ),

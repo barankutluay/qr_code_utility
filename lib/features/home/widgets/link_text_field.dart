@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/constants/app_strings.dart';
 import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
-import 'package:myproject/features/home/controllers/theme_switch_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class LinkTextField extends StatelessWidget {
@@ -11,7 +10,7 @@ class LinkTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeSwitchCubit = ThemeSwitchController.read(context);
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
     final textFormFieldCubit = LinkTextFieldController.read(context);
 
     return SmoothContainer(
@@ -24,10 +23,7 @@ class LinkTextField extends StatelessWidget {
         autofillHints: const [AutofillHints.url],
         autofocus: true,
         enableInteractiveSelection: true,
-        keyboardAppearance:
-            themeSwitchCubit.state.isDarkMode
-                ? Brightness.dark
-                : Brightness.light,
+        keyboardAppearance: isDarkMode ? Brightness.dark : Brightness.light,
         keyboardType: TextInputType.url,
         minLines: 1,
         textAlignVertical: TextAlignVertical.center,
@@ -39,13 +35,9 @@ class LinkTextField extends StatelessWidget {
         cursorHeight: 24.r,
         cursorRadius: Radius.circular(16.r),
         cursorColor:
-            themeSwitchCubit.state.isDarkMode
-                ? AppColors.darkOnSurface
-                : AppColors.lightOnSurface,
+            isDarkMode ? AppColors.darkOnSurface : AppColors.lightOnSurface,
         cursorErrorColor:
-            themeSwitchCubit.state.isDarkMode
-                ? AppColors.darkError
-                : AppColors.lightError,
+            isDarkMode ? AppColors.darkError : AppColors.lightError,
         decoration: const InputDecoration(
           hintText: AppStrings.linkTextFieldHintText,
         ),

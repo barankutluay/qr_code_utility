@@ -24,9 +24,9 @@ class ScanButton extends StatelessWidget {
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 112.r,
           icon: IconEnum.scanIcon.toSVGWidget(
+            context,
             width: 112.r,
             height: 112.r,
-            color: Theme.of(context).iconTheme.color,
           ),
         ),
       ),

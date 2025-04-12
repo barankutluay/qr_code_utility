@@ -6,7 +6,7 @@ import 'package:myproject/core/utils/border_util.dart';
 final class AppIconButtonTheme {
   const AppIconButtonTheme._();
 
-  static final RoundedRectangleBorder shape = RoundedRectangleBorder(
+  static final RoundedRectangleBorder _shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(16.r),
   );
 
@@ -15,9 +15,9 @@ final class AppIconButtonTheme {
       elevation: 2.r,
       enableFeedback: true,
       backgroundColor: AppColors.lightPrimaryContainer,
-      shadowColor: AppColors.shadowColor,
+      shadowColor: AppColors.lightShadow,
       overlayColor: AppColors.lightOnSurface,
-      shape: shape,
+      shape: _shape,
     ),
   );
 
@@ -26,9 +26,9 @@ final class AppIconButtonTheme {
       elevation: 2.r,
       enableFeedback: true,
       backgroundColor: AppColors.darkPrimaryContainer,
-      shadowColor: AppColors.shadowColor,
+      shadowColor: AppColors.darkShadow,
       overlayColor: AppColors.darkOnSurface,
-      shape: shape,
+      shape: _shape,
     ),
   );
 }

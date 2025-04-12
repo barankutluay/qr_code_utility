@@ -5,7 +5,6 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/enums/icon_enum.dart';
 import 'package:myproject/core/extensions/icon_enum_extension.dart';
 import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/home/controllers/theme_switch_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ClearHistoryButton extends StatelessWidget {
@@ -15,7 +14,7 @@ class ClearHistoryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeSwitchCubit = ThemeSwitchController.read(context);
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return SmoothContainer(
       child: SizedBox(
@@ -27,17 +26,13 @@ class ClearHistoryButton extends StatelessWidget {
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style!.copyWith(
             backgroundColor: WidgetStatePropertyAll(
-              themeSwitchCubit.state.isDarkMode
+              isDarkMode
                   ? AppColors.darkErrorContainer
                   : AppColors.lightErrorContainer,
             ),
           ),
           iconSize: 24.r,
-          icon: IconEnum.delete.toSVGWidget(
-            width: 24.r,
-            height: 24.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+          icon: IconEnum.delete.toSVGWidget(context, width: 24.r, height: 24.r),
         ),
       ),
     );

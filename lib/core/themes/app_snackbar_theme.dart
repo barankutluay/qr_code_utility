@@ -7,44 +7,44 @@ import 'package:myproject/core/utils/padding_util.dart';
 final class AppSnackbarTheme {
   const AppSnackbarTheme._();
 
-  static final ShapeBorder shape = RoundedRectangleBorder(
+  static final ShapeBorder _shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(100.r),
   );
 
-  static final EdgeInsets insetPadding = PaddingUtil.horizontalAndVertical(
+  static final EdgeInsets _insetPadding = PaddingUtil.horizontalAndVertical(
     20.r,
     8.r,
   );
 
-  static TextStyle textStyle(BuildContext context, {Color? color}) {
+  static TextStyle _textStyle(BuildContext context, {Color? color}) {
     return Theme.of(context).textTheme.bodyLarge!.copyWith(color: color);
   }
 
   static SnackBarThemeData light(BuildContext context) {
     return SnackBarThemeData(
       elevation: 2.r,
-      shape: shape,
-      insetPadding: insetPadding,
+      shape: _shape,
+      insetPadding: _insetPadding,
       behavior: SnackBarBehavior.floating,
       dismissDirection: DismissDirection.horizontal,
       actionBackgroundColor: AppColors.lightOnSurface,
       actionTextColor: AppColors.lightSurface,
       backgroundColor: AppColors.lightOnSurface,
-      contentTextStyle: textStyle(context, color: AppColors.lightSurface),
+      contentTextStyle: _textStyle(context, color: AppColors.lightSurface),
     );
   }
 
   static SnackBarThemeData dark(BuildContext context) {
     return SnackBarThemeData(
       elevation: 2.r,
-      shape: shape,
-      insetPadding: insetPadding,
+      shape: _shape,
+      insetPadding: _insetPadding,
       behavior: SnackBarBehavior.floating,
       dismissDirection: DismissDirection.horizontal,
       actionBackgroundColor: AppColors.darkOnSurface,
       actionTextColor: AppColors.darkSurface,
       backgroundColor: AppColors.darkOnSurface,
-      contentTextStyle: textStyle(context, color: AppColors.darkSurface),
+      contentTextStyle: _textStyle(context, color: AppColors.darkSurface),
     );
   }
 }

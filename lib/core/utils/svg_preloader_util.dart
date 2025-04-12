@@ -8,6 +8,10 @@ final class SvgPreloaderUtil {
     'assets/icons/scanIcon.svg',
     'assets/icons/history.svg',
     'assets/icons/create.svg',
+    'assets/icons/chevronBackward.svg',
+    'assets/icons/delete.svg',
+    'assets/icons/share.svg',
+    'assets/icons/openInNew.svg',
   ];
 
   static Future<void> svgPreloader(List<String> assetPaths) async {

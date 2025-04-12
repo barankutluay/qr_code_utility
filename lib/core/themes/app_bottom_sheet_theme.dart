@@ -6,7 +6,7 @@ import 'package:myproject/core/utils/border_util.dart';
 final class AppBottomSheetTheme {
   const AppBottomSheetTheme._();
 
-  static final RoundedRectangleBorder shape = RoundedRectangleBorder(
+  static final RoundedRectangleBorder _shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.only(topLeft: 16.r, topRight: 16.r),
   );
 
@@ -14,10 +14,10 @@ final class AppBottomSheetTheme {
     elevation: 2.r,
     modalElevation: 2.r,
     showDragHandle: false,
-    shape: shape,
+    shape: _shape,
     backgroundColor: AppColors.lightSurfaceContainerLow,
     modalBackgroundColor: AppColors.lightSurfaceContainerLow,
-    shadowColor: AppColors.black,
+    shadowColor: AppColors.lightShadow,
     modalBarrierColor: AppColors.black50,
   );
 
@@ -25,10 +25,10 @@ final class AppBottomSheetTheme {
     elevation: 2.r,
     modalElevation: 2.r,
     showDragHandle: false,
-    shape: shape,
+    shape: _shape,
     backgroundColor: AppColors.darkSurfaceContainerLow,
     modalBackgroundColor: AppColors.darkSurfaceContainerLow,
-    shadowColor: AppColors.black,
+    shadowColor: AppColors.darkShadow,
     modalBarrierColor: AppColors.black50,
   );
 }

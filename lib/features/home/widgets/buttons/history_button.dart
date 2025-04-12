@@ -24,9 +24,9 @@ class HistoryButton extends StatelessWidget {
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 36.r,
           icon: IconEnum.history.toSVGWidget(
+            context,
             width: 36.r,
             height: 36.r,
-            color: Theme.of(context).iconTheme.color,
           ),
         ),
       ),

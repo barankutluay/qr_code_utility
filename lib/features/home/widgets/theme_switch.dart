@@ -11,28 +11,25 @@ class ThemeSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final themeSwitchCubit = ThemeSwitchController.watch(context);
+    final isDarkMode = Theme.of(context).brightness == Brightness.dark;
 
     return SizedBox(
       width: 65.r,
       height: 40.r,
       child: Transform.scale(
         scale: 1.r,
+        filterQuality: FilterQuality.low,
         child: SmoothClipRRect(
           borderRadius: BorderUtil.all(100.r),
           child: Switch(
-            value: themeSwitchCubit.state.isDarkMode,
+            value: isDarkMode,
             onChanged: (_) => ThemeSwitchController.toggleTheme(context),
             activeColor: AppColors.darkPrimaryContainer,
             activeTrackColor: AppColors.darkPrimaryContainer,
-            thumbColor: ThemeSwitchStyle.thumbColor(themeSwitchCubit),
-            thumbIcon: ThemeSwitchStyle.thumbIcon(themeSwitchCubit),
-            trackOutlineColor: ThemeSwitchStyle.trackOutlineColor(
-              themeSwitchCubit,
-            ),
-            trackOutlineWidth: ThemeSwitchStyle.trackOutlineWidth(
-              themeSwitchCubit,
-            ),
+            thumbColor: ThemeSwitchStyle.thumbColor(context),
+            thumbIcon: ThemeSwitchStyle.thumbIcon(context),
+            trackOutlineColor: ThemeSwitchStyle.trackOutlineColor(context),
+            trackOutlineWidth: ThemeSwitchStyle.trackOutlineWidth(context),
           ),
         ),
       ),

@@ -6,12 +6,12 @@ import 'package:myproject/core/utils/padding_util.dart';
 Future<void> showCustomModalBottomSheet(
   BuildContext context, {
   required Widget widget,
+  VoidCallback? onDismiss,
   bool useSafeArea = true,
   bool isDismissible = true,
   bool isScrollControlled = true,
   bool enableDrag = false,
   bool showDragHandle = false,
-  VoidCallback? onDismiss,
 }) async {
   try {
     return showModalBottomSheet(
@@ -24,9 +24,9 @@ Future<void> showCustomModalBottomSheet(
       constraints: const BoxConstraints(),
       sheetAnimationStyle: AnimationStyle(
         curve: Curves.easeOutQuad,
-        duration: AppDurations.duration500ms,
+        duration: AppDurations.duration300ms,
         reverseCurve: Curves.easeOutQuad,
-        reverseDuration: AppDurations.duration500ms,
+        reverseDuration: AppDurations.duration300ms,
       ),
       builder: (context) {
         return Padding(

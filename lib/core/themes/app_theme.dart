@@ -13,12 +13,12 @@ import 'package:myproject/core/themes/app_text_theme.dart';
 final class AppTheme {
   const AppTheme._();
 
-  static ThemeData lightTheme(BuildContext context) {
+  static ThemeData light(BuildContext context) {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
       scaffoldBackgroundColor: AppColors.lightSurface,
-      shadowColor: AppColors.black,
+      shadowColor: AppColors.lightShadow,
       indicatorColor: AppColors.lightPrimaryContainer,
       splashColor: AppColors.lightSurfaceContainerLow,
       highlightColor: AppColors.lightSurfaceContainerHighest,
@@ -36,12 +36,12 @@ final class AppTheme {
     );
   }
 
-  static ThemeData darkTheme(BuildContext context) {
+  static ThemeData dark(BuildContext context) {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
       scaffoldBackgroundColor: AppColors.darkSurface,
-      shadowColor: AppColors.white.withValues(alpha: 0.2),
+      shadowColor: AppColors.darkShadow,
       indicatorColor: AppColors.darkPrimaryContainer,
       splashColor: AppColors.darkSurfaceContainerLow,
       highlightColor: AppColors.darkSurfaceContainerHighest,

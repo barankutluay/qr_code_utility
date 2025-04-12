@@ -14,8 +14,8 @@ final GoRoute scannerRoute = GoRoute(
       key: state.pageKey,
       child: const ScannerScreen(),
       barrierColor: AppColors.black50,
-      transitionDuration: AppDurations.duration1000ms,
-      reverseTransitionDuration: AppDurations.duration1000ms,
+      transitionDuration: AppDurations.duration500ms,
+      reverseTransitionDuration: AppDurations.duration500ms,
       transitionsBuilder: (
         context,
         primaryAnimation,

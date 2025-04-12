@@ -35,8 +35,8 @@ class App extends StatelessWidget {
                 debugShowCheckedModeBanner: false,
                 theme:
                     state.isDarkMode
-                        ? AppTheme.darkTheme(context)
-                        : AppTheme.lightTheme(context),
+                        ? AppTheme.dark(context)
+                        : AppTheme.light(context),
               );
             },
           ),

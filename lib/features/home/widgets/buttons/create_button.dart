@@ -23,11 +23,7 @@ class CreateButton extends StatelessWidget {
           alignment: Alignment.center,
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 36.r,
-          icon: IconEnum.create.toSVGWidget(
-            width: 36.r,
-            height: 36.r,
-            color: Theme.of(context).iconTheme.color,
-          ),
+          icon: IconEnum.create.toSVGWidget(context, width: 36.r, height: 36.r),
         ),
       ),
     );

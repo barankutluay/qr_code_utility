@@ -6,11 +6,11 @@ import 'package:myproject/core/utils/border_util.dart';
 final class AppElevatedButtonTheme {
   const AppElevatedButtonTheme._();
 
-  static final RoundedRectangleBorder shape = RoundedRectangleBorder(
+  static final RoundedRectangleBorder _shape = RoundedRectangleBorder(
     borderRadius: BorderUtil.all(16.r),
   );
 
-  static TextStyle textStyle(BuildContext context) {
+  static TextStyle _textStyle(BuildContext context) {
     return Theme.of(context).textTheme.titleLarge!.copyWith(
       fontSize: 20.r,
       fontWeight: FontWeight.w700,
@@ -21,14 +21,14 @@ final class AppElevatedButtonTheme {
     return ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         elevation: 2.r,
-        shape: shape,
+        shape: _shape,
         enableFeedback: true,
         alignment: Alignment.center,
         backgroundColor: AppColors.lightPrimaryContainer,
-        shadowColor: AppColors.shadowColor,
+        shadowColor: AppColors.lightShadow,
         overlayColor: AppColors.lightOnSurface,
         foregroundColor: AppColors.lightOnPrimaryContainer,
-        textStyle: textStyle(context),
+        textStyle: _textStyle(context),
       ),
     );
   }
@@ -38,13 +38,13 @@ final class AppElevatedButtonTheme {
       style: ElevatedButton.styleFrom(
         elevation: 2.r,
         enableFeedback: true,
-        shape: shape,
+        shape: _shape,
         alignment: Alignment.center,
         backgroundColor: AppColors.darkPrimaryContainer,
-        shadowColor: AppColors.shadowColor,
+        shadowColor: AppColors.darkShadow,
         overlayColor: AppColors.darkOnSurface,
         foregroundColor: AppColors.darkOnPrimaryContainer,
-        textStyle: textStyle(context),
+        textStyle: _textStyle(context),
       ),
     );
   }

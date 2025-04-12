@@ -7,8 +7,8 @@ final class AppTransitions {
   static CurvedAnimation _buildCurvedAnimation({
     required Animation<double> primaryAnimation,
     required Animation<double> secondaryAnimation,
-    bool useSecondary = false,
     Curve curve = Curves.easeOutQuad,
+    bool useSecondary = false,
   }) {
     return CurvedAnimation(
       parent: useSecondary ? secondaryAnimation : primaryAnimation,
@@ -31,6 +31,7 @@ final class AppTransitions {
       useSecondary: useSecondary,
       curve: curve,
     );
+
     final tween = Tween<Offset>(begin: begin, end: end);
 
     return SlideTransition(position: tween.animate(animation), child: child);
@@ -42,10 +43,10 @@ final class AppTransitions {
     required Widget child,
     required Offset begin,
     required Offset end,
+    Duration totalDuration = AppDurations.duration500ms,
+    Duration slideDelay = AppDurations.duration300ms,
     Curve curve = Curves.easeOutQuad,
     bool useSecondary = false,
-    Duration totalDuration = AppDurations.duration1000ms,
-    Duration slideDelay = AppDurations.duration500ms,
   }) {
     const beginScale = 1.0;
     final endScale = useSecondary ? 0.90 : 1.0;
@@ -72,6 +73,7 @@ final class AppTransitions {
 
     return ScaleTransition(
       scale: scaleTween.animate(parentAnimation),
+      filterQuality: FilterQuality.low,
       child: slideTransition,
     );
   }

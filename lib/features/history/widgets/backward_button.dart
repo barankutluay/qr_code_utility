@@ -24,9 +24,9 @@ class BackwardButton extends StatelessWidget {
           style: Theme.of(context).iconButtonTheme.style,
           iconSize: 24.r,
           icon: IconEnum.chevronBackward.toSVGWidget(
+            context,
             width: 24.r,
             height: 24.r,
-            color: Theme.of(context).iconTheme.color,
           ),
         ),
       ),

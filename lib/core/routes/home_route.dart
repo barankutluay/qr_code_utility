@@ -14,8 +14,8 @@ final GoRoute homeRoute = GoRoute(
       key: state.pageKey,
       child: const HomeScreen(),
       barrierColor: AppColors.black50,
-      transitionDuration: AppDurations.duration1000ms,
-      reverseTransitionDuration: AppDurations.duration1000ms,
+      transitionDuration: AppDurations.duration500ms,
+      reverseTransitionDuration: AppDurations.duration500ms,
       transitionsBuilder: (
         context,
         primaryAnimation,

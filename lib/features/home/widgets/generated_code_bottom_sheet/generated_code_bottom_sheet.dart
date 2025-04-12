@@ -28,9 +28,9 @@ class GeneratedCodeBottomSheet extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             const GeneratedCodeBottomSheetTitle(),
-            32.verticalSpacingRadius,
+            24.verticalSpacingRadius,
             qrImageView,
-            64.verticalSpacingRadius,
+            48.verticalSpacingRadius,
             GeneratedCodeBottomSheetButtons(repaintKey: repaintKey, url: url),
           ],
         ),

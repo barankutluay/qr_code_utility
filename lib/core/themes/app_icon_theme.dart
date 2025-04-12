@@ -10,6 +10,7 @@ final class AppIconTheme {
     size: 24.r,
     weight: 400.r,
   );
+
   static final IconThemeData dark = IconThemeData(
     color: AppColors.darkOnPrimaryContainer,
     size: 24.r,

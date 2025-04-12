@@ -9,23 +9,27 @@ class InfoWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Opacity(
-      opacity: 0.5,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        spacing: 4.r,
-        children: [
-          IconEnum.info.toSVGWidget(
-            width: 24.r,
-            height: 24.r,
-            color: Theme.of(context).textTheme.bodyMedium!.color,
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      spacing: 4.r,
+      children: [
+        IconEnum.info.toSVGWidget(
+          context,
+          width: 24.r,
+          height: 24.r,
+          color: Theme.of(
+            context,
+          ).textTheme.bodyMedium!.color!.withValues(alpha: 0.5),
+        ),
+        Text(
+          AppStrings.generateQrCodeBottomSheetInfoText,
+          style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+            color: Theme.of(
+              context,
+            ).textTheme.bodyMedium!.color!.withValues(alpha: 0.5),
           ),
-          Text(
-            AppStrings.generateQrCodeBottomSheetInfoText,
-            style: Theme.of(context).textTheme.bodyMedium,
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

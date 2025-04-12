@@ -53,7 +53,7 @@ final class GenerateQrCodeController {
       if (context.mounted && context.canPop()) {
         context.pop();
         await Future.wait([
-          Future.delayed(AppDurations.duration300ms, () {
+          Future.delayed(AppDurations.duration100ms, () {
             if (context.mounted) {
               showCustomModalBottomSheet(
                 context,
@@ -79,7 +79,7 @@ final class GenerateQrCodeController {
       }
       final boundary = renderObject;
       await Future.delayed(AppDurations.duration100ms);
-      final image = await boundary.toImage(pixelRatio: 5);
+      final image = await boundary.toImage(pixelRatio: 3);
       final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 
       if (byteData == null) {
