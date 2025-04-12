@@ -16,6 +16,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   logger: ^2.5.0
   meta: ^1.16.0
+  cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.17
   flutter_cache_manager: ^3.4.1
   smooth_page_indicator: ^1.2.1
@@ -32,6 +33,7 @@ dependencies:
   share_plus: ^10.1.4
   url_launcher: ^6.3.1
   intl: ^0.20.2
+  shared_preferences: ^2.5.3
 
 dev_dependencies:
   flutter_test:

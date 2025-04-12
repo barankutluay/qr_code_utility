@@ -12,13 +12,14 @@ final class QrHistoryRepository {
   Future<int> insertHistory(QrHistoryModel history) async {
     try {
       final db = await _databaseHelper.database;
+
       return await db.insert(
         DatabaseHelper.table,
         history.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace,
       );
     } catch (error, stackTrace) {
-      LoggerUtil.error('Insert error: $error', stackTrace);
+      LoggerUtil.error('Insert error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -30,9 +31,10 @@ final class QrHistoryRepository {
         DatabaseHelper.table,
         orderBy: '${DatabaseHelper.columnTime} DESC',
       );
+
       return maps.map(QrHistoryModel.fromMap).toList();
     } catch (error, stackTrace) {
-      LoggerUtil.error('Get all error: $error', stackTrace);
+      LoggerUtil.error('Get all error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -45,9 +47,10 @@ final class QrHistoryRepository {
         where: '${DatabaseHelper.columnType} = ?',
         whereArgs: [type],
       );
+
       return maps.map(QrHistoryModel.fromMap).toList();
     } catch (error, stackTrace) {
-      LoggerUtil.error('Filter error: $error', stackTrace);
+      LoggerUtil.error('Filter error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -55,13 +58,14 @@ final class QrHistoryRepository {
   Future<int> deleteHistory(int id) async {
     try {
       final db = await _databaseHelper.database;
+
       return await db.delete(
         DatabaseHelper.table,
         where: '${DatabaseHelper.columnId} = ?',
         whereArgs: [id],
       );
     } catch (error, stackTrace) {
-      LoggerUtil.error('Delete error: $error', stackTrace);
+      LoggerUtil.error('Delete error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -71,7 +75,7 @@ final class QrHistoryRepository {
       final db = await _databaseHelper.database;
       await db.delete(DatabaseHelper.table);
     } catch (error, stackTrace) {
-      LoggerUtil.error('Clear error: $error', stackTrace);
+      LoggerUtil.error('Clear error: $error', error, stackTrace);
       rethrow;
     }
   }

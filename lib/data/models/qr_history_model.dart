@@ -5,9 +5,9 @@ final class QrHistoryModel {
 
   factory QrHistoryModel.fromMap(Map<String, dynamic> map) {
     return QrHistoryModel(
-      url: map['url'],
-      time: _dateFormatter.parse(map['time']),
-      type: map['type'],
+      url: map['url'] as String,
+      time: _dateFormatter.parse(map['time'] as String),
+      type: map['type'] as int,
     );
   }
 

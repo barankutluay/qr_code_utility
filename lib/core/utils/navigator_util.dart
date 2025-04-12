@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 final class NavigatorUtil {
   const NavigatorUtil._();
 
-  static Future<void> push(BuildContext context, Route route) async {
+  static Future<void> push(BuildContext context, Route<dynamic> route) async {
     await Navigator.of(context).push(route);
   }
 
@@ -11,7 +11,10 @@ final class NavigatorUtil {
     await Navigator.of(context).pushNamed(routeName);
   }
 
-  static Future<void> pushReplacement(BuildContext context, Route route) async {
+  static Future<void> pushReplacement(
+    BuildContext context,
+    Route<dynamic> route,
+  ) async {
     await Navigator.of(context).pushReplacement(route);
   }
 

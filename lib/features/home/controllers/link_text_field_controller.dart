@@ -17,6 +17,7 @@ final class LinkTextFieldController {
     final uri = Uri.tryParse(value);
 
     if (value.isEmpty) return false;
+
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) return false;
 
     return true;
@@ -29,6 +30,7 @@ final class LinkTextFieldController {
     const notValidMessage = 'Please enter a valid link';
 
     if (value.isEmpty) return emptyMessage;
+
     if (uri == null || (!uri.hasScheme || !uri.hasAuthority)) {
       return notValidMessage;
     }

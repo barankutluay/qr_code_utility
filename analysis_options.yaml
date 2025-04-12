@@ -3,10 +3,11 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   exclude:
     - "**/*.g.dart"
-  # language:
-  #   strict-casts: true
-  #   strict-inference: true
-  #   strict-raw-types: true
+    - [build/**]
+  language:
+    strict-casts: true
+    strict-inference: true
+    strict-raw-types: true
 
 linter:
   rules:

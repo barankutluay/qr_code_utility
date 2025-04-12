@@ -14,7 +14,7 @@ Future<void> showCustomModalBottomSheet(
   bool showDragHandle = false,
 }) async {
   try {
-    return showModalBottomSheet(
+    return showModalBottomSheet<void>(
       context: context,
       useSafeArea: useSafeArea,
       isDismissible: isDismissible,
@@ -36,11 +36,13 @@ Future<void> showCustomModalBottomSheet(
           child: widget,
         );
       },
-    ).then((_) {
-      if (onDismiss != null) onDismiss();
-    });
+    ).then((_) => onDismiss?.call());
   } catch (error, stackTrace) {
-    LoggerUtil.error("The bottom sheet couldn't open: $error", stackTrace);
+    LoggerUtil.error(
+      "The bottom sheet couldn't open: $error",
+      error,
+      stackTrace,
+    );
     rethrow;
   }
 }

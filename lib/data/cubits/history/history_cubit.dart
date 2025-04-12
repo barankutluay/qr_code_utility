@@ -16,7 +16,7 @@ final class HistoryCubit extends Cubit<HistoryState> {
       final historyList = await QrHistoryRepository.instance.getAllHistory();
       emit(HistoryLoaded(historyList: historyList));
     } catch (error, stackTrace) {
-      LoggerUtil.error('Get history error: $error', stackTrace);
+      LoggerUtil.error('Get history error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -26,7 +26,7 @@ final class HistoryCubit extends Cubit<HistoryState> {
       await QrHistoryRepository.instance.clearAllHistory();
       emit(const HistoryLoaded(historyList: []));
     } catch (error, stackTrace) {
-      LoggerUtil.error("Couldn't clear history: $error", stackTrace);
+      LoggerUtil.error("Couldn't clear history: $error", error, stackTrace);
       rethrow;
     }
   }

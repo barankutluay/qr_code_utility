@@ -19,6 +19,7 @@ Future<void> showCustomSnackbar(
       ),
     );
   }
+
   if (type == SnackBarEnum.info) {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(

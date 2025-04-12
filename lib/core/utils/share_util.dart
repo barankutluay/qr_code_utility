@@ -9,6 +9,7 @@ Future<void> share(
   final renderBox = context.findRenderObject() as RenderBox?;
 
   if (renderBox == null) return;
+
   final sharePositionOrigin =
       renderBox.localToGlobal(Offset.zero) & renderBox.size;
 
@@ -16,6 +17,7 @@ Future<void> share(
     await Share.share(url, sharePositionOrigin: sharePositionOrigin);
   } else if (onShareFiles != null) {
     final files = await onShareFiles();
+
     if (files.isNotEmpty) {
       await Share.shareXFiles(files, sharePositionOrigin: sharePositionOrigin);
     }

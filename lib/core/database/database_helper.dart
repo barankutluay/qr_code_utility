@@ -22,7 +22,9 @@ final class DatabaseHelper {
 
   Future<Database> get database async {
     if (_database != null) return _database!;
+
     _database = await _initDatabase();
+
     return _database!;
   }
 
@@ -43,7 +45,7 @@ final class DatabaseHelper {
         onCreate: _onCreate,
       );
     } catch (error, stackTrace) {
-      LoggerUtil.error("Couldn't retrieve database: $error", stackTrace);
+      LoggerUtil.error("Couldn't retrieve database: $error", error, stackTrace);
       rethrow;
     }
   }

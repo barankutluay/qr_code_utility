@@ -9,6 +9,7 @@ final class AppBlocObserver extends BlocObserver {
   @override
   void onChange(BlocBase<dynamic> bloc, Change<dynamic> change) {
     super.onChange(bloc, change);
+
     if (change.nextState is! TextFormFieldState &&
         change.nextState is! HistoryLoaded) {
       LoggerUtil.debug('${bloc.runtimeType} $change');

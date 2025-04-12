@@ -45,6 +45,7 @@ final class GenerateQrCodeController {
       final url = textFormFieldCubit.state.value;
 
       if (!LinkTextFieldController.validateLink(context, url)) return;
+
       final Widget qrImageView = CustomQrImageView(
         data: textFormFieldCubit.state.value,
         repaintKey: repaintKey,
@@ -65,7 +66,7 @@ final class GenerateQrCodeController {
         ]);
       }
     } catch (error, stackTrace) {
-      LoggerUtil.error('QR Generate Error: $error', stackTrace);
+      LoggerUtil.error('QR Generate Error: $error', error, stackTrace);
       rethrow;
     }
   }
@@ -77,8 +78,9 @@ final class GenerateQrCodeController {
       if (renderObject == null || (renderObject is! RenderRepaintBoundary)) {
         throw 'RenderRepaintBoundary not found!';
       }
+
       final boundary = renderObject;
-      await Future.delayed(AppDurations.duration100ms);
+      await Future<void>.delayed(AppDurations.duration100ms);
       final image = await boundary.toImage(pixelRatio: 3);
       final byteData = await image.toByteData(format: ui.ImageByteFormat.png);
 
@@ -100,8 +102,9 @@ final class GenerateQrCodeController {
       return [XFile(file.path)];
     } catch (error, stackTrace) {
       if (error is String) {
-        LoggerUtil.error(error, stackTrace);
+        LoggerUtil.error('Error: $error', error, stackTrace);
       }
+
       rethrow;
     }
   }
@@ -110,6 +113,7 @@ final class GenerateQrCodeController {
     final capturedImage = await GenerateQrCodeController.captureImage(
       repaintKey,
     );
+
     return capturedImage;
   }
 }
