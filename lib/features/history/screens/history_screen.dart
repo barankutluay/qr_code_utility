@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myproject/data/cubits/history/history_cubit.dart';
-import 'package:myproject/features/history/screens/history_screen_layout.dart';
+import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
+import 'package:qr_code_utility/features/history/screens/history_screen_layout.dart';
 
 class HistoryScreen extends StatelessWidget {
   const HistoryScreen({super.key});

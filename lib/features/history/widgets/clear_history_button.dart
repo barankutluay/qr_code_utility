@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/enums/icon_enum.dart';
-import 'package:myproject/core/extensions/icon_enum_extension.dart';
-import 'package:myproject/core/utils/padding_util.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/enums/icon_enum.dart';
+import 'package:qr_code_utility/core/extensions/icon_enum_extension.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ClearHistoryButton extends StatelessWidget {

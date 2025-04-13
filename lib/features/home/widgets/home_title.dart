@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_strings.dart';
+import 'package:qr_code_utility/core/constants/app_strings.dart';
 
 class HomeTitle extends StatelessWidget {
   const HomeTitle({super.key});

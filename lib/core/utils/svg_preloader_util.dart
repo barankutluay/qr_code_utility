@@ -1,5 +1,5 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myproject/core/utils/logger_util.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
 
 final class SvgPreloaderUtil {
   const SvgPreloaderUtil._();

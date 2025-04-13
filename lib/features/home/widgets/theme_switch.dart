@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/styles/theme_switch_style.dart';
-import 'package:myproject/core/utils/border_util.dart';
-import 'package:myproject/features/home/controllers/theme_switch_controller.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/styles/theme_switch_style.dart';
+import 'package:qr_code_utility/core/utils/border_util.dart';
+import 'package:qr_code_utility/features/home/controllers/theme_switch_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class ThemeSwitch extends StatelessWidget {

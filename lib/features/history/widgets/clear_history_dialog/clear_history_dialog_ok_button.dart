@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/constants/app_strings.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_strings.dart';
 
 class ClearHistoryDialogOkButton extends StatelessWidget {
   const ClearHistoryDialogOkButton({super.key, this.onPressed});

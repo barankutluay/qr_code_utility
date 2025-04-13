@@ -2,12 +2,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/history/controllers/history_controller.dart';
-import 'package:myproject/features/history/widgets/backward_button.dart';
-import 'package:myproject/features/history/widgets/clear_history_button.dart';
-import 'package:myproject/features/history/widgets/history_title.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/features/history/controllers/history_controller.dart';
+import 'package:qr_code_utility/features/history/widgets/backward_button.dart';
+import 'package:qr_code_utility/features/history/widgets/clear_history_button.dart';
+import 'package:qr_code_utility/features/history/widgets/history_title.dart';
 
 class HistoryAppBar extends StatelessWidget {
   const HistoryAppBar({required this.innerBoxIsScrolled, super.key});

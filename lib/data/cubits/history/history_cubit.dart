@@ -1,11 +1,11 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:myproject/core/utils/dialog_util.dart';
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/data/models/qr_history_model.dart';
-import 'package:myproject/data/repos/qr_history_repository.dart';
-import 'package:myproject/features/history/widgets/clear_history_dialog/clear_history_dialog.dart';
+import 'package:qr_code_utility/core/utils/dialog_util.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/data/models/qr_history_model.dart';
+import 'package:qr_code_utility/data/repos/qr_history_repository.dart';
+import 'package:qr_code_utility/features/history/widgets/clear_history_dialog/clear_history_dialog.dart';
 
 part 'history_state.dart';
 

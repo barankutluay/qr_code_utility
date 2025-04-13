@@ -1,7 +1,7 @@
 final class AppStrings {
   const AppStrings._();
 
-  static const String appName = 'myproject';
+  static const String appName = 'qr_code_utility';
   static const String homeTitleText = 'QR Code Utility';
   static const String historyTitleText = 'History';
   static const String generateButtonText = 'Generate';

@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/data/cubits/history/history_cubit.dart';
-import 'package:myproject/features/history/widgets/history_generated_card/history_generated_card.dart';
-import 'package:myproject/features/history/widgets/history_scanned_card/history_scanned_card.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
+import 'package:qr_code_utility/features/history/widgets/history_generated_card/history_generated_card.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card.dart';
 
 class HistoryLoadedWidget extends StatelessWidget {
   const HistoryLoadedWidget({required this.state, super.key});

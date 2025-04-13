@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_strings.dart';
+import 'package:qr_code_utility/core/constants/app_strings.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class GenerateButton extends StatelessWidget {

@@ -3,8 +3,8 @@ import 'dart:ui';
 
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:myproject/core/styles/custom_system_ui_overlay_style.dart';
-import 'package:myproject/core/utils/logger_util.dart';
+import 'package:qr_code_utility/core/styles/custom_system_ui_overlay_style.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 part 'theme_switch_state.dart';

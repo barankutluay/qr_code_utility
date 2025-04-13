@@ -1,10 +1,10 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_buttons.dart';
-import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_title.dart';
-import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_url.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_buttons.dart';
+import 'package:qr_code_utility/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_title.dart';
+import 'package:qr_code_utility/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet_url.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class OnDetectBottomSheet extends StatelessWidget {

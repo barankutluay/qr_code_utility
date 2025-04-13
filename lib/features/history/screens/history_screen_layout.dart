@@ -2,10 +2,10 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myproject/core/utils/build_when_util.dart';
-import 'package:myproject/data/cubits/history/history_cubit.dart';
-import 'package:myproject/features/history/controllers/history_controller.dart';
-import 'package:myproject/features/history/widgets/history_app_bar.dart';
+import 'package:qr_code_utility/core/utils/build_when_util.dart';
+import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
+import 'package:qr_code_utility/features/history/controllers/history_controller.dart';
+import 'package:qr_code_utility/features/history/widgets/history_app_bar.dart';
 
 class HistoryScreenLayout extends StatelessWidget {
   const HistoryScreenLayout({super.key});

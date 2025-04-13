@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.barankutluay." "\0"
-            VALUE "FileDescription", "myproject" "\0"
+            VALUE "CompanyName", "Baran Kutluay" "\0"
+            VALUE "FileDescription", "QR Code Utility - Professional QR Code Scanner & Generator" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "myproject" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2025 com.barankutluay.. All rights reserved." "\0"
-            VALUE "OriginalFilename", "myproject.exe" "\0"
-            VALUE "ProductName", "myproject" "\0"
+            VALUE "InternalName", "QRCodeUtility" "\0"
+            VALUE "LegalCopyright", "Copyright (C) 2025 Baran Kutluay. All rights reserved." "\0"
+            VALUE "OriginalFilename", "QR Code Utility.exe" "\0"
+            VALUE "ProductName", "QR Code Utility" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

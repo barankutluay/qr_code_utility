@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
+import 'package:qr_code_utility/data/cubits/theme_switch/theme_switch_cubit.dart';
 
 final class ThemeSwitchController {
   const ThemeSwitchController._();

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/data/cubits/history/history_cubit.dart';
-import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
+import 'package:qr_code_utility/data/cubits/text_form_field/text_form_field_cubit.dart';
 
 final class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();

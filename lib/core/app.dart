@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_strings.dart';
-import 'package:myproject/core/styles/custom_system_ui_overlay_style.dart';
-import 'package:myproject/core/themes/app_theme.dart';
-import 'package:myproject/core/utils/build_when_util.dart';
-import 'package:myproject/core/utils/go_router_util.dart';
-import 'package:myproject/data/cubits/theme_switch/theme_switch_cubit.dart';
+import 'package:qr_code_utility/core/constants/app_strings.dart';
+import 'package:qr_code_utility/core/styles/custom_system_ui_overlay_style.dart';
+import 'package:qr_code_utility/core/themes/app_theme.dart';
+import 'package:qr_code_utility/core/utils/build_when_util.dart';
+import 'package:qr_code_utility/core/utils/go_router_util.dart';
+import 'package:qr_code_utility/data/cubits/theme_switch/theme_switch_cubit.dart';
 
 class App extends StatelessWidget {
   const App({super.key});

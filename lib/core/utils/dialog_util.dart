@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/constants/app_durations.dart';
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/core/utils/padding_util.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_durations.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
 
 Future<bool?> showCustomDialog(
   BuildContext context, {

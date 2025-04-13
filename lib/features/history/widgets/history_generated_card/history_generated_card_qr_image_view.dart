@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:myproject/features/home/widgets/custom_qr_image_view.dart';
+import 'package:qr_code_utility/features/home/widgets/custom_qr_image_view.dart';
 
 class HistoryGeneratedCardQrImageView extends StatelessWidget {
   const HistoryGeneratedCardQrImageView({

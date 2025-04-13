@@ -5,13 +5,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/enums/icon_enum.dart';
-import 'package:myproject/core/extensions/icon_enum_extension.dart';
-import 'package:myproject/core/utils/border_util.dart';
-import 'package:myproject/core/utils/share_util.dart';
-import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
-import 'package:myproject/features/scanner/widgets/scanner_overlay_painter.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/enums/icon_enum.dart';
+import 'package:qr_code_utility/core/extensions/icon_enum_extension.dart';
+import 'package:qr_code_utility/core/utils/border_util.dart';
+import 'package:qr_code_utility/core/utils/share_util.dart';
+import 'package:qr_code_utility/data/cubits/scanner/scanner_cubit.dart';
+import 'package:qr_code_utility/features/scanner/widgets/scanner_overlay_painter.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 final class ScannerController {

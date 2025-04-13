@@ -1,12 +1,12 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/border_util.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/history/widgets/history_scanned_card/history_scanned_card_buttons.dart';
-import 'package:myproject/features/history/widgets/history_scanned_card/history_scanned_card_date_string.dart';
-import 'package:myproject/features/history/widgets/history_scanned_card/history_scanned_card_title.dart';
-import 'package:myproject/features/history/widgets/history_scanned_card/history_scanned_card_url.dart';
+import 'package:qr_code_utility/core/utils/border_util.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_buttons.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_date_string.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_title.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_url.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class HistoryScannedCard extends StatelessWidget {

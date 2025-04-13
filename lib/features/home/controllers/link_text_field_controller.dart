@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
+import 'package:qr_code_utility/data/cubits/text_form_field/text_form_field_cubit.dart';
 
 final class LinkTextFieldController {
   const LinkTextFieldController._();

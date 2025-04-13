@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/constants/app_strings.dart';
-import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_strings.dart';
+import 'package:qr_code_utility/features/home/controllers/link_text_field_controller.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class LinkTextField extends StatelessWidget {

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/themes/app_bottom_sheet_theme.dart';
-import 'package:myproject/core/themes/app_elevated_button_theme.dart';
-import 'package:myproject/core/themes/app_icon_button_theme.dart';
-import 'package:myproject/core/themes/app_icon_theme.dart';
-import 'package:myproject/core/themes/app_input_decoration_theme.dart';
-import 'package:myproject/core/themes/app_progress_indicator_theme.dart';
-import 'package:myproject/core/themes/app_snackbar_theme.dart';
-import 'package:myproject/core/themes/app_text_button_theme.dart';
-import 'package:myproject/core/themes/app_text_selection_theme.dart';
-import 'package:myproject/core/themes/app_text_theme.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/themes/app_bottom_sheet_theme.dart';
+import 'package:qr_code_utility/core/themes/app_elevated_button_theme.dart';
+import 'package:qr_code_utility/core/themes/app_icon_button_theme.dart';
+import 'package:qr_code_utility/core/themes/app_icon_theme.dart';
+import 'package:qr_code_utility/core/themes/app_input_decoration_theme.dart';
+import 'package:qr_code_utility/core/themes/app_progress_indicator_theme.dart';
+import 'package:qr_code_utility/core/themes/app_snackbar_theme.dart';
+import 'package:qr_code_utility/core/themes/app_text_button_theme.dart';
+import 'package:qr_code_utility/core/themes/app_text_selection_theme.dart';
+import 'package:qr_code_utility/core/themes/app_text_theme.dart';
 
 final class AppTheme {
   const AppTheme._();

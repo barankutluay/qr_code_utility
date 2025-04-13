@@ -5,15 +5,15 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:go_router/go_router.dart';
-import 'package:myproject/core/constants/app_durations.dart';
-import 'package:myproject/core/utils/bottom_sheet_util.dart';
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/core/utils/save_data_util.dart';
-import 'package:myproject/core/utils/share_util.dart';
-import 'package:myproject/features/home/controllers/link_text_field_controller.dart';
-import 'package:myproject/features/home/widgets/custom_qr_image_view.dart';
-import 'package:myproject/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:qr_code_utility/core/constants/app_durations.dart';
+import 'package:qr_code_utility/core/utils/bottom_sheet_util.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/core/utils/save_data_util.dart';
+import 'package:qr_code_utility/core/utils/share_util.dart';
+import 'package:qr_code_utility/features/home/controllers/link_text_field_controller.dart';
+import 'package:qr_code_utility/features/home/widgets/custom_qr_image_view.dart';
+import 'package:qr_code_utility/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet.dart';
 import 'package:share_plus/share_plus.dart';
 
 final class GenerateQrCodeController {

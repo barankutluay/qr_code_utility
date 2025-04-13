@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:myproject/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
 
 final class AppTextSelectionTheme {
   const AppTextSelectionTheme._();

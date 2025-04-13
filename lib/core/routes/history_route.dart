@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:go_router/go_router.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/constants/app_durations.dart';
-import 'package:myproject/core/transitions/app_transitions.dart';
-import 'package:myproject/features/history/screens/history_screen.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_durations.dart';
+import 'package:qr_code_utility/core/transitions/app_transitions.dart';
+import 'package:qr_code_utility/features/history/screens/history_screen.dart';
 
 final GoRoute historyRoute = GoRoute(
   path: '/history',

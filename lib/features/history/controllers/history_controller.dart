@@ -2,12 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:myproject/core/utils/share_util.dart';
-import 'package:myproject/data/cubits/history/history_cubit.dart';
-import 'package:myproject/features/history/widgets/history_empty_widget.dart';
-import 'package:myproject/features/history/widgets/history_loaded_widget.dart';
-import 'package:myproject/features/history/widgets/history_loading_widget.dart';
-import 'package:myproject/features/home/controllers/generate_qr_code_controller.dart';
+import 'package:qr_code_utility/core/utils/share_util.dart';
+import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
+import 'package:qr_code_utility/features/history/widgets/history_empty_widget.dart';
+import 'package:qr_code_utility/features/history/widgets/history_loaded_widget.dart';
+import 'package:qr_code_utility/features/history/widgets/history_loading_widget.dart';
+import 'package:qr_code_utility/features/home/controllers/generate_qr_code_controller.dart';
 
 final class HistoryController {
   HistoryController._();

@@ -2,9 +2,9 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:myproject/core/utils/bottom_sheet_util.dart';
-import 'package:myproject/core/utils/save_data_util.dart';
-import 'package:myproject/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet.dart';
+import 'package:qr_code_utility/core/utils/bottom_sheet_util.dart';
+import 'package:qr_code_utility/core/utils/save_data_util.dart';
+import 'package:qr_code_utility/features/scanner/widgets/on_detect_bottom_sheet/on_detect_bottom_sheet.dart';
 
 part 'scanner_state.dart';
 

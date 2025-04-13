@@ -1,14 +1,14 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/features/home/controllers/create_button_controller.dart';
-import 'package:myproject/features/home/controllers/history_button_controller.dart';
-import 'package:myproject/features/home/widgets/buttons/create_button.dart';
-import 'package:myproject/features/home/widgets/buttons/history_button.dart';
-import 'package:myproject/features/home/widgets/buttons/scan_button.dart';
-import 'package:myproject/features/home/widgets/home_title.dart';
-import 'package:myproject/features/home/widgets/theme_switch.dart';
-import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/features/home/controllers/create_button_controller.dart';
+import 'package:qr_code_utility/features/home/controllers/history_button_controller.dart';
+import 'package:qr_code_utility/features/home/widgets/buttons/create_button.dart';
+import 'package:qr_code_utility/features/home/widgets/buttons/history_button.dart';
+import 'package:qr_code_utility/features/home/widgets/buttons/scan_button.dart';
+import 'package:qr_code_utility/features/home/widgets/home_title.dart';
+import 'package:qr_code_utility/features/home/widgets/theme_switch.dart';
+import 'package:qr_code_utility/features/scanner/controllers/scanner_controller.dart';
 
 class HomeScreenLayout extends StatelessWidget {
   const HomeScreenLayout({super.key});

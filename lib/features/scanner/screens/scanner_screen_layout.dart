@@ -3,9 +3,9 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mobile_scanner/mobile_scanner.dart';
-import 'package:myproject/core/utils/build_when_util.dart';
-import 'package:myproject/data/cubits/scanner/scanner_cubit.dart';
-import 'package:myproject/features/scanner/controllers/scanner_controller.dart';
+import 'package:qr_code_utility/core/utils/build_when_util.dart';
+import 'package:qr_code_utility/data/cubits/scanner/scanner_cubit.dart';
+import 'package:qr_code_utility/features/scanner/controllers/scanner_controller.dart';
 
 class ScannerScreenLayout extends StatefulWidget {
   const ScannerScreenLayout({super.key});

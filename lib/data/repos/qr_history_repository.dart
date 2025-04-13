@@ -1,6 +1,6 @@
-import 'package:myproject/core/database/database_helper.dart';
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/data/models/qr_history_model.dart';
+import 'package:qr_code_utility/core/database/database_helper.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/data/models/qr_history_model.dart';
 import 'package:sqflite/sqflite.dart';
 
 final class QrHistoryRepository {

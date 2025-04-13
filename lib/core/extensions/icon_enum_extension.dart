@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:myproject/core/enums/icon_enum.dart';
+import 'package:qr_code_utility/core/enums/icon_enum.dart';
 
 extension IconEnumExtension on IconEnum {
   String get _assetName => 'assets/icons/$name.svg';

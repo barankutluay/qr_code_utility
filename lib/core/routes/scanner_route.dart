@@ -1,10 +1,10 @@
 import 'dart:ui';
 
 import 'package:go_router/go_router.dart';
-import 'package:myproject/core/constants/app_colors.dart';
-import 'package:myproject/core/constants/app_durations.dart';
-import 'package:myproject/core/transitions/app_transitions.dart';
-import 'package:myproject/features/scanner/screens/scanner_screen.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_durations.dart';
+import 'package:qr_code_utility/core/transitions/app_transitions.dart';
+import 'package:qr_code_utility/features/scanner/screens/scanner_screen.dart';
 
 final GoRoute scannerRoute = GoRoute(
   path: '/scanner',

@@ -2,14 +2,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:myproject/core/utils/build_when_util.dart';
-import 'package:myproject/core/utils/padding_util.dart';
-import 'package:myproject/data/cubits/text_form_field/text_form_field_cubit.dart';
-import 'package:myproject/features/home/controllers/generate_qr_code_controller.dart';
-import 'package:myproject/features/home/widgets/buttons/generate_button.dart';
-import 'package:myproject/features/home/widgets/generate_qr_code_bottom_sheet/generate_qr_code_bottom_sheet_title.dart';
-import 'package:myproject/features/home/widgets/info_widget.dart';
-import 'package:myproject/features/home/widgets/link_text_field.dart';
+import 'package:qr_code_utility/core/utils/build_when_util.dart';
+import 'package:qr_code_utility/core/utils/padding_util.dart';
+import 'package:qr_code_utility/data/cubits/text_form_field/text_form_field_cubit.dart';
+import 'package:qr_code_utility/features/home/controllers/generate_qr_code_controller.dart';
+import 'package:qr_code_utility/features/home/widgets/buttons/generate_button.dart';
+import 'package:qr_code_utility/features/home/widgets/generate_qr_code_bottom_sheet/generate_qr_code_bottom_sheet_title.dart';
+import 'package:qr_code_utility/features/home/widgets/info_widget.dart';
+import 'package:qr_code_utility/features/home/widgets/link_text_field.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
 class GenerateQrCodeBottomSheet extends StatelessWidget {

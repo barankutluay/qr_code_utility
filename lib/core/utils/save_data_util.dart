@@ -1,6 +1,6 @@
-import 'package:myproject/core/utils/logger_util.dart';
-import 'package:myproject/data/models/qr_history_model.dart';
-import 'package:myproject/data/repos/qr_history_repository.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
+import 'package:qr_code_utility/data/models/qr_history_model.dart';
+import 'package:qr_code_utility/data/repos/qr_history_repository.dart';
 
 Future<void> saveData({
   required String url,

@@ -1,4 +1,4 @@
-import 'package:myproject/core/constants/app_colors.dart';
+import 'package:qr_code_utility/core/constants/app_colors.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 
 final class QrImageViewStyle {

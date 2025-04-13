@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:myproject/core/utils/logger_util.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:qr_code_utility/core/utils/logger_util.dart';
 import 'package:sqflite/sqflite.dart';
 
 final class DatabaseHelper {
