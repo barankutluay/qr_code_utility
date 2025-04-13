@@ -17,4 +17,10 @@ final class AppStrings {
   static const String historyScannedCardTitle = 'SCANNED';
   static const String historyGeneratedCardTitle = 'GENERATED';
   static const String historyIsEmpty = 'History is empty';
+  static const String historyClearDialogTitle = 'Delete History';
+  static const String historyClearDialogMessage =
+      'Do you really want to clear your history? This action is irreversible.';
+
+  static const String historyClearDialogCancelText = 'CANCEL';
+  static const String historyClearDialogOkText = 'OK';
 }

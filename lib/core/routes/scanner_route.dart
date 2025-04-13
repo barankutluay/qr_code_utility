@@ -13,7 +13,7 @@ final GoRoute scannerRoute = GoRoute(
     return CustomTransitionPage(
       key: state.pageKey,
       child: const ScannerScreen(),
-      barrierColor: AppColors.black50,
+      barrierColor: AppColors.black75,
       transitionDuration: AppDurations.duration500ms,
       reverseTransitionDuration: AppDurations.duration500ms,
       transitionsBuilder: (

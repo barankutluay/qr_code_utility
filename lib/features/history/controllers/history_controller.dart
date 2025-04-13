@@ -22,7 +22,7 @@ final class HistoryController {
   };
 
   static void clearHistory(BuildContext context) {
-    unawaited(read(context).clearHistory());
+    unawaited(read(context).clearHistory(context));
   }
 
   static void shareUrl(BuildContext context, String url) {

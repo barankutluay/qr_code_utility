@@ -4,8 +4,8 @@ import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-final class AppElevatedButtonTheme {
-  const AppElevatedButtonTheme._();
+final class AppTextButtonTheme {
+  const AppTextButtonTheme._();
 
   static final SmoothRectangleBorder _shape = SmoothRectangleBorder(
     smoothness: 0.6,
@@ -13,39 +13,32 @@ final class AppElevatedButtonTheme {
   );
 
   static TextStyle _textStyle(BuildContext context) {
-    return Theme.of(context).textTheme.titleLarge!.copyWith(
-      fontSize: 20.r,
-      fontWeight: FontWeight.w700,
-    );
+    return Theme.of(context).textTheme.titleMedium!;
   }
 
-  static ElevatedButtonThemeData light(BuildContext context) {
-    return ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        elevation: 2.r,
+  static TextButtonThemeData light(BuildContext context) {
+    return TextButtonThemeData(
+      style: TextButton.styleFrom(
         shape: _shape,
         enableFeedback: true,
         alignment: Alignment.center,
-        backgroundColor: AppColors.lightPrimaryContainer,
+        backgroundColor: AppColors.transparent,
         shadowColor: AppColors.lightShadow,
         overlayColor: AppColors.lightOnSurface,
-        foregroundColor: AppColors.lightOnPrimaryContainer,
         textStyle: _textStyle(context),
       ),
     );
   }
 
-  static ElevatedButtonThemeData dark(BuildContext context) {
-    return ElevatedButtonThemeData(
-      style: ElevatedButton.styleFrom(
-        elevation: 2.r,
-        enableFeedback: true,
+  static TextButtonThemeData dark(BuildContext context) {
+    return TextButtonThemeData(
+      style: TextButton.styleFrom(
         shape: _shape,
+        enableFeedback: true,
         alignment: Alignment.center,
-        backgroundColor: AppColors.darkPrimaryContainer,
+        backgroundColor: AppColors.transparent,
         shadowColor: AppColors.darkShadow,
         overlayColor: AppColors.darkOnSurface,
-        foregroundColor: AppColors.darkOnPrimaryContainer,
         textStyle: _textStyle(context),
       ),
     );

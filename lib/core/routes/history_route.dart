@@ -13,7 +13,7 @@ final GoRoute historyRoute = GoRoute(
     return CustomTransitionPage(
       key: state.pageKey,
       child: const HistoryScreen(),
-      barrierColor: AppColors.black50,
+      barrierColor: AppColors.black75,
       transitionDuration: AppDurations.duration500ms,
       reverseTransitionDuration: AppDurations.duration500ms,
       transitionsBuilder: (

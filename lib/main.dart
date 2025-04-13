@@ -14,7 +14,7 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 // TODO: Basit bir logo tasarla, app ikonları vs o logo yap
 // TODO: Logoyla birlikte basit bir splash screen oluştur
 // TODO: Widget ve diğer testleri yaz
-// TODO: Figma dosyası ile birlikte güzel bir rapor hazırla ve githubda paylaş
+// TODO: Figma dosyası ile birlikte güzel bir rapor hazırla ve github da paylaş
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

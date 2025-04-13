@@ -3,12 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:myproject/core/constants/app_colors.dart';
 import 'package:myproject/core/utils/border_util.dart';
 import 'package:myproject/core/utils/padding_util.dart';
+import 'package:smooth_corner/smooth_corner.dart';
 
 final class AppSnackbarTheme {
   const AppSnackbarTheme._();
 
-  static final ShapeBorder _shape = RoundedRectangleBorder(
-    borderRadius: BorderUtil.all(100.r),
+  static final SmoothRectangleBorder _shape = SmoothRectangleBorder(
+    smoothness: 0.6,
+    borderRadius: BorderUtil.all(16.r),
   );
 
   static final EdgeInsets _insetPadding = PaddingUtil.horizontalAndVertical(
