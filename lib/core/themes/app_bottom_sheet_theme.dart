@@ -21,6 +21,7 @@ final class AppBottomSheetTheme {
     modalBackgroundColor: AppColors.lightSurfaceContainerLow,
     shadowColor: AppColors.lightShadow,
     modalBarrierColor: AppColors.black75,
+    surfaceTintColor: AppColors.transparent,
   );
 
   static final BottomSheetThemeData dark = BottomSheetThemeData(
@@ -32,5 +33,6 @@ final class AppBottomSheetTheme {
     modalBackgroundColor: AppColors.darkSurfaceContainerLow,
     shadowColor: AppColors.darkShadow,
     modalBarrierColor: AppColors.black75,
+    surfaceTintColor: AppColors.transparent,
   );
 }

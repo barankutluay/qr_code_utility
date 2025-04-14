@@ -22,5 +22,5 @@ final class AppStrings {
       'Do you really want to clear your history? This action is irreversible.';
 
   static const String historyClearDialogCancelText = 'CANCEL';
-  static const String historyClearDialogOkText = 'OK';
+  static const String historyClearDialogDeleteText = 'DELETE';
 }

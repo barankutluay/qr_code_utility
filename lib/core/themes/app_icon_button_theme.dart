@@ -19,6 +19,7 @@ final class AppIconButtonTheme {
       backgroundColor: AppColors.lightPrimaryContainer,
       shadowColor: AppColors.lightShadow,
       overlayColor: AppColors.lightOnSurface,
+      surfaceTintColor: AppColors.transparent,
       shape: _shape,
     ),
   );
@@ -30,6 +31,7 @@ final class AppIconButtonTheme {
       backgroundColor: AppColors.darkPrimaryContainer,
       shadowColor: AppColors.darkShadow,
       overlayColor: AppColors.darkOnSurface,
+      surfaceTintColor: AppColors.transparent,
       shape: _shape,
     ),
   );

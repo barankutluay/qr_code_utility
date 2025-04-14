@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_code_utility/core/constants/app_colors.dart';
 import 'package:qr_code_utility/core/constants/app_strings.dart';
+import 'package:qr_code_utility/core/utils/border_util.dart';
+import 'package:smooth_corner/smooth_corner.dart';
 
 class ClearHistoryDialogCancelButton extends StatelessWidget {
   const ClearHistoryDialogCancelButton({super.key, this.onPressed});
@@ -11,19 +13,24 @@ class ClearHistoryDialogCancelButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    final shape = WidgetStatePropertyAll(
+      SmoothRectangleBorder(borderRadius: BorderUtil.only(bottomLeft: 16.r)),
+    );
+
+    return Container(
       height: 48.r,
       child: TextButton(
         onPressed: onPressed,
+        style: Theme.of(context).textButtonTheme.style!.copyWith(shape: shape),
         child: Text(
           AppStrings.historyClearDialogCancelText,
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
-            fontSize: 12.r,
+            fontSize: 14.r,
             color:
                 Theme.of(context).brightness == Brightness.dark
-                    ? AppColors.darkError
-                    : AppColors.lightError,
+                    ? AppColors.darkOnSurface
+                    : AppColors.lightOnSurface,
           ),
         ),
       ),

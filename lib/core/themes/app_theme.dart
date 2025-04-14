@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_code_utility/core/constants/app_colors.dart';
 import 'package:qr_code_utility/core/themes/app_bottom_sheet_theme.dart';
+import 'package:qr_code_utility/core/themes/app_dialog_theme.dart';
 import 'package:qr_code_utility/core/themes/app_elevated_button_theme.dart';
 import 'package:qr_code_utility/core/themes/app_icon_button_theme.dart';
 import 'package:qr_code_utility/core/themes/app_icon_theme.dart';
@@ -25,6 +26,7 @@ final class AppTheme {
       indicatorColor: AppColors.lightPrimaryContainer,
       splashColor: AppColors.lightSurfaceContainerLow,
       highlightColor: AppColors.lightSurfaceContainerHighest,
+      dividerColor: AppColors.lightOutline,
 
       textTheme: AppTextTheme.light,
       iconTheme: AppIconTheme.light,
@@ -32,6 +34,7 @@ final class AppTheme {
       bottomSheetTheme: AppBottomSheetTheme.light,
       textSelectionTheme: AppTextSelectionTheme.light,
       progressIndicatorTheme: AppProgressIndicatorTheme.light,
+      dialogTheme: AppDialogTheme.light,
 
       elevatedButtonTheme: AppElevatedButtonTheme.light(context),
       textButtonTheme: AppTextButtonTheme.light(context),
@@ -51,6 +54,7 @@ final class AppTheme {
       indicatorColor: AppColors.darkPrimaryContainer,
       splashColor: AppColors.darkSurfaceContainerLow,
       highlightColor: AppColors.darkSurfaceContainerHighest,
+      dividerColor: AppColors.darkOutline,
 
       textTheme: AppTextTheme.dark,
       iconTheme: AppIconTheme.dark,
@@ -58,6 +62,7 @@ final class AppTheme {
       bottomSheetTheme: AppBottomSheetTheme.dark,
       textSelectionTheme: AppTextSelectionTheme.dark,
       progressIndicatorTheme: AppProgressIndicatorTheme.dark,
+      dialogTheme: AppDialogTheme.dark,
 
       elevatedButtonTheme: AppElevatedButtonTheme.dark(context),
       textButtonTheme: AppTextButtonTheme.dark(context),

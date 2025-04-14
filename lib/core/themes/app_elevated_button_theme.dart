@@ -30,6 +30,7 @@ final class AppElevatedButtonTheme {
         shadowColor: AppColors.lightShadow,
         overlayColor: AppColors.lightOnSurface,
         foregroundColor: AppColors.lightOnPrimaryContainer,
+        surfaceTintColor: AppColors.transparent,
         textStyle: _textStyle(context),
       ),
     );
@@ -46,6 +47,7 @@ final class AppElevatedButtonTheme {
         shadowColor: AppColors.darkShadow,
         overlayColor: AppColors.darkOnSurface,
         foregroundColor: AppColors.darkOnPrimaryContainer,
+        surfaceTintColor: AppColors.transparent,
         textStyle: _textStyle(context),
       ),
     );
