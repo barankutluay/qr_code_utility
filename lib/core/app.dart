@@ -8,7 +8,7 @@ import 'package:qr_code_utility/core/utils/build_when_util.dart';
 import 'package:qr_code_utility/core/utils/go_router_util.dart';
 import 'package:qr_code_utility/data/cubits/theme_switch/theme_switch_cubit.dart';
 
-class App extends StatelessWidget {
+final class App extends StatelessWidget {
   const App({super.key});
 
   @override

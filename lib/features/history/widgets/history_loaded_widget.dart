@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:qr_code_utility/core/utils/padding_util.dart';
 import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
-import 'package:qr_code_utility/features/history/widgets/history_generated_card/history_generated_card.dart';
-import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card.dart';
+import 'package:qr_code_utility/features/history/widgets/history_generated_card/history_generated_card_layout.dart';
+import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_layout.dart';
 
 class HistoryLoadedWidget extends StatelessWidget {
   const HistoryLoadedWidget({required this.state, super.key});
@@ -21,12 +21,12 @@ class HistoryLoadedWidget extends StatelessWidget {
         final repaintKey = item.type == 0 ? GlobalKey() : null;
 
         return switch (item.type) {
-          0 => HistoryGeneratedCard(
+          0 => HistoryGeneratedCardLayout(
             dateString: item.formattedTime,
             url: item.url,
             repaintKey: repaintKey!,
           ),
-          1 => HistoryScannedCard(
+          1 => HistoryScannedCardLayout(
             dateString: item.formattedTime,
             url: item.url,
           ),

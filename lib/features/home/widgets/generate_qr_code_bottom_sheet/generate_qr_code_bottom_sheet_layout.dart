@@ -12,8 +12,8 @@ import 'package:qr_code_utility/features/home/widgets/info_widget.dart';
 import 'package:qr_code_utility/features/home/widgets/link_text_field.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class GenerateQrCodeBottomSheet extends StatelessWidget {
-  GenerateQrCodeBottomSheet({super.key});
+class GenerateQrCodeBottomSheetLayout extends StatelessWidget {
+  GenerateQrCodeBottomSheetLayout({super.key});
 
   final GlobalKey repaintKey = GlobalKey();
 

@@ -13,7 +13,7 @@ import 'package:qr_code_utility/core/utils/save_data_util.dart';
 import 'package:qr_code_utility/core/utils/share_util.dart';
 import 'package:qr_code_utility/features/home/controllers/link_text_field_controller.dart';
 import 'package:qr_code_utility/features/home/widgets/custom_qr_image_view.dart';
-import 'package:qr_code_utility/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet.dart';
+import 'package:qr_code_utility/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet_layout.dart';
 import 'package:share_plus/share_plus.dart';
 
 final class GenerateQrCodeController {
@@ -58,7 +58,11 @@ final class GenerateQrCodeController {
             if (context.mounted) {
               showCustomModalBottomSheet(
                 context,
-                widget: GeneratedCodeBottomSheet(qrImageView, repaintKey, url),
+                widget: GeneratedCodeBottomSheetLayout(
+                  qrImageView,
+                  repaintKey,
+                  url,
+                ),
               );
             }
           }),

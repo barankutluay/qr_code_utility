@@ -6,8 +6,8 @@ import 'package:qr_code_utility/features/home/widgets/generated_code_bottom_shee
 import 'package:qr_code_utility/features/home/widgets/generated_code_bottom_sheet/generated_code_bottom_sheet_title.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class GeneratedCodeBottomSheet extends StatelessWidget {
-  const GeneratedCodeBottomSheet(
+class GeneratedCodeBottomSheetLayout extends StatelessWidget {
+  const GeneratedCodeBottomSheetLayout(
     this.qrImageView,
     this.repaintKey,
     this.url, {

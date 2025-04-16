@@ -9,8 +9,8 @@ import 'package:qr_code_utility/features/history/widgets/history_scanned_card/hi
 import 'package:qr_code_utility/features/history/widgets/history_scanned_card/history_scanned_card_url.dart';
 import 'package:smooth_corner/smooth_corner.dart';
 
-class HistoryScannedCard extends StatelessWidget {
-  const HistoryScannedCard({
+class HistoryScannedCardLayout extends StatelessWidget {
+  const HistoryScannedCardLayout({
     required this.dateString,
     required this.url,
     super.key,

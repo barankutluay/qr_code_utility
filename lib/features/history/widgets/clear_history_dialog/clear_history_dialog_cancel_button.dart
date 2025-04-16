@@ -27,10 +27,12 @@ class ClearHistoryDialogCancelButton extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.titleMedium!.copyWith(
             fontSize: 14.r,
+            letterSpacing: 0,
+            fontWeight: FontWeight.w700,
             color:
                 Theme.of(context).brightness == Brightness.dark
-                    ? AppColors.darkOnSurface
-                    : AppColors.lightOnSurface,
+                    ? AppColors.darkPrimaryContainer
+                    : AppColors.lightPrimaryContainer,
           ),
         ),
       ),

@@ -22,7 +22,7 @@ final class AppDialogTheme {
     elevation: 0,
     insetPadding: PaddingUtil.horizontal(40.r),
     backgroundColor: AppColors.transparent,
-    shadowColor: AppColors.lightShadow,
+    shadowColor: AppColors.darkShadow,
     barrierColor: AppColors.black75,
     surfaceTintColor: AppColors.transparent,
     shape: SmoothRectangleBorder(borderRadius: BorderUtil.all(24.r)),

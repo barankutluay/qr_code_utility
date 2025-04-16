@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 import 'package:qr_code_utility/core/utils/share_util.dart';
 import 'package:qr_code_utility/data/cubits/history/history_cubit.dart';
 import 'package:qr_code_utility/features/history/widgets/history_empty_widget.dart';
@@ -38,6 +39,14 @@ final class HistoryController {
         },
       ),
     );
+  }
+
+  static void cancel(BuildContext context) {
+    return context.pop(false);
+  }
+
+  static void delete(BuildContext context) {
+    context.pop(true);
   }
 
   static Widget bodyBuilder(BuildContext context, HistoryState state) {
