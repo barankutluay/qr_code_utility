@@ -10,8 +10,6 @@ import 'package:qr_code_utility/core/styles/custom_system_ui_overlay_style.dart'
 import 'package:qr_code_utility/core/utils/svg_preloader_util.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 
-// TODO: Figma dosyası ile birlikte güzel bir rapor hazırla ve github da paylaş
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = const AppBlocObserver();
