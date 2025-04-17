@@ -16,6 +16,14 @@ Ideal for both personal and professional use, this tool simplifies interactions 
 
 ## **Figma**
 
+### Components
+
 <img src="/github/Components.png" alt="Components" width="100%" />
+
+### Light
+
 <img src="/github/Light.png" alt="Light" width="100%" />
+
+### Dark
+
 <img src="/github/Dark.png" alt="Dark" width="100%" />
