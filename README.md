@@ -27,3 +27,5 @@ Ideal for both personal and professional use, this tool simplifies interactions 
 ### Dark
 
 <img src="/github/Dark.png" alt="Dark" width="100%" />
+
+Copyright © by Baran Kutluay. All rights reserved.
