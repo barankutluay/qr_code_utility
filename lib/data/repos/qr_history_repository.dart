@@ -1,4 +1,4 @@
-import 'package:qr_code_utility/core/database/database_helper.dart';
+import 'package:qr_code_utility/core/configs/database_helper.dart';
 import 'package:qr_code_utility/core/utils/logger_util.dart';
 import 'package:qr_code_utility/data/models/qr_history_model.dart';
 import 'package:sqflite/sqflite.dart';
