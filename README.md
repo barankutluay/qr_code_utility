@@ -1,5 +1,11 @@
 # **QR Code Utility - Professional QR Code Scanner & Generator**  
 
+<div align="center">
+  <img src="/assets/images/logo.png" alt="Components" width="25%" style="background-color: #141313; border-radius: 12px" />
+</div>
+
+<br>
+
 QR Code Utility is a comprehensive mobile application that enables users to quickly and conveniently create, scan, and manage QR codes. The app automatically saves all generated or scanned QR codes to a local history, allowing you to easily access and manage them later. Alongside meeting essential needs like generating customizable QR codes, sharing scan results, or directly opening links, it stands out with its user-friendly interface.  
 
 ## **Technologies Used**  
@@ -14,18 +20,18 @@ QR Code Utility is a comprehensive mobile application that enables users to quic
 
 Ideal for both personal and professional use, this tool simplifies interactions with QR codes while securely storing your data.
 
-## **Figma**
-
-### Components
-
-<img src="/github/Components.png" alt="Components" width="100%" />
+## **Design (Figma)**
 
 ### Light
 
-<img src="/github/Light.png" alt="Light" width="100%" />
+<div>
+  <img src="/github/Light.png" alt="Light" width="75%" />
+</div>
 
 ### Dark
 
-<img src="/github/Dark.png" alt="Dark" width="100%" />
+<div>
+  <img src="/github/Dark.png" alt="Dark" width="75%" />
+</div>
 
 Copyright © by Baran Kutluay. All rights reserved.
