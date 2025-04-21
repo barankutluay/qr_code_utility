@@ -87,4 +87,3 @@ lib/generated_plugin_registrant.dart
 
 # Project specific ignores
 release/
-build_apk_release.ps1

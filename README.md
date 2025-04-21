@@ -25,13 +25,13 @@ Ideal for both personal and professional use, this tool simplifies interactions 
 ### Light
 
 <div>
-  <img src="/github/Light.png" alt="Light" width="75%" />
+  <img src="/assets/github/Light.png" alt="Light" width="75%" />
 </div>
 
 ### Dark
 
 <div>
-  <img src="/github/Dark.png" alt="Dark" width="75%" />
+  <img src="/assets/github/Dark.png" alt="Dark" width="75%" />
 </div>
 
 Copyright © by Baran Kutluay. All rights reserved.
