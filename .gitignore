@@ -86,3 +86,5 @@ lib/generated_plugin_registrant.dart
 *.sqlite
 
 # Project specific ignores
+release/
+build_apk_release.ps1
